@@ -1,0 +1,6 @@
+version: '3.6'
+services:
+  poldle:
+    build: .
+    ports:
+      - '80:8000'
