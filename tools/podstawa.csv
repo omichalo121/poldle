@@ -1,0 +1,979 @@
+1,Warszawa,powiat,Warszawa,mazowieckie,1795569,517.2,km²,21.00672,52.23196
+2,Kraków,powiat,Kraków,małopolskie,782137,326.9,km²,19.93686,50.06195
+3,Łódź,powiat,Łódź,łódzkie,664071,293.3,km²,19.45699,51.76873
+4,Wrocław,powiat,Wrocław,dolnośląskie,642687,292.8,km²,17.03267,51.10898
+5,Poznań,powiat,Poznań,wielkopolskie,529410,261.9,km²,16.91973,52.40066
+6,Gdańsk,powiat,Gdańsk,pomorskie,470621,262,km²,18.61298,54.37069
+7,Szczecin,powiat,Szczecin,zachodniopomorskie,395513,300.6,km²,14.55096,53.43018
+8,Bydgoszcz,powiat,Bydgoszcz,kujawsko-pomorskie,339053,176,km²,18.00025,53.12196
+9,Lublin,powiat,Lublin,lubelskie,336339,147.5,km²,22.5701,51.25056
+10,Białystok,powiat,Białystok,podlaskie,295683,102.1,km²,23.14705,53.12751
+11,Katowice,powiat,Katowice,śląskie,286960,164.6,km²,19.02159,50.2599
+12,Gdynia,powiat,Gdynia,pomorskie,243918,135.1,km²,18.54027,54.5165
+13,Częstochowa,powiat,Częstochowa,śląskie,214342,159.7,km²,19.11321,50.81205
+14,Radom,powiat,Radom,mazowieckie,206946,111.8,km²,21.15415,51.40226
+15,Toruń,powiat,Toruń,kujawsko-pomorskie,196935,115.7,km²,18.60481,53.01027
+16,Sosnowiec,powiat,Sosnowiec,śląskie,194818,91.1,km²,19.13429,50.27808
+17,Kielce,powiat,Kielce,świętokrzyskie,191448,109.7,km²,20.60992,50.85403
+18,Rzeszów,powiat,Rzeszów,podkarpackie,198609,129,km²,22.00472,50.03745
+19,Gliwice,powiat,Gliwice,śląskie,175102,133.9,km²,18.66573,50.29411
+20,Zabrze,powiat,Zabrze,śląskie,168946,80.4,km²,18.78637,50.30862
+21,Olsztyn,powiat,Olsztyn,warmińsko-mazurskie,169793,88.3,km²,20.47778,53.77672
+22,Bielsko-Biała,powiat,Bielsko-Biała,śląskie,168319,124.5,km²,19.04489,49.82212
+23,Bytom,powiat,Bytom,śląskie,161139,69.4,km²,18.87153,50.36574
+24,Zielona Góra,powiat,Zielona Góra,lubuskie,140403,278.3,km²,15.50504,51.93838
+25,Rybnik,powiat,Rybnik,śląskie,135994,148.4,km²,18.54199,50.09558
+26,Ruda Śląska,powiat,Ruda Śląska,śląskie,135008,77.7,km²,18.86439,50.27035
+27,Opole,powiat,Opole,opolskie,127077,148.9,km²,17.92364,50.66682
+28,Tychy,powiat,Tychy,śląskie,125781,81.8,km²,18.99659,50.1144
+29,Gorzów Wielkopolski,powiat,Gorzów Wielkopolski,lubuskie,120087,85.7,km²,15.24005,52.73099
+30,Dąbrowa Górnicza,powiat,Dąbrowa Górnicza,śląskie,116971,188.7,km²,19.20789,50.33087
+31,Elbląg,powiat,Elbląg,warmińsko-mazurskie,117390,79.8,km²,19.40446,54.15587
+32,Płock,powiat,Płock,mazowieckie,116962,88,km²,19.70086,52.54645
+33,Wałbrzych,powiat,Wałbrzych,dolnośląskie,108222,84.7,km²,16.28254,50.76591
+34,Włocławek,powiat,Włocławek,kujawsko-pomorskie,106928,85.1,km²,19.0723,52.66017
+35,Tarnów,powiat,Tarnów,małopolskie,105922,72.4,km²,20.96406,50.02599
+36,Chorzów,powiat,Chorzów,śląskie,105628,33.2,km²,18.97044,50.28856
+37,Koszalin,powiat,Koszalin,zachodniopomorskie,104994,98.3,km²,16.17707,54.19092
+38,Kalisz,powiat,Kalisz,wielkopolskie,97905,69.4,km²,18.07959,51.74737
+39,Legnica,powiat,Legnica,dolnośląskie,97300,56.3,km²,16.17468,51.20477
+40,Grudziądz,powiat,Grudziądz,kujawsko-pomorskie,92552,57.8,km²,18.76189,53.47251
+41,Jaworzno,powiat,Jaworzno,śląskie,89350,152.6,km²,19.27216,50.20344
+42,Słupsk,powiat,Słupsk,pomorskie,88835,43.2,km²,17.02095,54.46358
+43,Jastrzębie-Zdrój,powiat,Jastrzębie-Zdrój,śląskie,86632,85.3,km²,18.60236,49.95191
+44,Nowy Sącz,powiat,Nowy Sącz,małopolskie,83116,57.6,km²,20.71494,49.6103
+45,Jelenia Góra,powiat,Jelenia Góra,dolnośląskie,77366,109.2,km²,15.73443,50.9031
+46,Siedlce,powiat,Siedlce,mazowieckie,77354,31.9,km²,22.28125,52.16159
+47,Mysłowice,powiat,Mysłowice,śląskie,74085,65.6,km²,19.13217,50.20962
+48,Konin,powiat,Konin,wielkopolskie,71427,82.3,km²,18.25211,52.23019
+49,Piotrków Trybunalski,powiat,Piotrków Trybunalski,łódzkie,71252,67.2,km²,19.68868,51.41285
+50,Piła,powiat,pilski,wielkopolskie,71846,102.7,km²,16.73803,53.15113
+51,Inowrocław,powiat,inowrocławski,kujawsko-pomorskie,70713,30.4,km²,18.24631,52.78146
+52,Lubin,powiat,lubiński,dolnośląskie,70815,40.8,km²,16.19934,51.39968
+53,Ostrów Wielkopolski,powiat,ostrowski,wielkopolskie,70982,41.9,km²,17.80230,51.64972
+54,Suwałki,powiat,Suwałki,podlaskie,69206,65.5,km²,22.93188,54.10271
+55,Ostrowiec Świętokrzyski,powiat,ostrowiecki,świętokrzyskie,66258,46.4,km²,21.41151,50.95021
+56,Gniezno,powiat,gnieźnieński,wielkopolskie,66769,40.6,km²,17.59815,52.52465
+57,Stargard,powiat,stargardzki,zachodniopomorskie,67293,48.1,km²,15.03165,53.30898
+58,Głogów,powiat,głogowski,dolnośląskie,65400,35.1,km²,16.0614,51.67019
+59,Siemianowice Śląskie,powiat,Siemianowice Śląskie,śląskie,65684,25.5,km²,19.01779,50.31285
+60,Pabianice,powiat,pabianicki,łódzkie,63023,33,km²,19.35925,51.66623
+61,Leszno,powiat,Leszno,wielkopolskie,62200,31.9,km²,16.58042,51.84361
+62,Zamość,powiat,Zamość,lubelskie,62021,30.3,km²,23.25959,50.72127
+63,Łomża,powiat,Łomża,podlaskie,62019,32.7,km²,22.05218,53.18243
+64,Chełm,powiat,Chełm,lubelskie,60231,35.3,km²,23.49394,51.13559
+65,Tomaszów Mazowiecki,powiat,tomaszowski,łódzkie,60529,41.3,km²,20.03376,51.51949
+66,Żory,powiat,Żory,śląskie,62848,64.6,km²,18.68061,50.03889
+67,Ełk,powiat,ełcki,warmińsko-mazurskie,61677,21.1,km²,22.36192,53.82396
+68,Pruszków,powiat,pruszkowski,mazowieckie,62750,19.2,km²,20.80298,52.17196
+69,Tarnowskie Góry,powiat,tarnogórski,śląskie,61842,83.9,km²,18.85548,50.44452
+70,Przemyśl,powiat,Przemyśl,podkarpackie,58721,46.2,km²,22.78851,49.78356
+71,Stalowa Wola,powiat,stalowowolski,podkarpackie,58545,82.5,km²,22.06441,50.56531
+72,Kędzierzyn-Koźle,powiat,kędzierzyńsko-kozielski,opolskie,58899,123.7,km²,18.21096,50.34488
+73,Mielec,powiat,mielecki,podkarpackie,59509,46.9,km²,21.46313,50.28025
+74,Tczew,powiat,tczewski,pomorskie,59111,22.4,km²,18.77794,54.09088
+75,Bełchatów,powiat,bełchatowski,łódzkie,55583,34.6,km²,19.37692,51.3547
+76,Biała Podlaska,powiat,Biała Podlaska,lubelskie,56498,49.4,km²,23.14974,52.0298
+77,Świdnica,powiat,świdnicki,dolnośląskie,55413,21.8,km²,16.48705,50.84248
+78,Będzin,powiat,będziński,śląskie,55183,37.4,km²,19.1173,50.33563
+79,Zgierz,powiat,zgierski,łódzkie,54974,42.3,km²,19.39063,51.85552
+80,Piekary Śląskie,powiat,Piekary Śląskie,śląskie,54226,40,km²,18.93794,50.37578
+81,Racibórz,powiat,raciborski,śląskie,53632,75,km²,18.21515,50.09053
+82,Legionowo,powiat,legionowski,mazowieckie,53205,13.5,km²,20.93315,52.40484
+83,Ostrołęka,powiat,Ostrołęka,mazowieckie,51012,33.5,km²,21.57487,53.07803
+84,Świętochłowice,powiat,Świętochłowice,śląskie,48577,13.3,km²,18.90747,50.29894
+85,Wejherowo,powiat,wejherowski,pomorskie,48462,27,km²,18.23179,54.60607
+86,Zawiercie,powiat,zawierciański,śląskie,48108,85.3,km²,19.43339,50.48442
+87,Rumia,powiat,wejherowski,pomorskie,49936,30.1,km²,18.38462,54.57008
+88,Starachowice,powiat,starachowicki,świętokrzyskie,46879,31.8,km²,21.08204,51.03846
+89,Skierniewice,powiat,Skierniewice,łódzkie,47031,34.6,km²,20.14487,51.95805
+90,Wodzisław Śląski,powiat,wodzisławski,śląskie,47073,49.5,km²,18.44806,50.00238
+91,Piaseczno,powiat,piaseczyński,mazowieckie,48688,16.2,km²,21.02709,52.07474
+92,Starogard Gdański,powiat,starogardzki,pomorskie,46768,25.3,km²,18.52666,53.96545
+93,Puławy,powiat,puławski,lubelskie,46304,50.5,km²,21.9853,51.42626
+94,Tarnobrzeg,powiat,Tarnobrzeg,podkarpackie,45827,85.4,km²,21.69643,50.59242
+95,Krosno,powiat,Krosno,podkarpackie,45463,44.7,km²,21.75348,49.68898
+96,Kołobrzeg,powiat,kołobrzeski,zachodniopomorskie,45713,25.7,km²,15.57655,54.17607
+97,Radomsko,powiat,radomszczański,łódzkie,44700,51.4,km²,19.44985,51.07106
+98,Dębica,powiat,dębicki,podkarpackie,44692,33.8,km²,21.41276,50.04612
+99,Skarżysko-Kamienna,powiat,skarżyski,świętokrzyskie,43422,64.4,km²,20.87701,51.12297
+100,Otwock,powiat,otwocki,mazowieckie,44078,47.3,km²,21.29346,52.11617
+101,Ciechanów,powiat,ciechanowski,mazowieckie,43495,32.8,km²,20.60625,52.8712
+102,Kutno,powiat,kutnowski,łódzkie,42704,33.6,km²,19.3876,52.222
+103,Nysa,powiat,nyski,opolskie,42740,27.5,km²,17.33247,50.4738
+104,Sieradz,powiat,sieradzki,łódzkie,40891,51.2,km²,18.7399,51.60175
+105,Zduńska Wola,powiat,zduńskowolski,łódzkie,40730,24.6,km²,18.95011,51.59491
+106,Świnoujście,powiat,Świnoujście,zachodniopomorskie,40467,202.1,km²,14.25107,53.90975
+107,Mikołów,powiat,mikołowski,śląskie,41047,79.2,km²,18.85385,50.196
+108,Mińsk Mazowiecki,powiat,miński,mazowieckie,40754,13.2,km²,21.56946,52.1796
+109,Szczecinek,powiat,szczecinecki,zachodniopomorskie,39474,48.5,km²,16.70713,53.70234
+110,Żyrardów,powiat,żyrardowski,mazowieckie,39138,14.4,km²,20.44464,52.05553
+111,Chojnice,powiat,chojnicki,pomorskie,39423,21,km²,17.57034,53.69992
+112,Świdnik,powiat,świdnicki,lubelskie,38174,20.4,km²,22.69096,51.21649
+113,Bolesławiec,powiat,bolesławiecki,dolnośląskie,38346,23.6,km²,15.55502,51.26217
+114,Nowa Sól,powiat,nowosolski,lubuskie,37791,21.8,km²,15.70624,51.80334
+115,Malbork,powiat,malborski,pomorskie,37693,17.2,km²,19.0394,54.02874
+116,Kwidzyn,powiat,kwidzyński,pomorskie,37975,21.5,km²,18.93746,53.72047
+117,Knurów,powiat,gliwicki,śląskie,37502,34,km²,18.66371,50.20718
+118,Oświęcim,powiat,oświęcimski,małopolskie,37031,30,km²,19.26008,50.03367
+119,Jarosław,powiat,jarosławski,podkarpackie,36563,34.6,km²,39.89337,57.62639
+120,Żary,powiat,żarski,lubuskie,36559,33.5,km²,15.14872,51.62444
+121,Sanok,powiat,sanocki,podkarpackie,36462,38.1,km²,22.21176,49.55895
+122,Oleśnica,powiat,oleśnicki,dolnośląskie,36683,21,km²,17.38295,51.21024
+123,Wołomin,powiat,wołomiński,mazowieckie,36492,17.2,km²,21.24202,52.34687
+124,Chrzanów,powiat,chrzanowski,małopolskie,35651,38.3,km²,19.40285,50.14119
+125,Ząbki,powiat,wołomiński,mazowieckie,39420,11,km²,21.1147,52.29233
+126,Sochaczew,powiat,sochaczewski,mazowieckie,35455,26.2,km²,20.25712,52.23672
+127,Sopot,powiat,Sopot,pomorskie,34909,17.3,km²,18.56131,54.44304
+128,Brzeg,powiat,brzeski,opolskie,34778,14.6,km²,17.46412,50.85886
+129,Czechowice-Dziedzice,powiat,bielski,śląskie,35684,32.9,km²,19.00756,49.91121
+130,Olkusz,powiat,olkuski,małopolskie,34265,25.7,km²,19.55963,50.27882
+131,Lębork,powiat,lęborski,pomorskie,34864,17.9,km²,17.74478,54.53338
+132,Jasło,powiat,jasielski,podkarpackie,34040,36.5,km²,21.49358,49.74696
+133,Cieszyn,powiat,cieszyński,śląskie,33500,28.6,km²,18.65623,49.75577
+134,Kraśnik,powiat,kraśnicki,lubelskie,33382,26.1,km²,22.20835,50.94349
+135,Marki,powiat,wołomiński,mazowieckie,38061,26.2,km²,21.12078,52.33638
+136,Nowy Targ,powiat,nowotarski,małopolskie,33090,51.1,km²,20.02634,49.48921
+137,Dzierżoniów,powiat,dzierżoniowski,dolnośląskie,32346,20.1,km²,16.65675,50.72917
+138,Iława,powiat,iławski,warmińsko-mazurskie,33003,21.9,km²,19.5761,53.59611
+139,Ostróda,powiat,ostródzki,warmińsko-mazurskie,32440,14.2,km²,19.96286,53.70281
+140,Oława,powiat,oławski,dolnośląskie,32997,27.4,km²,17.29027,50.95709
+141,Police,powiat,policki,zachodniopomorskie,31863,37.3,km²,14.56574,53.54864
+142,Luboń,powiat,poznański,wielkopolskie,31900,13.5,km²,16.87185,52.33669
+143,Myszków,powiat,myszkowski,śląskie,30776,73.6,km²,19.32486,50.56467
+144,Czeladź,powiat,będziński,śląskie,30732,16.4,km²,19.07843,50.31914
+145,Grodzisk Mazowiecki,powiat,grodziski,mazowieckie,32818,13.2,km²,20.63134,52.10662
+146,Żywiec,powiat,żywiecki,śląskie,30313,50.5,km²,19.21915,49.7065
+147,Mława,powiat,mławski,mazowieckie,31047,34.8,km²,20.36288,53.13419
+148,Pruszcz Gdański,powiat,gdański,pomorskie,31949,16.5,km²,18.6501,54.25765
+149,Września,powiat,wrzesiński,wielkopolskie,30937,12.7,km²,17.56523,52.32507
+150,Zgorzelec,powiat,zgorzelecki,dolnośląskie,29253,15.9,km²,15.01443,51.15179
+151,Swarzędz,powiat,poznański,wielkopolskie,29426,8.2,km²,17.0771,52.41037
+152,Augustów,powiat,augustowski,podlaskie,29729,80.9,km²,22.98024,53.84373
+153,Bielawa,powiat,dzierżoniowski,dolnośląskie,29232,36.2,km²,16.60719,50.67539
+154,Łuków,powiat,łukowski,lubelskie,29170,35.8,km²,22.37278,51.92517
+155,Bochnia,powiat,bocheński,małopolskie,29317,29.9,km²,20.42533,49.97468
+156,Śrem,powiat,śremski,wielkopolskie,28821,12.4,km²,15.9265,51.64467
+157,Giżycko,powiat,giżycki,warmińsko-mazurskie,28597,13.7,km²,21.76613,54.03614
+158,Krotoszyn,powiat,krotoszyński,wielkopolskie,28421,22.5,km²,17.43742,51.69593
+159,Brodnica,powiat,brodnicki,kujawsko-pomorskie,28536,23.2,km²,19.40543,53.25802
+160,Nowy Dwór Mazowiecki,powiat,nowodworski,mazowieckie,28564,28.2,km²,20.70611,52.43418
+161,Łowicz,powiat,łowicki,łódzkie,27436,23.4,km²,19.94746,52.10123
+162,Czerwionka-Leszczyny,powiat,rybnicki,śląskie,27683,37.6,km²,18.6532,50.145
+163,Gorlice,powiat,gorlicki,małopolskie,26545,23.5,km²,21.16348,49.66633
+164,Kętrzyn,powiat,kętrzyński,warmińsko-mazurskie,26436,10.4,km²,21.37683,54.08198
+165,Zakopane,powiat,tatrzański,małopolskie,26540,84.3,km²,19.95048,49.29691
+166,Turek,powiat,turecki,wielkopolskie,26084,16.2,km²,18.51145,52.0162
+167,Kłodzko,powiat,kłodzki,dolnośląskie,25990,24.8,km²,16.64225,50.43371
+168,Wyszków,powiat,wyszkowski,mazowieckie,26841,20.8,km²,21.45846,52.5928
+169,Biłgoraj,powiat,biłgorajski,lubelskie,25838,21.1,km²,22.72093,50.54248
+170,Jarocin,powiat,jarociński,wielkopolskie,26410,22,km²,17.50113,51.97392
+171,Świecie,powiat,świecki,kujawsko-pomorskie,25236,11.9,km²,18.44553,53.40725
+172,Pszczyna,powiat,pszczyński,śląskie,25527,22.5,km²,18.94251,49.97783
+173,Żagań,powiat,żagański,lubuskie,24907,40.4,km²,15.30078,51.61532
+174,Reda,powiat,wejherowski,pomorskie,27014,33.5,km²,18.32171,54.62101
+175,Wągrowiec,powiat,wągrowiecki,wielkopolskie,25407,17.8,km²,17.20191,52.81221
+176,Bielsk Podlaski,powiat,bielski,podlaskie,24719,27,km²,23.18821,52.76492
+177,Wałcz,powiat,wałecki,zachodniopomorskie,24687,38.2,km²,16.47682,53.27285
+178,Skawina,powiat,krakowski,małopolskie,24294,20.5,km²,19.82657,49.97475
+179,Białogard,powiat,białogardzki,zachodniopomorskie,23614,25.7,km²,15.96913,54.01451
+180,Kościan,powiat,kościański,wielkopolskie,23479,9,km²,16.64609,52.08337
+181,Lubliniec,powiat,lubliniecki,śląskie,23374,89.4,km²,18.68256,50.66902
+182,Kościerzyna,powiat,kościerski,pomorskie,23561,15.9,km²,17.97817,54.12102
+183,Kobyłka,powiat,wołomiński,mazowieckie,25790,19.6,km²,21.19054,52.33997
+184,Kluczbork,powiat,kluczborski,opolskie,23032,12.4,km²,18.21401,50.97307
+185,Sandomierz,powiat,sandomierski,świętokrzyskie,22654,28.7,km²,21.74951,50.67931
+186,Bartoszyce,powiat,bartoszycki,warmińsko-mazurskie,22597,11.8,km²,20.80839,54.25343
+187,Wieliczka,powiat,wielicki,małopolskie,24594,13.4,km²,20.06021,49.98238
+188,Szczytno,powiat,szczycieński,warmińsko-mazurskie,22628,10.6,km²,20.99686,53.56373
+189,Środa Wielkopolska,powiat,średzki,wielkopolskie,23811,21.9,km²,17.27783,52.22843
+190,Jawor,powiat,jaworski,dolnośląskie,22151,18.8,km²,16.19761,51.0677
+191,Świebodzice,powiat,świdnicki,dolnośląskie,22467,30.4,km²,16.32288,50.87246
+192,Piastów,powiat,pruszkowski,mazowieckie,22297,5.8,km²,20.84764,52.18555
+193,Ostrów Mazowiecka,powiat,ostrowski,mazowieckie,22028,22.3,km²,21.87964,52.80711
+194,Wieluń,powiat,wieluński,łódzkie,21624,16.9,km²,18.57011,51.22053
+195,Polkowice,powiat,polkowicki,dolnośląskie,22238,23.7,km²,16.07134,51.50393
+196,Goleniów,powiat,goleniowski,zachodniopomorskie,21757,11.8,km²,14.82993,53.56569
+197,Łaziska Górne,powiat,mikołowski,śląskie,21941,20.1,km²,18.83907,50.15009
+198,Nowa Ruda,powiat,kłodzki,dolnośląskie,21260,37.1,km²,16.51138,50.5735
+199,Zambrów,powiat,zambrowski,podlaskie,21708,19,km²,22.23729,52.97583
+200,Płońsk,powiat,płoński,mazowieckie,21817,11.6,km²,20.36428,52.6264
+201,Lubartów,powiat,lubartowski,lubelskie,21373,13.9,km²,22.612,51.45852
+202,Koło,powiat,kolski,wielkopolskie,20833,13.9,km²,18.63599,52.20199
+203,Grajewo,powiat,grajewski,podlaskie,21555,18.9,km²,22.45784,53.63991
+204,Świebodzin,powiat,świebodziński,lubuskie,21341,16.9,km²,15.5325,52.24984
+205,Mrągowo,powiat,mrągowski,warmińsko-mazurskie,20962,14.8,km²,21.30516,53.86857
+206,Aleksandrów Łódzki,powiat,zgierski,łódzkie,21789,13.8,km²,19.30354,51.81965
+207,Rydułtowy,powiat,wodzisławski,śląskie,21165,15,km²,18.42451,50.0664
+208,Opoczno,powiat,opoczyński,łódzkie,20409,27,km²,20.29318,51.37824
+209,Działdowo,powiat,działdowski,warmińsko-mazurskie,20935,11.5,km²,20.18469,53.24064
+210,Gryfino,powiat,gryfiński,zachodniopomorskie,20733,11.8,km²,14.49242,53.25359
+211,Lubań,powiat,lubański,dolnośląskie,20518,16.1,km²,18.12367,26.82345
+212,Prudnik,powiat,prudnicki,opolskie,20352,20.5,km²,17.5801,50.32172
+213,Orzesze,powiat,mikołowski,śląskie,21388,83.7,km²,18.77557,50.14389
+214,Hajnówka,powiat,hajnowski,podlaskie,19993,21.3,km²,23.57125,52.73174
+215,Józefów,powiat,otwocki,mazowieckie,20723,23.9,km²,23.05406,50.48083
+216,Rawicz,powiat,rawicki,wielkopolskie,19904,8.9,km²,16.85837,51.61016
+217,Andrychów,powiat,wadowicki,małopolskie,19524,10.3,km²,19.34368,49.85558
+218,Gostyń,powiat,gostyński,wielkopolskie,20089,11.1,km²,17.01676,51.87786
+219,Trzebinia,powiat,chrzanowski,małopolskie,19242,31.9,km²,19.47091,50.15977
+220,Chełmno,powiat,chełmiński,kujawsko-pomorskie,18915,13.6,km²,18.44042,53.3525
+221,Sulejówek,powiat,miński,mazowieckie,19926,19.3,km²,21.27825,52.24435
+222,Bieruń,powiat,bieruńsko-lędziński,śląskie,19334,40.5,km²,19.1253,50.08427
+223,Ozorków,powiat,zgierski,łódzkie,18846,15.5,km²,19.28931,51.95877
+224,Pułtusk,powiat,pułtuski,mazowieckie,19185,23.1,km²,21.08403,52.70511
+225,Końskie,powiat,konecki,świętokrzyskie,18600,17.7,km²,20.40718,51.19102
+226,Pisz,powiat,piski,warmińsko-mazurskie,18796,10.1,km²,21.80982,53.62949
+227,Tomaszów Lubelski,powiat,tomaszowski,lubelskie,18396,13.3,km²,23.4292,50.44792
+228,Kamienna Góra,powiat,kamiennogórski,dolnośląskie,18235,18,km²,16.02236,50.78469
+229,Łęczna,powiat,łęczyński,lubelskie,18391,19,km²,22.88677,51.30029
+230,Sokołów Podlaski,powiat,sokołowski,mazowieckie,18767,17.5,km²,22.23998,52.41456
+231,Krasnystaw,powiat,krasnostawski,lubelskie,18169,42.1,km²,23.16504,50.99185
+232,Szamotuły,powiat,szamotulski,wielkopolskie,18545,11.1,km²,16.58312,52.61203
+233,Wadowice,powiat,wadowicki,małopolskie,18074,10.5,km²,19.49253,49.88345
+234,Kęty,powiat,oświęcimski,małopolskie,18306,23.1,km²,19.2302,49.88177
+235,Chodzież,powiat,chodzieski,wielkopolskie,17976,12.8,km²,16.91993,52.995
+236,Gostynin,powiat,gostyniński,mazowieckie,18179,32.4,km²,19.46334,52.42425
+237,Pyskowice,powiat,gliwicki,śląskie,18274,30.9,km²,18.62772,50.39808
+238,Złotów,powiat,złotowski,wielkopolskie,18174,11.6,km²,17.04382,53.3592
+239,Pionki,powiat,radomski,mazowieckie,17581,18.4,km²,21.45233,51.4718
+240,Myślenice,powiat,myślenicki,małopolskie,18265,30.2,km²,19.93843,49.83461
+241,Nakło Nad Notecią,powiat,nakielski,kujawsko-pomorskie,17809,10.8,km²,17.59989,53.13869
+242,Sokółka,powiat,sokólski,podlaskie,17749,18.6,km²,23.49956,53.40492
+243,Oborniki,powiat,obornicki,wielkopolskie,17709,14.1,km²,16.80998,52.64553
+244,Międzyrzecz,powiat,międzyrzecki,lubuskie,17465,10.3,km²,15.57864,52.44483
+245,Konstantynów Łódzki,powiat,pabianicki,łódzkie,18533,27.3,km²,19.31394,51.75080
+246,Sierpc,powiat,sierpecki,mazowieckie,17635,18.6,km²,19.66141,52.85318
+247,Strzelce Opolskie,powiat,strzelecki,opolskie,17447,30,km²,18.30045,50.5109
+248,Radlin,powiat,wodzisławski,śląskie,17486,12.5,km²,18.46467,50.04119
+249,Kostrzyn Nad Odrą,powiat,gorzowski,lubuskie,17659,46.1,km²,14.62795,52.61627
+250,Łańcut,powiat,łańcucki,podkarpackie,17590,19.4,km²,22.23351,50.06959
+251,Hrubieszów,powiat,hrubieszowski,lubelskie,16885,33,km²,23.88635,50.8068
+252,Zielonka,powiat,wołomiński,mazowieckie,17457,79.5,km²,21.15232,52.31085
+253,Bogatynia,powiat,zgorzelecki,dolnośląskie,16781,59.9,km²,14.95392,50.90771
+254,Garwolin,powiat,garwoliński,mazowieckie,17566,22.1,km²,21.62106,51.8958
+255,Rawa Mazowiecka,powiat,rawski,łódzkie,16980,14.3,km²,20.251,51.75829
+256,Pleszew,powiat,pleszewski,wielkopolskie,16792,13.4,km²,17.78657,51.8961
+257,Łask,powiat,łaski,łódzkie,16687,15.7,km²,19.13348,51.59299
+258,Kozienice,powiat,kozienicki,mazowieckie,16630,10.5,km²,21.54988,51.58497
+259,Przasnysz,powiat,przasnyski,mazowieckie,16884,25.2,km²,20.88457,53.01825
+260,Trzcianka,powiat,czarnkowsko-trzcianecki,wielkopolskie,16842,18.3,km²,16.4611,53.04176
+261,Konstancin-Jeziorna,powiat,piaseczyński,mazowieckie,16709,17.7,km²,21.12081,52.08348
+262,Libiąż,powiat,chrzanowski,małopolskie,16694,35.9,km²,19.31475,50.10305
+263,Braniewo,powiat,braniewski,warmińsko-mazurskie,16876,12.4,km²,19.82212,54.37918
+264,Łomianki,powiat,warszawski zachodni,mazowieckie,17091,8.4,km²,20.89501,52.33553
+265,Bytów,powiat,bytowski,pomorskie,16730,8.7,km²,17.48903,54.16946
+266,Sulechów,powiat,zielonogórski,lubuskie,16360,6.9,km²,15.62591,52.08548
+267,Brzesko,powiat,brzeski,małopolskie,16665,11.9,km²,20.60685,49.96784
+268,Lędziny,powiat,bieruńsko-lędziński,śląskie,16704,31.7,km²,19.11609,50.12862
+269,Radzionków,powiat,tarnogórski,śląskie,16851,13.2,km²,18.9033,50.40151
+270,Międzyrzec Podlaski,powiat,bialski,lubelskie,16468,20,km²,22.78673,51.98161
+271,Słubice,powiat,słubicki,lubuskie,16470,19.2,km²,14.56624,52.35575
+272,Grójec,powiat,grójecki,mazowieckie,16652,8.6,km²,20.8675,51.86551
+273,Gubin,powiat,krośnieński,lubuskie,16321,20.7,km²,14.73704,51.95734
+274,Nowogard,powiat,goleniowski,zachodniopomorskie,16264,12.6,km²,15.12259,53.66877
+275,Gryfice,powiat,gryficki,zachodniopomorskie,16040,12.4,km²,15.19871,53.91485
+276,Namysłów,powiat,namysłowski,opolskie,16672,22.6,km²,17.71856,51.07663
+277,Olecko,powiat,olecki,warmińsko-mazurskie,16156,11.5,km²,22.49342,54.0398
+278,Krapkowice,powiat,krapkowicki,opolskie,15745,21,km²,17.9671,50.47474
+279,Rypin,powiat,rypiński,kujawsko-pomorskie,15820,11,km²,19.41933,53.06296
+280,Milanówek,powiat,grodziski,mazowieckie,16508,13.4,km²,20.66934,52.12375
+281,Strzegom,powiat,świdnicki,dolnośląskie,15684,20.5,km²,16.34621,50.96011
+282,Dęblin,powiat,rycki,lubelskie,15505,38.3,km²,21.85624,51.56723
+283,Ustroń,powiat,cieszyński,śląskie,15875,59,km²,18.82511,49.71865
+284,Busko-Zdrój,powiat,buski,świętokrzyskie,15310,12.3,km²,20.71919,50.46759
+285,Ropczyce,powiat,ropczycko-sędziszowski,podkarpackie,15912,47.1,km²,21.61163,50.05286
+286,Lidzbark Warmiński,powiat,lidzbarski,warmińsko-mazurskie,15379,14.4,km²,20.56492,54.13059
+287,Jelcz-Laskowice,powiat,oławski,dolnośląskie,15474,17.1,km²,17.34996,51.03983
+288,Radzyń Podlaski,powiat,radzyński,lubelskie,15182,19.3,km²,22.62497,51.77567
+289,Złotoryja,powiat,złotoryjski,dolnośląskie,15021,11.5,km²,15.91945,51.12241
+290,Łapy,powiat,białostocki,podlaskie,15283,12.1,km²,22.88301,52.99082
+291,Solec Kujawski,powiat,bydgoski,kujawsko-pomorskie,15550,18.7,km²,18.22461,53.0792
+292,Świdwin,powiat,świdwiński,zachodniopomorskie,15197,22.4,km²,15.78249,53.77438
+293,Ustka,powiat,słupski,pomorskie,14954,10.2,km²,16.85918,54.57345
+294,Boguszów-Gorce,powiat,wałbrzyski,dolnośląskie,15016,27,km²,16.19636,50.75525
+295,Przeworsk,powiat,przeworski,podkarpackie,14973,22.1,km²,22.50138,50.0545
+296,Nisko,powiat,niżański,podkarpackie,15048,61,km²,22.13989,50.5199
+297,Choszczno,powiat,choszczeński,zachodniopomorskie,14831,9.6,km²,15.41673,53.17048
+298,Limanowa,powiat,limanowski,małopolskie,15012,18.7,km²,20.42307,49.71499
+299,Jędrzejów,powiat,jędrzejowski,świętokrzyskie,14577,11.4,km²,20.30461,50.63944
+300,Ząbkowice Śląskie,powiat,ząbkowicki,dolnośląskie,14606,13.7,km²,16.81115,50.58927
+301,Staszów,powiat,staszowski,świętokrzyskie,14321,26.9,km²,21.16778,50.56123
+302,Grodzisk Wielkopolski,powiat,grodziski,wielkopolskie,14739,18.2,km²,16.36281,52.22632
+303,Nowy Tomyśl,powiat,nowotomyski,wielkopolskie,14093,5.2,km²,16.12916,52.31776
+304,Chełmża,powiat,toruński,kujawsko-pomorskie,14181,7.8,km²,18.61255,53.19238
+305,Siemiatycze,powiat,siemiatycki,podlaskie,14022,36.3,km²,22.87544,52.42093
+306,Lipno,powiat,lipnowski,kujawsko-pomorskie,14135,11,km²,13.68086,50.3006
+307,Skoczów,powiat,cieszyński,śląskie,13996,9.9,km²,18.78776,49.7999
+308,Kartuzy,powiat,kartuski,pomorskie,14079,7.4,km²,18.19736,54.33423
+309,Głowno,powiat,zgierski,łódzkie,13727,19.8,km²,19.71166,51.9624
+310,Ostrzeszów,powiat,ostrzeszowski,wielkopolskie,13840,12.1,km²,17.93318,51.42577
+311,Kępno,powiat,kępiński,wielkopolskie,13760,7.8,km²,17.98666,51.27903
+312,Łęczyca,powiat,łęczycki,łódzkie,13587,9,km²,19.19829,52.05451
+313,Mosina,powiat,poznański,wielkopolskie,14298,13.5,km²,16.84726,52.24558
+314,Lubsko,powiat,żarski,lubuskie,13548,12.5,km²,14.97213,51.78819
+315,Pszów,powiat,wodzisławski,śląskie,13625,20.4,km²,18.39622,50.04499
+316,Wschowa,powiat,wschowski,lubuskie,13516,9.3,km²,16.31728,51.80384
+317,Żnin,powiat,żniński,kujawsko-pomorskie,13379,8.4,km²,17.72188,52.84846
+318,Leżajsk,powiat,leżajski,podkarpackie,13390,20.6,km²,22.42176,50.2654
+319,Dębno,powiat,myśliborski,zachodniopomorskie,13443,19.5,km²,14.70145,52.73967
+320,Morąg,powiat,ostródzki,warmińsko-mazurskie,13209,6.1,km²,19.92799,53.912
+321,Nidzica,powiat,nidzicki,warmińsko-mazurskie,13355,6.9,km²,20.42757,53.36138
+322,Barlinek,powiat,myśliborski,zachodniopomorskie,13491,17.6,km²,15.21664,52.99208
+323,Słupca,powiat,słupecki,wielkopolskie,13448,10.3,km²,17.87164,52.2907
+324,Darłowo,powiat,sławieński,zachodniopomorskie,13324,20.2,km²,16.40385,54.42915
+325,Gołdap,powiat,gołdapski,warmińsko-mazurskie,13551,17.2,km²,22.30188,54.30802
+326,Człuchów,powiat,człuchowski,pomorskie,13350,12.8,km²,17.35883,53.66515
+327,Tuchola,powiat,tucholski,kujawsko-pomorskie,13450,17.7,km²,17.85904,53.58809
+328,Wąbrzeźno,powiat,wąbrzeski,kujawsko-pomorskie,13276,8.5,km²,18.94049,53.27835
+329,Głuchołazy,powiat,nyski,opolskie,13141,6.8,km²,17.38338,50.31708
+330,Brwinów,powiat,pruszkowski,mazowieckie,13718,14.7,km²,20.71707,52.14256
+331,Chojnów,powiat,legnicki,dolnośląskie,13002,5.3,km²,15.93939,51.27221
+332,Trzebnica,powiat,trzebnicki,dolnośląskie,13394,10.6,km²,17.0626,51.30964
+333,Włodawa,powiat,włodawski,lubelskie,12741,18,km²,23.52904,51.54128
+334,Wolsztyn,powiat,wolsztyński,wielkopolskie,12664,4.8,km²,16.11266,52.11725
+335,Koluszki,powiat,łódzki wschodni,łódzkie,12687,9.9,km²,19.81797,51.7445
+336,Niepołomice,powiat,wielicki,małopolskie,14523,27.4,km²,20.21716,50.03312
+337,Kłobuck,powiat,kłobucki,śląskie,12663,47.5,km²,18.93716,50.90255
+338,Złocieniec,powiat,drawski,zachodniopomorskie,12579,32.3,km²,16.01207,53.53107
+339,Radzymin,powiat,wołomiński,mazowieckie,13502,23.4,km²,21.18078,52.41763
+340,Rabka-Zdrój,powiat,nowotarski,małopolskie,12599,36.3,km²,19.96226,49.60767
+341,Węgrów,powiat,węgrowski,mazowieckie,12354,35.5,km²,22.04648,52.40083
+342,Golub-Dobrzyń,powiat,golubsko-dobrzyński,kujawsko-pomorskie,12210,7.5,km²,19.05728,53.11228
+343,Pyrzyce,powiat,pyrzycki,zachodniopomorskie,12415,38.8,km²,14.89267,53.1457
+344,Głubczyce,powiat,głubczycki,opolskie,12282,12.5,km²,17.82932,50.20009
+345,Brzeziny,powiat,brzeziński,łódzkie,12326,21.6,km²,19.74462,51.80066
+346,Sławno,powiat,sławieński,zachodniopomorskie,12286,15.8,km²,16.67541,54.36114
+347,Brzeg Dolny,powiat,wołowski,dolnośląskie,12395,17.2,km²,16.70759,51.26723
+348,Strzelin,powiat,strzeliński,dolnośląskie,12319,12.7,km²,17.06839,50.78092
+349,Wołów,powiat,wołowski,dolnośląskie,12202,18.5,km²,16.64869,51.33638
+350,Błonie,powiat,warszawski zachodni,mazowieckie,12058,9.1,km²,20.61697,52.19461
+351,Aleksandrów Kujawski,powiat,aleksandrowski,kujawsko-pomorskie,11910,7.2,km²,18.69407,52.87646
+352,Pasłęk,powiat,elbląski,warmińsko-mazurskie,12026,10.6,km²,19.65654,54.06263
+353,Lubaczów,powiat,lubaczowski,podkarpackie,11670,25.7,km²,23.11793,50.15713
+354,Góra Kalwaria,powiat,piaseczyński,mazowieckie,11946,13.7,km²,21.21402,51.98438
+355,Janów Lubelski,powiat,janowski,lubelskie,11503,14.8,km²,22.41107,50.70659
+356,Warka,powiat,grójecki,mazowieckie,11905,26.8,km²,21.18338,51.7851
+357,Szprotawa,powiat,żagański,lubuskie,11371,11,km²,15.53676,51.56507
+358,Dąbrowa Tarnowska,powiat,dąbrowski,małopolskie,11828,23.2,km²,20.98507,50.17435
+359,Mogilno,powiat,mogileński,kujawsko-pomorskie,11426,8.3,km²,17.95007,52.65734
+360,Góra,powiat,górowski,dolnośląskie,11389,13.7,km²,16.53933,51.66815
+361,Szydłowiec,powiat,szydłowiecki,mazowieckie,11363,21.9,km²,20.85751,51.22389
+362,Drawsko Pomorskie,powiat,drawski,zachodniopomorskie,11292,22.3,km²,15.81342,53.53108
+363,Miechów,powiat,miechowski,małopolskie,11364,15.5,km²,20.02769,50.3566
+364,Ożarów Mazowiecki,powiat,warszawski zachodni,mazowieckie,12885,8.1,km²,20.79416,52.20805
+365,Zdzieszowice,powiat,krapkowicki,opolskie,11161,12.4,km²,18.11932,50.42029
+366,Wasilków,powiat,białostocki,podlaskie,12021,28.3,km²,23.20568,53.19868
+367,Krosno Odrzańskie,powiat,krośnieński,lubuskie,11047,8.2,km²,15.09803,52.05364
+368,Milicz,powiat,milicki,dolnośląskie,11113,13.5,km²,17.27525,51.532
+369,Węgorzewo,powiat,węgorzewski,warmińsko-mazurskie,11076,10.9,km²,21.74166,54.21382
+370,Puck,powiat,pucki,pomorskie,11025,4.8,km²,18.43258,54.73077
+371,Myślibórz,powiat,myśliborski,zachodniopomorskie,10941,15,km²,14.86648,52.92482
+372,Brzeszcze,powiat,oświęcimski,małopolskie,10935,19,km²,19.15281,49.9819
+373,Wronki,powiat,szamotulski,wielkopolskie,10881,5.8,km²,16.37423,52.71012
+374,Koronowo,powiat,bydgoski,kujawsko-pomorskie,10947,28.2,km²,17.93698,53.31406
+375,Nowa Dęba,powiat,tarnobrzeski,podkarpackie,10892,16.7,km²,21.75413,50.41349
+376,Wisła,powiat,cieszyński,śląskie,10898,110.2,km²,20.94572,52.31162
+377,Rogoźno,powiat,obornicki,wielkopolskie,11071,11.2,km²,16.99363,52.7523
+378,Kowary,powiat,jeleniogórski,dolnośląskie,10523,37.4,km²,15.83605,50.77868
+379,Nowe Miasto Lubawskie,powiat,nowomiejski,warmińsko-mazurskie,10554,11.4,km²,19.58392,53.4249
+380,Pińczów,powiat,pińczowski,świętokrzyskie,10371,14.3,km²,20.52562,50.52019
+381,Czarnków,powiat,czarnkowsko-trzcianecki,wielkopolskie,10279,10.2,km²,16.57258,52.90107
+382,Krynica-Zdrój,powiat,nowosądecki,małopolskie,10279,39.7,km²,20.95942,49.42061
+383,Parczew,powiat,parczewski,lubelskie,10395,8.1,km²,22.9,51.639
+384,Międzychód,powiat,międzychodzki,wielkopolskie,10386,7,km²,15.89354,52.60465
+385,Biskupiec,powiat,olsztyński,warmińsko-mazurskie,10496,5,km²,20.95518,53.8688
+386,Ciechocinek,powiat,aleksandrowski,kujawsko-pomorskie,10442,15.3,km²,18.80327,52.88394
+387,Miastko,powiat,bytowski,pomorskie,10034,5.7,km²,16.97747,54.00015
+388,Syców,powiat,oleśnicki,dolnośląskie,10209,17.1,km²,17.71981,51.30786
+389,Murowana Goślina,powiat,poznański,wielkopolskie,10355,8.6,km²,17.00979,52.57585
+390,Lubawa,powiat,iławski,warmińsko-mazurskie,10370,16.8,km²,19.73545,53.5005
+391,Kolno,powiat,kolneński,podlaskie,10065,25.1,km²,21.93608,53.40169
+392,Łobez,powiat,łobeski,zachodniopomorskie,9891,12.8,km²,15.62135,53.63912
+393,Dobre Miasto,powiat,olsztyński,warmińsko-mazurskie,9857,4.9,km²,20.39734,53.98689
+394,Bukowno,powiat,olkuski,małopolskie,9876,64.6,km²,19.43618,50.261
+395,Bystrzyca Kłodzka,powiat,kłodzki,dolnośląskie,9773,10.7,km²,16.65202,50.29687
+396,Drezdenko,powiat,strzelecko-drezdenecki,lubuskie,9804,10.7,km²,15.83182,52.83985
+397,Sulęcin,powiat,sulęciński,lubuskie,9850,8.6,km²,15.11615,52.44138
+398,Krzeszowice,powiat,krakowski,małopolskie,9917,17,km²,19.63202,50.13502
+399,Włoszczowa,powiat,włoszczowski,świętokrzyskie,9708,30.3,km²,19.96678,50.85207
+400,Mońki,powiat,moniecki,podlaskie,9872,7.7,km²,22.79838,53.40657
+401,Trzebiatów,powiat,gryficki,zachodniopomorskie,9778,10.3,km²,15.26572,54.0627
+402,Sztum,powiat,sztumski,pomorskie,9660,4.6,km²,19.03054,53.91987
+403,Strzelce Krajeńskie,powiat,strzelecko-drezdenecki,lubuskie,9752,5.5,km²,15.53269,52.87858
+404,Władysławowo,powiat,pucki,pomorskie,9751,13.7,km²,18.40873,54.79013
+405,Kudowa-Zdrój,powiat,kłodzki,dolnośląskie,9613,33.9,km²,16.25415,50.44579
+406,Nowy Dwór Gdański,powiat,nowodworski,pomorskie,9767,5.1,km²,19.11508,54.21463
+407,Czersk,powiat,chojnicki,pomorskie,9844,9.7,km²,17.97562,53.7962
+408,Karczew,powiat,otwocki,mazowieckie,9670,28.1,km²,21.25081,52.07828
+409,Maków Mazowiecki,powiat,makowski,mazowieckie,9489,10.3,km²,21.09235,52.86205
+410,Skwierzyna,powiat,międzyrzecki,lubuskie,9356,35.9,km²,15.5011,52.59675
+411,Puszczykowo,powiat,poznański,wielkopolskie,9484,16.4,km²,16.85594,52.2773
+412,Kostrzyn,powiat,poznański,wielkopolskie,9702,8,km²,17.22754,52.39837
+413,Ryki,powiat,rycki,lubelskie,9498,27.2,km²,21.9357,51.6267
+414,Opalenica,powiat,nowotomyski,wielkopolskie,9520,6.4,km²,16.41243,52.30881
+415,Blachownia,powiat,częstochowski,śląskie,9383,36.7,km²,18.96843,50.78202
+416,Szubin,powiat,nakielski,kujawsko-pomorskie,9528,7.7,km²,17.74394,53.01175
+417,Kożuchów,powiat,nowosolski,lubuskie,9213,5.9,km²,15.59445,51.74548
+418,Środa Śląska,powiat,średzki,dolnośląskie,9599,14.9,km²,16.59425,51.16389
+419,Wysokie Mazowieckie,powiat,wysokomazowiecki,podlaskie,9240,15.2,km²,22.5104,52.92564
+420,Olesno,powiat,oleski,opolskie,9345,15.1,km²,18.42195,50.87666
+421,Czarna Białostocka,powiat,białostocki,podlaskie,9032,14.3,km²,23.2851,53.29828
+422,Poniatowa,powiat,opolski,lubelskie,8853,15.3,km²,22.06505,51.19298
+423,Pobiedziska,powiat,poznański,wielkopolskie,9501,10.2,km²,17.28704,52.47734
+424,Sucha Beskidzka,powiat,suski,małopolskie,8967,27.7,km²,19.5823,49.73232
+425,Imielin,powiat,bieruńsko-lędziński,śląskie,9374,28,km²,19.20258,50.14407
+426,Kolbuszowa,powiat,kolbuszowski,podkarpackie,8834,8,km²,21.77546,50.24333
+427,Ustrzyki Dolne,powiat,bieszczadzki,podkarpackie,8759,16.8,km²,22.5877,49.43019
+428,Sępólno Krajeńskie,powiat,sępoleński,kujawsko-pomorskie,8951,6.6,km²,17.53484,53.45474
+429,Oborniki Śląskie,powiat,trzebnicki,dolnośląskie,9050,14.5,km²,16.91455,51.30107
+430,Chełmek,powiat,oświęcimski,małopolskie,8810,8.3,km²,19.25426,50.10033
+431,Stary Sącz,powiat,nowosądecki,małopolskie,8974,15,km²,20.63662,49.56403
+432,Wojkowice,powiat,będziński,śląskie,8834,12.8,km²,19.03576,50.36593
+433,Strzyżów,powiat,strzyżowski,podkarpackie,8683,13.9,km²,21.78563,49.87021
+434,Żuromin,powiat,żuromiński,mazowieckie,8685,11.2,km²,19.90784,53.06717
+435,Lwówek Śląski,powiat,lwówecki,dolnośląskie,8572,16.7,km²,15.585,51.11089
+436,Kamień Pomorski,powiat,kamieński,zachodniopomorskie,8536,10.7,km²,14.77286,53.96539
+437,Kruszwica,powiat,inowrocławski,kujawsko-pomorskie,9229,10.2,km²,18.32548,52.67438
+438,Orneta,powiat,lidzbarski,warmińsko-mazurskie,8537,9.6,km²,20.13034,54.11555
+439,Ziębice,powiat,ząbkowicki,dolnośląskie,8376,15.1,km²,17.04056,50.60078
+440,Janikowo,powiat,inowrocławski,kujawsko-pomorskie,8554,9.5,km²,18.1141,52.75316
+441,Ozimek,powiat,opolski,opolskie,8373,3.3,km²,18.21252,50.67892
+442,Prabuty,powiat,kwidzyński,pomorskie,8550,7.3,km²,19.20444,53.75599
+443,Grodków,powiat,brzeski,opolskie,8383,9.9,km²,17.38498,50.69816
+444,Kalety,powiat,tarnogórski,śląskie,8476,76.3,km²,18.93615,50.56866
+445,Wolbrom,powiat,olkuski,małopolskie,8346,10.1,km²,19.75988,50.38484
+446,Jastrowie,powiat,złotowski,wielkopolskie,8613,72.3,km²,16.81502,53.42055
+447,Wieruszów,powiat,wieruszowski,łódzkie,8405,6,km²,18.15106,51.29516
+448,Poręba,powiat,zawierciański,śląskie,8411,40,km²,19.32628,50.48905
+449,Opole Lubelskie,powiat,opolski,lubelskie,8241,15.1,km²,21.96642,51.14754
+450,Suchedniów,powiat,skarżyski,świętokrzyskie,8111,59.4,km²,20.83867,51.04723
+451,Żychlin,powiat,kutnowski,łódzkie,7866,8.7,km²,19.62609,52.24401
+452,Tłuszcz,powiat,wołomiński,mazowieckie,8117,7.9,km²,21.43551,52.43017
+453,Połaniec,powiat,staszowski,świętokrzyskie,7852,17.4,km²,21.28105,50.43291
+454,Połczyn-Zdrój,powiat,świdwiński,zachodniopomorskie,7894,7.2,km²,16.09527,53.7649
+455,Pniewy,powiat,szamotulski,wielkopolskie,8104,9.3,km²,16.25664,52.50896
+456,Mszana Dolna,powiat,limanowski,małopolskie,7875,27.1,km²,20.0765,49.68108
+457,Chocianów,powiat,polkowicki,dolnośląskie,7689,9,km²,15.89869,51.41683
+458,Witkowo,powiat,gnieźnieński,wielkopolskie,7574,8.3,km²,17.77251,52.43959
+459,Siechnice,powiat,wrocławski,dolnośląskie,9302,15.6,km²,17.15073,51.03239
+460,Kórnik,powiat,poznański,wielkopolskie,8025,6,km²,17.09012,52.24928
+461,Pelplin,powiat,tczewski,pomorskie,7509,4.4,km²,18.69785,53.92832
+462,Lidzbark,powiat,działdowski,warmińsko-mazurskie,7545,5.7,km²,19.82318,53.2628
+463,Zwoleń,powiat,zwoleński,mazowieckie,7558,15.9,km²,19.12471,48.57825
+464,Nasielsk,powiat,nowodworski,mazowieckie,7577,12.6,km²,20.81301,52.58675
+465,Praszka,powiat,oleski,opolskie,7377,9.4,km²,18.44852,51.05536
+466,Trzemeszno,powiat,gnieźnieński,wielkopolskie,7517,5.5,km²,17.82089,52.56007
+467,Zelów,powiat,bełchatowski,łódzkie,7356,10.8,km²,19.21958,51.46503
+468,Olsztynek,powiat,olsztyński,warmińsko-mazurskie,7423,7.7,km²,20.28162,53.58342
+469,Sędziszów Małopolski,powiat,ropczycko-sędziszowski,podkarpackie,12438,37,km²,21.70075,50.0716
+470,Barczewo,powiat,olsztyński,warmińsko-mazurskie,7483,4.6,km²,20.69115,53.82971
+471,Paczków,powiat,nyski,opolskie,7234,6.6,km²,17.00639,50.46429
+472,Barcin,powiat,żniński,kujawsko-pomorskie,7255,3.7,km²,17.94725,52.86323
+473,Brzozów,powiat,brzozowski,podkarpackie,7336,11.5,km²,22.01965,49.69504
+474,Miasteczko Śląskie,powiat,tarnogórski,śląskie,7328,67.8,km²,18.96417,50.49427
+475,Poddębice,powiat,poddębicki,łódzkie,7144,5.9,km²,18.95173,51.8932
+476,Chojna,powiat,gryfiński,zachodniopomorskie,7330,12.6,km²,14.43141,52.96298
+477,Tuszyn,powiat,łódzki wschodni,łódzkie,7193,23.3,km²,19.54382,51.60566
+478,Zbąszyń,powiat,nowotomyski,wielkopolskie,7128,5.4,km²,15.92093,52.2501
+479,Zawadzkie,powiat,strzelecki,opolskie,6953,16.5,km²,18.48013,50.60658
+480,Gniewkowo,powiat,inowrocławski,kujawsko-pomorskie,6984,9.2,km²,18.40668,52.89443
+481,Pieszyce,powiat,dzierżoniowski,dolnośląskie,6928,17.7,km²,16.58161,50.71244
+482,Czaplinek,powiat,drawski,zachodniopomorskie,7012,13.6,km²,16.23194,53.56067
+483,Łosice,powiat,łosicki,mazowieckie,6956,23.7,km²,22.71729,52.21151
+484,Sławków,powiat,będziński,śląskie,6897,36.7,km²,19.34143,50.29189
+485,Skarszewy,powiat,starogardzki,pomorskie,6921,10.8,km²,18.446,54.07175
+486,Białobrzegi,powiat,białobrzeski,mazowieckie,6749,7.5,km²,23.15072,50.77292
+487,Sobótka,powiat,wrocławski,dolnośląskie,6929,32.2,km²,16.74457,50.89909
+488,Kąty Wrocławskie,powiat,wrocławski,dolnośląskie,7091,8.6,km²,16.77023,51.03027
+489,Łazy,powiat,zawierciański,śląskie,6671,8.6,km²,19.39485,50.42761
+490,Łochów,powiat,węgrowski,mazowieckie,6747,13.4,km²,21.68528,52.53042
+491,Pajęczno,powiat,pajęczański,łódzkie,6536,20.2,km²,18.9957,51.14688
+492,Witnica,powiat,gorzowski,lubuskie,6616,8.2,km²,14.89721,52.67294
+493,Gniew,powiat,tczewski,pomorskie,6533,6,km²,18.82516,53.83422
+494,Żarów,powiat,świdnicki,dolnośląskie,6597,7.6,km²,16.49235,50.94384
+495,Rudnik Nad Sanem,powiat,niżański,podkarpackie,6607,36.6,km²,22.24403,50.44478
+496,Twardogóra,powiat,oleśnicki,dolnośląskie,6522,8.3,km²,17.4696,51.36456
+497,Żukowo,powiat,kartuski,pomorskie,6754,4.7,km²,18.36501,54.34586
+498,Tuchów,powiat,tarnowski,małopolskie,6438,18.1,km²,21.05384,49.89522
+499,Sianów,powiat,koszaliński,zachodniopomorskie,6540,15.9,km²,16.29428,54.22819
+500,Gogolin,powiat,krapkowicki,opolskie,6771,20.4,km²,18.01762,50.49251
+501,Gryfów Śląski,powiat,lwówecki,dolnośląskie,6415,6.6,km²,15.41451,51.02815
+502,Sułkowice,powiat,myślenicki,małopolskie,6641,16.5,km²,19.80121,49.84083
+503,Otmuchów,powiat,nyski,opolskie,6402,49.5,km²,17.13237,50.46553
+504,Szklarska Poręba,powiat,jeleniogórski,dolnośląskie,6557,75.4,km²,15.4545,50.81428
+505,Głogów Małopolski,powiat,rzeszowski,podkarpackie,9917,38.2,km²,21.96276,50.15118
+506,Rzepin,powiat,słubicki,lubuskie,6431,11.4,km²,14.83829,52.34432
+507,Bełżyce,powiat,lubelski,lubelskie,6290,23.5,km²,22.275,51.17506
+508,Koźmin Wielkopolski,powiat,krotoszyński,wielkopolskie,6340,5.9,km²,17.45285,51.82566
+509,Opatów,powiat,opatowski,świętokrzyskie,6276,9.4,km²,21.42383,50.80177
+510,Sędziszów,powiat,jędrzejowski,świętokrzyskie,6288,7.9,km²,20.0538,50.56478
+511,Kłodawa,powiat,kolski,wielkopolskie,6245,4.3,km²,18.91121,52.25745
+512,Piława Górna,powiat,dzierżoniowski,dolnośląskie,6294,20.9,km²,16.75107,50.68292
+513,Żmigród,powiat,trzebnicki,dolnośląskie,6354,9.5,km²,16.90827,51.47174
+514,Dobczyce,powiat,myślenicki,małopolskie,6388,13,km²,20.09054,49.88034
+515,Mszczonów,powiat,żyrardowski,mazowieckie,6211,8.6,km²,20.51267,51.97403
+516,Głuszyca,powiat,wałbrzyski,dolnośląskie,6127,16.2,km²,16.37306,50.68622
+517,Niemodlin,powiat,opolski,opolskie,6101,13.1,km²,17.62114,50.64159
+518,Polanica-Zdrój,powiat,kłodzki,dolnośląskie,6110,17.2,km²,16.5062,50.39886
+519,Piechowice,powiat,jeleniogórski,dolnośląskie,6001,43.2,km²,15.57654,50.82771
+520,Krzyż Wielkopolski,powiat,czarnkowsko-trzcianecki,wielkopolskie,6070,5.8,km²,16.01417,52.87964
+521,Sulejów,powiat,piotrkowski,łódzkie,6065,26.3,km²,19.88908,51.35492
+522,Przemków,powiat,polkowicki,dolnośląskie,5967,6.2,km²,15.78745,51.52754
+523,Dynów,powiat,rzeszowski,podkarpackie,6035,24.6,km²,22.23809,49.81378
+524,Boguchwała,powiat,rzeszowski,podkarpackie,6174,9.1,km²,21.93918,49.98069
+525,Buk,powiat,poznański,wielkopolskie,5903,3,km²,17.46871,49.50445
+526,Lubawka,powiat,kamiennogórski,dolnośląskie,5850,22.4,km²,16.00039,50.70709
+527,Sieraków,powiat,międzychodzki,wielkopolskie,5897,14.1,km²,16.08081,52.65139
+528,Grybów,powiat,nowosądecki,małopolskie,5937,17,km²,20.94882,49.61496
+529,Kietrz,powiat,głubczycki,opolskie,5802,18.7,km²,18.00211,50.07963
+530,Proszowice,powiat,proszowicki,małopolskie,5901,7.3,km²,20.29176,50.19265
+531,Więcbork,powiat,sępoleński,kujawsko-pomorskie,5868,4.3,km²,17.48739,53.35255
+532,Czarne,powiat,człuchowski,pomorskie,5747,46.4,km²,16.94221,53.68353
+533,Koniecpol,powiat,częstochowski,śląskie,5740,36.9,km²,19.67697,50.77253
+534,Stęszew,powiat,poznański,wielkopolskie,5911,5.7,km²,16.69993,52.27935
+535,Działoszyn,powiat,pajęczański,łódzkie,5627,4.9,km²,18.86516,51.1168
+536,Wołczyn,powiat,kluczborski,opolskie,5697,7.5,km²,18.0496,51.01903
+537,Wieleń,powiat,czarnkowsko-trzcianecki,wielkopolskie,5678,4.5,km²,16.17128,52.89433
+538,Karlino,powiat,białogardzki,zachodniopomorskie,5830,9.4,km²,15.8793,54.04103
+539,Piwniczna-Zdrój,powiat,nowosądecki,małopolskie,5771,38.3,km²,20.71423,49.44065
+540,Nowa Sarzyna,powiat,leżajski,podkarpackie,5699,9.2,km²,22.34338,50.31986
+541,Choroszcz,powiat,białostocki,podlaskie,5960,16.8,km²,22.98846,53.14393
+542,Nowe,powiat,świecki,kujawsko-pomorskie,5646,3.6,km²,8.78767,61.15294
+543,Przysucha,powiat,przysuski,mazowieckie,5657,7,km²,20.62855,51.3585
+544,Maków Podhalański,powiat,suski,małopolskie,5726,20.1,km²,19.67688,49.7299
+545,Pieńsk,powiat,zgorzelecki,dolnośląskie,5684,9.9,km²,15.04499,51.24578
+546,Szczawnica,powiat,nowotarski,małopolskie,5563,32.9,km²,20.47614,49.42663
+547,Jedlicze,powiat,krośnieński,podkarpackie,5620,10.6,km²,21.64215,49.71415
+548,Szczyrk,powiat,bielski,śląskie,5656,39.3,km²,19.01095,49.69649
+549,Lewin Brzeski,powiat,brzeski,opolskie,5647,11.6,km²,17.61665,50.74871
+550,Stronie Śląskie,powiat,kłodzki,dolnośląskie,5500,2.4,km²,16.87369,50.29163
+551,Pakość,powiat,inowrocławski,kujawsko-pomorskie,5526,3.5,km²,18.08996,52.80733
+552,Śmigiel,powiat,kościański,wielkopolskie,5536,5.3,km²,16.52711,52.01274
+553,Stąporków,powiat,konecki,świętokrzyskie,5474,10.9,km²,20.55731,51.13801
+554,Strzelno,powiat,mogileński,kujawsko-pomorskie,5528,4.5,km²,18.17338,52.63017
+555,Lądek-Zdrój,powiat,kłodzki,dolnośląskie,5348,20.3,km²,16.87259,50.34583
+556,Szczawno-Zdrój,powiat,wałbrzyski,dolnośląskie,5392,14.7,km²,16.22327,50.79517
+557,Głogówek,powiat,prudnicki,opolskie,5480,22.1,km²,17.86193,50.35344
+558,Radziejów,powiat,radziejowski,kujawsko-pomorskie,5410,5.7,km²,18.52937,52.61911
+559,Siewierz,powiat,będziński,śląskie,5571,38.7,km²,19.23189,50.47101
+560,Ścinawa,powiat,lubiński,dolnośląskie,5526,13.5,km²,16.42597,51.41653
+561,Kazimierza Wielka,powiat,kazimierski,świętokrzyskie,5340,6.1,km²,20.48533,50.26749
+562,Orzysz,powiat,piski,warmińsko-mazurskie,5477,8.2,km²,21.94736,53.80983
+563,Susz,powiat,iławski,warmińsko-mazurskie,5478,6.7,km²,19.33853,53.71666
+564,Terespol,powiat,bialski,lubelskie,5394,10.1,km²,23.62223,52.07652
+565,Dąbrowa Białostocka,powiat,sokólski,podlaskie,5305,22.6,km²,23.34851,53.65444
+566,Lipsko,powiat,lipski,mazowieckie,5261,15.7,km²,12.37473,51.34063
+567,Lesko,powiat,leski,podkarpackie,5347,15.3,km²,22.33038,49.4689
+568,Międzyzdroje,powiat,kamieński,zachodniopomorskie,5230,5.2,km²,14.4489,53.92827
+569,Kuźnia Raciborska,powiat,raciborski,śląskie,5151,31.5,km²,18.31057,50.2007
+570,Jordanów,powiat,suski,małopolskie,5231,21,km²,19.83835,49.64891
+571,Dzierzgoń,powiat,sztumski,pomorskie,5242,3.9,km²,19.34795,53.92391
+572,Sejny,powiat,sejneński,podlaskie,5077,4.5,km²,23.34714,54.11017
+573,Radymno,powiat,jarosławski,podkarpackie,5154,13.6,km²,22.82673,49.95407
+574,Czempiń,powiat,kościański,wielkopolskie,4921,3.3,km²,16.76133,52.14315
+575,Brusy,powiat,chojnicki,pomorskie,5201,5.2,km²,17.71904,53.88616
+576,Nowogród Bobrzański,powiat,zielonogórski,lubuskie,5032,14.6,km²,15.2365,51.79865
+577,Szczytna,powiat,kłodzki,dolnośląskie,4988,80.4,km²,16.44082,50.41693
+578,Jaworzyna Śląska,powiat,świdnicki,dolnośląskie,5084,4.3,km²,16.43086,50.91442
+579,Wyrzysk,powiat,pilski,wielkopolskie,5061,4.1,km²,17.2627,53.15698
+580,Odolanów,powiat,ostrowski,wielkopolskie,5048,4.8,km²,17.67351,51.57422
+581,Zagórz,powiat,sanocki,podkarpackie,4995,22.3,km²,22.26329,49.50988
+582,Debrzno,powiat,człuchowski,pomorskie,4983,7.5,km²,17.23387,53.53861
+583,Borne Sulinowo,powiat,szczecinecki,zachodniopomorskie,4989,18.2,km²,16.53812,53.58129
+584,Szczebrzeszyn,powiat,zamojski,lubelskie,4918,29.1,km²,22.97868,50.6947
+585,Zbąszynek,powiat,świebodziński,lubuskie,4994,3.6,km²,15.81389,52.24363
+586,Bolków,powiat,jaworski,dolnośląskie,4801,7.7,km²,16.1005,50.922
+587,Bychawa,powiat,lubelski,lubelskie,4757,6.7,km²,22.53454,51.01522
+588,Pilzno,powiat,dębicki,podkarpackie,4973,16,km²,13.37752,49.74774
+589,Bierutów,powiat,oleśnicki,dolnośląskie,4728,8.4,km²,17.54004,51.12527
+590,Łaskarzew,powiat,garwoliński,mazowieckie,4762,15.4,km²,21.60247,51.78553
+591,Jedlina-Zdrój,powiat,wałbrzyski,dolnośląskie,4748,17.5,km²,16.33758,50.72423
+592,Muszyna,powiat,nowosądecki,małopolskie,4665,24.4,km²,20.89675,49.35617
+593,Wolin,powiat,kamieński,zachodniopomorskie,4736,14.5,km²,14.52001,53.91317
+594,Iłża,powiat,radomski,mazowieckie,4572,15.8,km²,21.23746,51.16242
+595,Nowe Skalmierzyce,powiat,ostrowski,wielkopolskie,4680,1.6,km²,17.99433,51.71091
+596,Kcynia,powiat,nakielski,kujawsko-pomorskie,4433,6.8,km²,17.48737,52.99177
+597,Brześć Kujawski,powiat,włocławski,kujawsko-pomorskie,4527,7,km²,18.90155,52.60482
+598,Ciechanowiec,powiat,wysokomazowiecki,podlaskie,4511,19.5,km²,22.49911,52.6788
+599,Karpacz,powiat,jeleniogórski,dolnośląskie,4367,38,km²,15.7452,50.764
+600,Duszniki-Zdrój,powiat,kłodzki,dolnośląskie,4329,22.3,km²,16.37849,50.37034
+601,Supraśl,powiat,białostocki,podlaskie,4533,5.7,km²,23.33607,53.21004
+602,Biecz,powiat,gorlicki,małopolskie,4468,17.7,km²,21.24942,49.73054
+603,Ożarów,powiat,opatowski,świętokrzyskie,4393,7.8,km²,21.66562,50.88641
+604,Pilawa,powiat,garwoliński,mazowieckie,4563,6.7,km²,19.89416,54.64372
+605,Reszel,powiat,kętrzyński,warmińsko-mazurskie,4451,3.8,km²,21.14216,54.04826
+606,Żarki,powiat,myszkowski,śląskie,4483,25.4,km²,19.36456,50.62596
+607,Zduny,powiat,krotoszyński,wielkopolskie,4417,6.2,km²,17.37762,51.64633
+608,Kalwaria Zebrzydowska,powiat,wadowicki,małopolskie,4423,5.5,km²,19.67631,49.86695
+609,Golina,powiat,koniński,wielkopolskie,4423,3.5,km²,18.09534,52.24276
+610,Łabiszyn,powiat,żniński,kujawsko-pomorskie,4484,2.9,km²,17.92059,52.95287
+611,Leśna,powiat,lubański,dolnośląskie,4300,8.6,km²,23.94538,53.10192
+612,Ruciane-Nida,powiat,piski,warmińsko-mazurskie,4359,17.1,km²,21.55982,53.65042
+613,Piotrków Kujawski,powiat,radziejowski,kujawsko-pomorskie,4368,9.8,km²,18.49872,52.55057
+614,Krzepice,powiat,kłobucki,śląskie,4300,27.7,km²,18.72552,50.9707
+615,Chęciny,powiat,kielecki,świętokrzyskie,4361,14.1,km²,20.46222,50.80008
+616,Raciąż,powiat,płoński,mazowieckie,4297,8.4,km²,20.11967,52.78286
+617,Rejowiec Fabryczny,powiat,chełmski,lubelskie,4260,14.3,km²,23.24324,51.11942
+618,Serock,powiat,legionowski,mazowieckie,4755,13.4,km²,21.07312,52.51352
+619,Kalisz Pomorski,powiat,drawski,zachodniopomorskie,4331,12,km²,15.90599,53.29816
+620,Skaryszew,powiat,radomski,mazowieckie,4286,27.5,km²,21.25239,51.31057
+621,Krośniewice,powiat,kutnowski,łódzkie,4208,4.2,km²,19.16893,52.25606
+622,Mrocza,powiat,nakielski,kujawsko-pomorskie,4302,5,km²,17.60689,53.24387
+623,Olszyna,powiat,lubański,dolnośląskie,4295,20.3,km²,15.37531,51.06555
+624,Słomniki,powiat,krakowski,małopolskie,4279,3.4,km²,20.08114,50.24037
+625,Skoki,powiat,wągrowiecki,wielkopolskie,4546,11.2,km²,17.15313,52.67259
+626,Woźniki,powiat,lubliniecki,śląskie,4262,71,km²,19.05953,50.58708
+627,Bytom Odrzański,powiat,nowosolski,lubuskie,4191,2.3,km²,15.82692,51.73083
+628,Jasień,powiat,żarski,lubuskie,4158,4.8,km²,15.01234,51.75154
+629,Sława,powiat,wschowski,lubuskie,4236,14.9,km²,16.07025,51.8807
+630,Krobia,powiat,gostyński,wielkopolskie,4353,7.1,km²,16.98455,51.7741
+631,Ogrodzieniec,powiat,zawierciański,śląskie,4176,28.6,km²,19.52136,50.45215
+632,Nowy Staw,powiat,malborski,pomorskie,4197,4.7,km²,19.00869,54.13428
+633,Korsze,powiat,kętrzyński,warmińsko-mazurskie,4093,4,km²,21.14423,54.17076
+634,Żabno,powiat,tarnowski,małopolskie,4156,11.1,km²,20.88593,50.13352
+635,Nowogrodziec,powiat,bolesławiecki,dolnośląskie,4216,16.1,km²,15.3987,51.19714
+636,Resko,powiat,łobeski,zachodniopomorskie,4092,4.5,km²,15.40561,53.7734
+637,Szamocin,powiat,chodzieski,wielkopolskie,4140,4.7,km²,17.12172,53.029
+638,Zawidów,powiat,zgorzelecki,dolnośląskie,4074,6.1,km²,15.04515,51.0245
+639,Kleczew,powiat,koniński,wielkopolskie,4075,7.8,km²,18.17799,52.37073
+640,Świeradów-Zdrój,powiat,lubański,dolnośląskie,3945,20.7,km²,15.30847,50.91697
+641,Szczucin,powiat,dąbrowski,małopolskie,4097,6.9,km²,21.07516,50.30903
+642,Sokołów Małopolski,powiat,rzeszowski,podkarpackie,4242,15.5,km²,22.11893,50.23116
+643,Kowalewo Pomorskie,powiat,golubsko-dobrzyński,kujawsko-pomorskie,4038,4.5,km²,18.89755,53.15431
+644,Tarczyn,powiat,piaseczyński,mazowieckie,4196,5.2,km²,20.83396,51.98029
+645,Gąbin,powiat,płocki,mazowieckie,4065,28,km²,19.73072,52.39942
+646,Mieroszów,powiat,wałbrzyski,dolnośląskie,3891,10.3,km²,16.1862,50.66699
+647,Czerwieńsk,powiat,zielonogórski,lubuskie,3900,9.4,km²,15.42115,52.01306
+648,Biała Piska,powiat,piski,warmińsko-mazurskie,3986,3.2,km²,22.05814,53.61136
+649,Bobolice,powiat,koszaliński,zachodniopomorskie,3896,4.8,km²,16.58848,53.95469
+650,Tułowice,powiat,opolski,opolskie,3993,9.2,km²,17.65331,50.59542
+651,Żelechów,powiat,garwoliński,mazowieckie,3904,12.1,km²,21.8955,51.80967
+652,Płoty,powiat,gryficki,zachodniopomorskie,3865,4.1,km²,15.2664,53.80309
+653,Górowo Iławeckie,powiat,bartoszycki,warmińsko-mazurskie,3805,3.3,km²,20.49047,54.28855
+654,Janowiec Wielkopolski,powiat,żniński,kujawsko-pomorskie,3832,3,km²,17.48877,52.75673
+655,Ośno Lubuskie,powiat,słubicki,lubuskie,3919,8,km²,14.8682,52.45513
+656,Lipiany,powiat,pyrzycki,zachodniopomorskie,3846,5.5,km²,14.97088,53.0029
+657,Babimost,powiat,zielonogórski,lubuskie,3847,3.7,km²,15.82852,52.16531
+658,Iłowa,powiat,żagański,lubuskie,3805,9.2,km²,15.19846,51.50068
+659,Mirsk,powiat,lwówecki,dolnośląskie,3763,14.7,km²,15.38579,50.97218
+660,Okonek,powiat,złotowski,wielkopolskie,3832,6,km²,16.85162,53.53476
+661,Podkowa Leśna,powiat,grodziski,mazowieckie,3788,10.1,km²,20.76141,52.11132
+662,Drzewica,powiat,opoczyński,łódzkie,3778,4.8,km²,20.47736,51.45084
+663,Mikołajki,powiat,mrągowski,warmińsko-mazurskie,3700,9.3,km²,21.57725,53.79818
+664,Rymanów,powiat,krośnieński,podkarpackie,3704,12.4,km²,21.86764,49.57613
+665,Tyczyn,powiat,rzeszowski,podkarpackie,4095,9.7,km²,22.03367,49.96379
+666,Skała,powiat,krakowski,małopolskie,3794,3,km²,19.85354,50.23038
+667,Nowe Miasto Nad Pilicą,powiat,grójecki,mazowieckie,3622,11.3,km²,20.57962,51.61669
+668,Pruchnik,powiat,jarosławski,podkarpackie,3729,19.9,km²,22.51606,49.90614
+669,Brańsk,powiat,bielski,podlaskie,3643,32.4,km²,34.36683,53.24238
+670,Małogoszcz,powiat,jędrzejowski,świętokrzyskie,3590,9.7,km²,20.26483,50.81235
+671,Nałęczów,powiat,puławski,lubelskie,3700,13.8,km²,22.21479,51.28761
+672,Jabłonowo Pomorskie,powiat,brodnicki,kujawsko-pomorskie,3698,3.4,km²,19.1527,53.38798
+673,Kargowa,powiat,zielonogórski,lubuskie,3746,4.6,km²,15.8648,52.07192
+674,Nekla,powiat,wrzesiński,wielkopolskie,3848,19.8,km²,17.41446,52.36562
+675,Halinów,powiat,miński,mazowieckie,3729,2.8,km²,19.47065,52.35816
+676,Barwice,powiat,szczecinecki,zachodniopomorskie,3627,7.5,km²,16.35494,53.74456
+677,Dobrodzień,powiat,oleski,opolskie,3650,19.5,km²,18.44434,50.72886
+678,Chmielnik,powiat,kielecki,świętokrzyskie,3557,7.8,km²,20.75104,50.6146
+679,Zator,powiat,oświęcimski,małopolskie,3588,11.5,km²,19.43768,49.99631
+680,Ujście,powiat,pilski,wielkopolskie,3567,5.8,km²,16.73243,53.05315
+681,Strumień,powiat,cieszyński,śląskie,3640,6.3,km²,18.76349,49.9172
+682,Opatówek,powiat,kaliski,wielkopolskie,3570,8.7,km²,18.21373,51.73944
+683,Wojcieszów,powiat,złotoryjski,dolnośląskie,3582,32.2,km²,15.9283,50.95592
+684,Łeba,powiat,lęborski,pomorskie,3474,16.6,km²,17.53138,54.76044
+685,Mieszkowice,powiat,gryfiński,zachodniopomorskie,3525,5.3,km²,14.49543,52.78541
+686,Krajenka,powiat,złotowski,wielkopolskie,3557,3.8,km²,16.99095,53.29709
+687,Szczekociny,powiat,zawierciański,śląskie,3482,18,km²,19.81947,50.62592
+688,Prochowice,powiat,legnicki,dolnośląskie,3510,9.9,km²,16.36443,51.27342
+689,Skórcz,powiat,starogardzki,pomorskie,3575,3.6,km²,18.51748,53.79455
+690,Byczyna,powiat,kluczborski,opolskie,3490,5.8,km²,18.21433,51.11424
+691,Kępice,powiat,słupski,pomorskie,3500,6.1,km²,16.88967,54.24278
+692,Skępe,powiat,lipnowski,kujawsko-pomorskie,3509,7.5,km²,19.34652,52.86716
+693,Rakoniewice,powiat,grodziski,wielkopolskie,3580,3.4,km²,16.27385,52.13935
+694,Toszek,powiat,gliwicki,śląskie,3527,9.7,km²,18.51806,50.45511
+695,Przedbórz,powiat,radomszczański,łódzkie,3406,6.1,km²,19.87444,51.08681
+696,Miłosław,powiat,wrzesiński,wielkopolskie,3497,4.5,km²,17.48922,52.20231
+697,Mrozy,powiat,miński,mazowieckie,3565,7.7,km²,21.80017,52.16555
+698,Sompolno,powiat,koniński,wielkopolskie,3445,6.2,km²,18.50301,52.38844
+699,Kowal,powiat,włocławski,kujawsko-pomorskie,3439,4.7,km²,19.14462,52.53187
+700,Stryków,powiat,zgierski,łódzkie,3376,8.2,km²,19.6037,51.90094
+701,Małomice,powiat,żagański,lubuskie,3467,6.8,km²,15.44729,51.555
+702,Myszyniec,powiat,ostrołęcki,mazowieckie,3372,11.2,km²,21.34207,53.3832
+703,Rzgów,powiat,łódzki wschodni,łódzkie,3376,16.8,km²,19.49081,51.66265
+704,Szczuczyn,powiat,grajewski,podlaskie,3312,13.2,km²,22.28555,53.563
+705,Złoczew,powiat,sieradzki,łódzkie,3301,13.8,km²,18.6059,51.41751
+706,Alwernia,powiat,chrzanowski,małopolskie,3310,8.9,km²,19.53967,50.06904
+707,Maszewo,powiat,goleniowski,zachodniopomorskie,3333,5.5,km²,15.06135,53.49622
+708,Tarnogród,powiat,biłgorajski,lubelskie,3269,10.7,km²,22.74194,50.36131
+709,Gołańcz,powiat,wągrowiecki,wielkopolskie,3170,12.6,km²,17.29998,52.94316
+710,Wojnicz,powiat,tarnowski,małopolskie,3293,8.5,km²,20.8364,49.95735
+711,Kolonowskie,powiat,strzelecki,opolskie,3345,55.7,km²,18.38311,50.65286
+712,Kock,powiat,lubartowski,lubelskie,3183,16.8,km²,22.44782,51.63839
+713,Łasin,powiat,grudziądzki,kujawsko-pomorskie,3151,4.8,km²,10.98308,46.0251
+714,Hel,powiat,pucki,pomorskie,3123,23,km²,24.94736,60.32182
+715,Tuliszków,powiat,turecki,wielkopolskie,3182,7,km²,18.29493,52.0771
+716,Warta,powiat,sieradzki,łódzkie,3135,10.9,km²,18.87492,51.11099
+717,Kobylin,powiat,krotoszyński,wielkopolskie,3212,4.9,km²,17.22476,51.71636
+718,Miejska Górka,powiat,rawicki,wielkopolskie,3173,3.1,km²,16.95615,51.65521
+719,Jeziorany,powiat,olsztyński,warmińsko-mazurskie,3092,3.4,km²,20.74591,53.97686
+720,Zakroczym,powiat,nowodworski,mazowieckie,3118,20,km²,20.61168,52.43335
+721,Chociwel,powiat,stargardzki,zachodniopomorskie,3105,3.7,km²,15.33144,53.46639
+722,Biała Rawska,powiat,rawski,łódzkie,3081,9.5,km²,20.47209,51.8076
+723,Radomyśl Wielki,powiat,mielecki,podkarpackie,3252,8.8,km²,21.27616,50.19637
+724,Zwierzyniec,powiat,zamojski,lubelskie,3045,6.2,km²,22.97063,50.61459
+725,Kańczuga,powiat,przeworski,podkarpackie,3094,7.6,km²,22.41318,49.98437
+726,Radoszyce,powiat,konecki,świętokrzyskie,3044,17.2,km²,20.25977,51.07367
+727,Ślesin,powiat,koniński,wielkopolskie,3095,7.2,km²,18.30593,52.37082
+728,Pyzdry,powiat,wrzesiński,wielkopolskie,3058,12.2,km²,17.68713,52.16943
+729,Bobowa,powiat,gorlicki,małopolskie,3101,7.2,km²,20.95761,49.713
+730,Dobrzyca,powiat,pleszewski,wielkopolskie,3101,19.7,km²,17.60264,51.86682
+731,Krasnobród,powiat,zamojski,lubelskie,3067,7,km²,23.21156,50.546
+732,Mirosławiec,powiat,wałecki,zachodniopomorskie,2994,2.4,km²,16.08815,53.34151
+733,Dobiegniew,powiat,strzelecko-drezdenecki,lubuskie,3004,5.7,km²,15.75481,52.96677
+734,Wilamowice,powiat,bielski,śląskie,3147,10.4,km²,19.15247,49.91674
+735,Chorzele,powiat,przasnyski,mazowieckie,3047,17.5,km²,20.89786,53.26105
+736,Gozdnica,powiat,żagański,lubuskie,2927,23.9,km²,15.0816,51.45355
+737,Michałowo,powiat,białostocki,podlaskie,2924,2.2,km²,23.60669,53.03289
+738,Lubraniec,powiat,włocławski,kujawsko-pomorskie,2857,2,km²,18.83158,52.54308
+739,Ćmielów,powiat,ostrowiecki,świętokrzyskie,2954,13.3,km²,21.51009,50.89184
+740,Margonin,powiat,chodzieski,wielkopolskie,2967,5.2,km²,17.09489,52.97329
+741,Glinojeck,powiat,ciechanowski,mazowieckie,2951,7.4,km²,20.28627,52.81917
+742,Zaklików,powiat,stalowowolski,podkarpackie,2929,11.4,km²,22.10202,50.75544
+743,Zagórów,powiat,słupecki,wielkopolskie,2831,3.4,km²,17.90016,52.16899
+744,Oleszyce,powiat,lubaczowski,podkarpackie,2923,5.1,km²,23.03148,50.1682
+745,Uniejów,powiat,poddębicki,łódzkie,2965,12.2,km²,18.79324,51.97413
+746,Kunów,powiat,ostrowiecki,świętokrzyskie,2859,7.3,km²,21.27882,50.95411
+747,Lwówek,powiat,nowotomyski,wielkopolskie,2948,3.2,km²,16.18036,52.44893
+748,Niemcza,powiat,dzierżoniowski,dolnośląskie,2866,19.8,km²,16.83504,50.71634
+749,Łobżenica,powiat,pilski,wielkopolskie,2906,3.3,km²,17.25484,53.26029
+750,Mielno,powiat,koszaliński,zachodniopomorskie,2841,33.5,km²,16.05206,54.25608
+751,Bojanowo,powiat,rawicki,wielkopolskie,2886,2.3,km²,16.74877,51.707
+752,Baborów,powiat,głubczycki,opolskie,2844,11.9,km²,17.98594,50.15636
+753,Polanów,powiat,koszaliński,zachodniopomorskie,2869,7.4,km²,16.68725,54.11921
+754,Recz,powiat,choszczeński,zachodniopomorskie,2824,12.4,km²,15.54676,53.26015
+755,Daleszyce,powiat,kielecki,świętokrzyskie,2830,15.5,km²,20.80663,50.80199
+756,Kałuszyn,powiat,miński,mazowieckie,2829,12.3,km²,21.81333,52.20823
+757,Drobin,powiat,płocki,mazowieckie,2778,9.7,km²,19.98932,52.7378
+758,Sulmierzyce,powiat,krotoszyński,wielkopolskie,2789,29.3,km²,17.5345,51.61613
+759,Rydzyna,powiat,leszczyński,wielkopolskie,2951,2.2,km²,16.66732,51.78637
+760,Węgliniec,powiat,zgorzelecki,dolnośląskie,2769,8.7,km²,15.22414,51.28712
+761,Ryn,powiat,giżycki,warmińsko-mazurskie,2784,4.1,km²,-1.68002,48.11134
+762,Poniec,powiat,gostyński,wielkopolskie,2875,3.5,km²,16.80599,51.76504
+763,Ryglice,powiat,tarnowski,małopolskie,2808,25.2,km²,21.13804,49.87833
+764,Węgorzyno,powiat,łobeski,zachodniopomorskie,2764,6.9,km²,15.56024,53.54118
+765,Czarna Woda,powiat,starogardzki,pomorskie,2735,9.9,km²,18.09843,53.8442
+766,Złoty Stok,powiat,ząbkowicki,dolnośląskie,2675,7.7,km²,16.87658,50.44514
+767,Kamieńsk,powiat,radomszczański,łódzkie,2670,12,km²,19.49707,51.20417
+768,Nowe Miasteczko,powiat,nowosolski,lubuskie,2669,3.3,km²,15.7312,51.69081
+769,Radłów,powiat,tarnowski,małopolskie,2735,16.8,km²,20.84766,50.08309
+770,Wąchock,powiat,starachowicki,świętokrzyskie,2681,16,km²,21.01169,51.07381
+771,Cybinka,powiat,słubicki,lubuskie,2704,5.3,km²,14.79688,52.19403
+772,Knyszyn,powiat,moniecki,podlaskie,2682,23.7,km²,22.92004,53.31224
+773,Pieniężno,powiat,braniewski,warmińsko-mazurskie,2658,3.8,km²,20.12582,54.23857
+774,Nowy Wiśnicz,powiat,bocheński,małopolskie,2748,5,km²,20.46217,49.91527
+775,Brzostek,powiat,dębicki,podkarpackie,2760,8.8,km²,21.41186,49.87847
+776,Różan,powiat,makowski,mazowieckie,2680,6.7,km²,21.39935,52.88926
+777,Książ Wielkopolski,powiat,śremski,wielkopolskie,2683,2,km²,17.23727,52.06153
+778,Jastarnia,powiat,pucki,pomorskie,2666,5.1,km²,18.65545,54.70849
+779,Dziwnów,powiat,kamieński,zachodniopomorskie,2595,6.5,km²,14.75265,54.0251
+780,Tolkmicko,powiat,elbląski,warmińsko-mazurskie,2623,2.3,km²,19.52702,54.32018
+781,Golczewo,powiat,kamieński,zachodniopomorskie,2660,7.4,km²,14.97734,53.82411
+782,Wąsosz,powiat,górowski,dolnośląskie,2615,3.2,km²,22.31941,53.52194
+783,Czerniejewo,powiat,gnieźnieński,wielkopolskie,2654,10.2,km²,17.4894,52.42961
+784,Wysoka,powiat,pilski,wielkopolskie,2614,4.8,km²,17.07971,53.18293
+785,Czyżew,powiat,wysokomazowiecki,podlaskie,2621,5.2,km²,22.31235,52.79755
+786,Kłecko,powiat,gnieźnieński,wielkopolskie,2586,9.6,km²,17.42829,52.63242
+787,Izbica Kujawska,powiat,włocławski,kujawsko-pomorskie,2572,2.2,km²,18.76435,52.41925
+788,Wyszogród,powiat,płocki,mazowieckie,2554,13,km²,20.19131,52.38837
+789,Międzylesie,powiat,kłodzki,dolnośląskie,2466,14.4,km²,16.66693,50.14801
+790,Prószków,powiat,opolski,opolskie,2585,16.2,km²,17.86999,50.57867
+791,Pełczyce,powiat,choszczeński,zachodniopomorskie,2565,13.1,km²,15.30591,53.04218
+792,Leśnica,powiat,strzelecki,opolskie,2546,14.5,km²,18.18499,50.42856
+793,Kazimierz Dolny,powiat,puławski,lubelskie,2525,30.4,km²,21.94737,51.32201
+794,Bardo,powiat,ząbkowicki,dolnośląskie,2440,4.7,km²,-0.58004,44.84123
+795,Miłakowo,powiat,ostródzki,warmińsko-mazurskie,2512,8.8,km²,20.07112,54.01017
+796,Piaski,powiat,świdnicki,lubelskie,2505,8.4,km²,19.47513,50.1532
+797,Stoczek Łukowski,powiat,łukowski,lubelskie,2443,9.2,km²,21.96159,51.95679
+798,Annopol,powiat,kraśnicki,lubelskie,2383,7.7,km²,21.85508,50.88517
+799,Borek Wielkopolski,powiat,gostyński,wielkopolskie,2482,6.3,km²,17.2426,51.91615
+800,Torzym,powiat,sulęciński,lubuskie,2492,9.1,km²,15.08283,52.31386
+801,Pasym,powiat,szczycieński,warmińsko-mazurskie,2480,15.2,km²,20.79174,53.65216
+802,Tychowo,powiat,białogardzki,zachodniopomorskie,2506,4,km²,16.25668,53.92866
+803,Józefów,powiat,biłgorajski,lubelskie,2444,5,km²,23.05406,50.48083
+804,Koprzywnica,powiat,sandomierski,świętokrzyskie,2431,17.9,km²,21.58473,50.59322
+805,Łęknica,powiat,żarski,lubuskie,2364,16.4,km²,14.75408,51.54732
+806,Stepnica,powiat,goleniowski,zachodniopomorskie,2449,3.4,km²,14.62995,53.65145
+807,Ciężkowice,powiat,tarnowski,małopolskie,2444,10,km²,20.97375,49.78646
+808,Zabłudów,powiat,białostocki,podlaskie,2483,14.3,km²,23.33795,53.01477
+809,Koziegłowy,powiat,myszkowski,śląskie,2433,26.7,km²,19.16152,50.59787
+810,Gorzów Śląski,powiat,oleski,opolskie,2431,18.5,km²,18.42227,51.02816
+811,Lubycza Królewska,powiat,tomaszowski,lubelskie,2408,3.9,km²,23.51966,50.34116
+812,Biała,powiat,prudnicki,opolskie,2336,14.7,km²,32.93949,55.83307
+813,Miłomłyn,powiat,ostródzki,warmińsko-mazurskie,2412,12.4,km²,19.84135,53.7634
+814,Radków,powiat,kłodzki,dolnośląskie,2385,15,km²,16.40135,50.50422
+815,Gościno,powiat,kołobrzeski,zachodniopomorskie,2456,5.7,km²,15.6534,54.05158
+816,Świątniki Górne,powiat,krakowski,małopolskie,2440,4.4,km²,19.9525,49.93464
+817,Krynki,powiat,sokólski,podlaskie,2303,3.8,km²,23.77262,53.26444
+818,Rychwał,powiat,koniński,wielkopolskie,2322,9.7,km²,18.16683,52.07062
+819,Trzciel,powiat,międzyrzecki,lubuskie,2297,3,km²,15.87321,52.36517
+820,Kamień Krajeński,powiat,sępoleński,kujawsko-pomorskie,2333,3.7,km²,17.51991,53.53332
+821,Obrzycko,powiat,szamotulski,wielkopolskie,2387,3.7,km²,16.5301,52.702
+822,Bisztynek,powiat,bartoszycki,warmińsko-mazurskie,2282,2.2,km²,20.90883,54.08668
+823,Frombork,powiat,braniewski,warmińsko-mazurskie,2260,7.6,km²,19.68237,54.35836
+824,Międzybórz,powiat,oleśnicki,dolnośląskie,2331,6.4,km²,17.66502,51.39771
+825,Lipsk,powiat,augustowski,podlaskie,2214,5,km²,12.37473,51.34063
+826,Osieczna,powiat,leszczyński,wielkopolskie,2413,4.8,km²,16.67621,51.90339
+827,Czchów,powiat,brzeski,małopolskie,2288,14.1,km²,20.67315,49.83394
+828,Wolbórz,powiat,piotrkowski,łódzkie,2297,15.2,km²,19.83032,51.50363
+829,Człopa,powiat,wałecki,zachodniopomorskie,2277,6.3,km²,16.12011,53.08846
+830,Dobra,powiat,łobeski,zachodniopomorskie,2215,2.4,km²,24.23735,46.58142
+831,Świerzawa,powiat,złotoryjski,dolnośląskie,2182,1.8,km²,15.89207,51.01508
+832,Drawno,powiat,choszczeński,zachodniopomorskie,2219,5,km²,15.75801,53.21895
+833,Trzcińsko-Zdrój,powiat,gryfiński,zachodniopomorskie,2183,2.3,km²,14.6076,52.96604
+834,Dobrzany,powiat,stargardzki,zachodniopomorskie,2225,5.3,km²,15.42993,53.35828
+835,Mogielnica,powiat,grójecki,mazowieckie,2160,13,km²,20.72337,51.69295
+836,Wiązów,powiat,strzeliński,dolnośląskie,2172,9.2,km²,17.20172,50.81388
+837,Bodzentyn,powiat,kielecki,świętokrzyskie,2168,8.7,km²,20.95735,50.94099
+838,Prusice,powiat,trzebnicki,dolnośląskie,2196,10.9,km²,14.87786,49.96836
+839,Biały Bór,powiat,szczecinecki,zachodniopomorskie,2226,12.8,km²,16.83773,53.89874
+840,Stawiski,powiat,kolneński,podlaskie,2104,13.2,km²,22.15489,53.37984
+841,Suchowola,powiat,sokólski,podlaskie,2101,26,km²,23.10582,53.57856
+842,Szepietowo,powiat,wysokomazowiecki,podlaskie,2127,2.8,km²,22.54743,52.8713
+843,Zalewo,powiat,iławski,warmińsko-mazurskie,2101,8.2,km²,19.60612,53.84588
+844,Krzanowice,powiat,raciborski,śląskie,2104,3.1,km²,18.12162,50.01793
+845,Nowogród,powiat,łomżyński,podlaskie,2140,20.6,km²,21.87979,53.22808
+846,Łaszczów,powiat,tomaszowski,lubelskie,2076,5,km²,23.72639,50.53261
+847,Błażowa,powiat,rzeszowski,podkarpackie,2149,4.2,km²,22.1008,49.8856
+848,Sieniawa,powiat,przeworski,podkarpackie,2100,6.7,km²,22.61022,50.17807
+849,Dobrzyń Nad Wisłą,powiat,lipnowski,kujawsko-pomorskie,2025,5.4,km²,19.32137,52.63745
+850,Tyszowce,powiat,tomaszowski,lubelskie,1983,18.5,km²,23.69822,50.6172
+851,Żerków,powiat,jarociński,wielkopolskie,2105,2.2,km²,17.56336,52.06871
+852,Błaszki,powiat,sieradzki,łódzkie,1992,1.6,km²,18.43328,51.6525
+853,Kisielice,powiat,iławski,warmińsko-mazurskie,2045,3.4,km²,19.25939,53.60761
+854,Pogorzela,powiat,gostyński,wielkopolskie,2068,4.4,km²,17.23104,51.82241
+855,Raszków,powiat,ostrowski,wielkopolskie,2098,2.1,km²,17.72771,51.71821
+856,Ostrów Lubelski,powiat,lubartowski,lubelskie,2067,29.8,km²,22.85547,51.49712
+857,Kosów Lacki,powiat,sokołowski,mazowieckie,2062,11.6,km²,22.14718,52.59608
+858,Dukla,powiat,krośnieński,podkarpackie,2017,5.5,km²,21.68475,49.55636
+859,Narol,powiat,lubaczowski,podkarpackie,2023,12.4,km²,23.32744,50.34881
+860,Rejowiec,powiat,chełmski,lubelskie,1997,6.5,km²,23.28329,51.09455
+861,Lubniewice,powiat,sulęciński,lubuskie,2061,12.1,km²,15.2441,52.51196
+862,Osiek,powiat,staszowski,świętokrzyskie,1964,17.4,km²,18.69537,45.55488
+863,Dąbie,powiat,kolski,wielkopolskie,1940,8.8,km²,18.82207,52.08717
+864,Lubomierz,powiat,lwówecki,dolnośląskie,1935,8.1,km²,15.51022,51.01246
+865,Drohiczyn,powiat,siemiatycki,podlaskie,1904,15.7,km²,22.65881,52.39665
+866,Sanniki,powiat,gostyniński,mazowieckie,1868,11.8,km²,19.86693,52.33089
+867,Tykocin,powiat,białostocki,podlaskie,1949,29,km²,22.77302,53.20765
+868,Jutrosin,powiat,rawicki,wielkopolskie,1940,1.6,km²,17.16899,51.65362
+869,Sępopol,powiat,bartoszycki,warmińsko-mazurskie,1859,4.6,km²,21.01465,54.26472
+870,Pilica,powiat,zawierciański,śląskie,1898,8.2,km²,19.65736,50.46811
+871,Brok,powiat,ostrowski,mazowieckie,1876,28.1,km²,21.86018,52.69893
+872,Grabów Nad Prosną,powiat,ostrzeszowski,wielkopolskie,1912,2.6,km²,18.11888,51.50605
+873,Cieszanów,powiat,lubaczowski,podkarpackie,1906,15.1,km²,23.13013,50.24543
+874,Ińsko,powiat,stargardzki,zachodniopomorskie,1877,7.5,km²,15.55031,53.43653
+875,Ostroróg,powiat,szamotulski,wielkopolskie,1905,1.3,km²,16.45406,52.62611
+876,Szadek,powiat,zduńskowolski,łódzkie,1880,17.9,km²,18.97703,51.69175
+877,Tuczno,powiat,wałecki,zachodniopomorskie,1901,9.2,km²,16.15482,53.19442
+878,Sośnicowice,powiat,gliwicki,śląskie,1968,11.7,km²,18.52986,50.27228
+879,Chodecz,powiat,włocławski,kujawsko-pomorskie,2244,1.9,km²,19.02726,52.40517
+880,Nieszawa,powiat,aleksandrowski,kujawsko-pomorskie,1821,9.8,km²,18.88516,52.83965
+881,Radzyń Chełmiński,powiat,grudziądzki,kujawsko-pomorskie,1768,1.8,km²,18.93519,53.38501
+882,Bieżuń,powiat,żuromiński,mazowieckie,1807,12.1,km²,19.88999,52.9618
+883,Mikstat,powiat,ostrzeszowski,wielkopolskie,1778,2.5,km²,17.97107,51.53153
+884,Korfantów,powiat,nyski,opolskie,1771,10.2,km²,17.59842,50.48798
+885,Goniądz,powiat,moniecki,podlaskie,1767,4.3,km²,22.73237,53.48922
+886,Mordy,powiat,siedlecki,mazowieckie,1691,4.5,km²,22.51542,52.21066
+887,Iwonicz-Zdrój,powiat,krośnieński,podkarpackie,1706,5.9,km²,21.79323,49.56967
+888,Młynary,powiat,elbląski,warmińsko-mazurskie,1754,2.8,km²,19.72294,54.18762
+889,Wleń,powiat,lwówecki,dolnośląskie,1697,7.2,km²,15.67446,51.01688
+890,Chocz,powiat,pleszewski,wielkopolskie,1746,6.9,km²,17.8707,51.97514
+891,Zawichost,powiat,sandomierski,świętokrzyskie,1702,20.3,km²,21.85238,50.80743
+892,Ujazd,powiat,strzelecki,opolskie,1741,14.8,km²,19.92107,51.59973
+893,Przecław,powiat,mielecki,podkarpackie,1799,16,km²,13.86657,53.3167
+894,Wielichowo,powiat,grodziski,wielkopolskie,1730,1.2,km²,16.35214,52.11827
+895,Krzywiń,powiat,kościański,wielkopolskie,1716,2.3,km²,16.8193,51.96293
+896,Urzędów,powiat,kraśnicki,lubelskie,1663,12.9,km²,22.14358,50.9939
+897,Morawica,powiat,kielecki,świętokrzyskie,1725,4.4,km²,19.75002,50.07643
+898,Nowe Brzesko,powiat,proszowicki,małopolskie,1653,7.3,km²,20.37672,50.13228
+899,Przedecz,powiat,kolski,wielkopolskie,1604,3,km²,18.89851,52.33417
+900,Zakliczyn,powiat,tarnowski,małopolskie,1612,4,km²,20.80867,49.85644
+901,Jedwabne,powiat,łomżyński,podlaskie,1598,4.5,km²,22.30214,53.28673
+902,Moryń,powiat,gryfiński,zachodniopomorskie,1588,5.5,km²,14.3968,52.8558
+903,Otyń,powiat,nowosolski,lubuskie,1688,7.9,km²,15.7104,51.84732
+904,Łagów,powiat,kielecki,świętokrzyskie,1540,8.2,km²,21.08398,50.77549
+905,Rajgród,powiat,grajewski,podlaskie,1508,35.3,km²,22.69762,53.73047
+906,Cedynia,powiat,gryfiński,zachodniopomorskie,1484,1.7,km²,14.20256,52.87856
+907,Dolsk,powiat,śremski,wielkopolskie,1550,6.2,km²,17.06537,51.9866
+908,Stawiszyn,powiat,kaliski,wielkopolskie,1424,1,km²,18.11154,51.91824
+909,Suchań,powiat,stargardzki,zachodniopomorskie,1410,3.6,km²,15.31883,53.27994
+910,Baranów Sandomierski,powiat,tarnobrzeski,podkarpackie,1420,9.2,km²,21.54179,50.4995
+911,Modliborzyce,powiat,janowski,lubelskie,1450,7.9,km²,22.32917,50.75345
+912,Frampol,powiat,biłgorajski,lubelskie,1431,4.7,km²,22.66987,50.67183
+913,Stopnica,powiat,buski,świętokrzyskie,1407,4.6,km²,20.93857,50.43826
+914,Ulanów,powiat,niżański,podkarpackie,1411,8.2,km²,22.26257,50.49044
+915,Jaraczewo,powiat,jarociński,wielkopolskie,1404,10.1,km²,17.29811,51.96891
+916,Siedliszcze,powiat,chełmski,lubelskie,1381,13.2,km²,23.16485,51.19462
+917,Kołaczyce,powiat,jasielski,podkarpackie,1423,7.2,km²,21.43405,49.80766
+918,Lubień Kujawski,powiat,włocławski,kujawsko-pomorskie,1354,2.3,km²,19.16018,52.40736
+919,Dobra,powiat,turecki,wielkopolskie,1333,1.8,km²,24.23735,46.58142
+920,Górzno,powiat,brodnicki,kujawsko-pomorskie,1383,3.4,km²,19.64457,53.19808
+921,Krynica Morska,powiat,nowodworski,pomorskie,1294,118.6,km²,19.44336,54.38001
+922,Skalbmierz,powiat,kazimierski,świętokrzyskie,1260,7.1,km²,20.39968,50.31709
+923,Szlichtyngowa,powiat,wschowski,lubuskie,1258,1.6,km²,16.2446,51.71407
+924,Kleszczele,powiat,hajnowski,podlaskie,1188,46.7,km²,23.32549,52.57417
+925,Nowe Warpno,powiat,policki,zachodniopomorskie,1160,24.5,km²,14.28107,53.72525
+926,Suraż,powiat,białostocki,podlaskie,986,33.9,km²,22.95638,52.94917
+927,Józefów Nad Wisłą,powiat,opolski,lubelskie,887,3.7,km²,21.82968,51.04085
+928,Działoszyce,powiat,pińczowski,świętokrzyskie,882,1.9,km²,20.35215,50.36547
+929,Wyśmierzyce,powiat,białobrzeski,mazowieckie,894,16.8,km²,20.81193,51.62511
+930,Wiślica,powiat,buski,świętokrzyskie,497,4.7,km²,20.67454,50.34848
+931,Miękinia,powiat,średzki,dolnośląskie,2082,11,km²,16.73869,51.19096
+932,Kamieniec Ząbkowicki,powiat,ząbkowicki,dolnośląskie,4463,13,km²,16.87361,50.52291
+933,Pruszcz,powiat,świecki,kujawsko-pomorskie,2798,7,km²,18.6501,54.25765
+934,Goraj,powiat,biłgorajski,lubelskie,911,7.6,km²,22.66821,50.72123
+935,Izbica,powiat,krasnostawski,lubelskie,1739,9.5,km²,23.1588,50.89278
+936,Kamionka,powiat,lubartowski,lubelskie,1663,5.9,km²,22.46442,51.47112
+937,Dąbrowice,powiat,kutnowski,łódzkie,847,18.5,km²,19.08451,52.31564
+938,Piątek,powiat,łęczycki,łódzkie,1652,5.2,km²,19.47997,52.06899
+939,Lutomiersk,powiat,pabianicki,łódzkie,1546,5.2,km²,19.2121,51.75501
+940,Rozprza,powiat,piotrkowski,łódzkie,1680,4.2,km²,19.64478,51.30167
+941,Bolimów,powiat,skierniewicki,łódzkie,934,3.8,km²,20.16348,52.07624
+942,Ujazd,powiat,tomaszowski,łódzkie,1694,10.3,km²,19.92107,51.59973
+943,Lututów,powiat,wieruszowski,łódzkie,2269,19,km²,18.4346,51.37125
+944,Jeżów,powiat,brzeziński,łódzkie,1279,12.6,km²,19.9688,51.81345
+945,Książ Wielki,powiat,miechowski,małopolskie,812,5.6,km²,20.13995,50.44294
+946,Czarny Dunajec,powiat,nowotarski,małopolskie,3771,38,km²,19.85356,49.44049
+947,Koszyce,powiat,proszowicki,małopolskie,762,3.3,km²,21.24968,48.71723
+948,Solec Nad Wisłą,powiat,lipski,mazowieckie,1040,20.9,km²,21.76538,51.135
+949,Cegłów,powiat,miński,mazowieckie,2321,7.7,km²,21.73817,52.14702
+950,Latowicz,powiat,miński,mazowieckie,1377,25.7,km²,21.80754,52.02627
+951,Bodzanów,powiat,płocki,mazowieckie,1122,4.8,km²,20.02988,52.50125
+952,Czerwińsk Nad Wisłą,powiat,płoński,mazowieckie,989,5.5,km²,20.31237,52.39402
+953,Nowe Miasto,powiat,płoński,mazowieckie,1545,8.9,km²,20.63074,52.65632
+954,Sochocin,powiat,płoński,mazowieckie,1885,6.8,km²,20.4708,52.68989
+955,Jedlnia-Letnisko,powiat,radomski,mazowieckie,4078,8.2,km²,21.32925,51.43035
+956,Jastrząb,powiat,szydłowiecki,mazowieckie,1065,12.6,km²,20.94882,51.24687
+957,Jadów,powiat,wołomiński,mazowieckie,927,4.6,km²,21.63262,52.47835
+958,Lubowidz,powiat,żuromiński,mazowieckie,1615,5.3,km²,19.8408,53.12167
+959,Wiskitki,powiat,żyrardowski,mazowieckie,1332,6.6,km²,20.38325,52.0869
+960,Dubiecko,powiat,przemyski,podkarpackie,858,2.4,km²,22.39162,49.82532
+961,Olsztyn,powiat,częstochowski,śląskie,2541,34.3,km²,20.47778,53.77672
+962,Włodowice,powiat,zawierciański,śląskie,1118,23.5,km²,19.45043,50.55209
+963,Nowy Korczyn,powiat,buski,świętokrzyskie,915,7.5,km²,20.80906,50.29943
+964,Pacanów,powiat,buski,świętokrzyskie,1125,7.1,km²,21.04099,50.39997
+965,Wodzisław,powiat,jędrzejowski,świętokrzyskie,1099,7.9,km²,20.19092,50.52114
+966,Opatowiec,powiat,kazimierski,świętokrzyskie,338,5.5,km²,20.72378,50.24259
+967,Łopuszno,powiat,kielecki,świętokrzyskie,1395,5.2,km²,20.2506,50.94862
+968,Nowa Słupia,powiat,kielecki,świętokrzyskie,1345,14,km²,21.09073,50.86404
+969,Piekoszów,powiat,kielecki,świętokrzyskie,3158,8.5,km²,20.46425,50.88142
+970,Pierzchnica,powiat,kielecki,świętokrzyskie,1147,6.9,km²,20.75443,50.69743
+971,Iwaniska,powiat,opatowski,świętokrzyskie,1236,6.0,km²,21.28111,50.73143
+972,Klimontów,powiat,sandomierski,świętokrzyskie,1857,4.7,km²,21.45062,50.65639
+973,Oleśnica,powiat,staszowski,świętokrzyskie,1795,10,km²,17.38295,51.21024
+974,Szydłów,powiat,staszowski,świętokrzyskie,1077,16.2,km²,21.00457,50.59077
+975,Wielbark,powiat,szczycieński,warmińsko-mazurskie,2963,18.4,km²,20.94627,53.39842
+976,Budzyń,powiat,chodzieski,wielkopolskie,4480,40.6,km²,20.76574,50.38343
+977,Koźminek,powiat,kaliski,wielkopolskie,1913,6,km²,18.33836,51.7983
+978,Kaczory,powiat,pilski,wielkopolskie,2867,16.6,km²,16.88313, 53.10234
+979,Miasteczko Krajeńskie,powiat,pilski,wielkopolskie,1080,1.9,km²,17.00649,53.09675

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Witamy w Poldle!</title>
+        <link href="static/styleIndex.css" type="text/css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="static/icons/other/favicon.png">
+    </head>
+    <p></p>
+    <body>
+        <div class="title">
+            <img src="static/icons/other/title.png" alt="Title">
+        </div>
+        <div class="MainCont">
+            <div class="ButtonsContainer">
+                <table>
+                    <tr><td><a id="extreme" href="/extreme" class="button-60" role="button">Miasto poniżej 10 tysięcy ludności</a></td></tr>
+                    <tr><td><a id="hard" href="/hard" class="button-60" role="button">Miasto pomiędzy 10 a 40 tysięcy ludności</a></td></tr>
+                    <tr><td><a id="medium" href="/medium" class="button-60" role="button">Miasto od 40 tysięcy ludności</a></td></tr>
+                    <tr><td><a id="easy" href="/easy" class="button-60" role="button">Miasto od 100 tysięcy ludności</a></td></tr>
+                    <tr><td><a id="info" class="button-60" role="button">Informacje</a></td></tr>
+                </table>
+            </div>
+            <div id="information" class="info-block">
+                <div class="clueCont">
+                    <div class="clueTitle">Ikony informacyjne</div>
+                    <div class="clueRow3">
+                        <div class="clueIcon"><img src="static/icons/table-headers/count.png"><p>Próba</p></div>
+                        <p>Liczba udanych prób zgadnięcia miasta</p>
+                    </div>
+                    <div class="clueRow">
+                        <div class="clueIcon"><img src="static/icons/table-headers/city.png"><p>Miasto</p></div>
+                        <p>Pokazuje nazwę oraz województwo podanego miejsca</p>
+                    </div>
+                    <div class="clueRow">
+                        <div class="clueIcon"><img src="static/icons/table-headers/way.png"><p>Kierunek</p></div>
+                        <p>Określa w którym kierunku leży miasto dnia w odniesieniu do podanego miasta</p>
+                    </div>
+                    <div class="clueRow">
+                        <div class="clueIcon"><img src="static/icons/table-headers/distance.png"><p>Dystans</p></div>
+                        <p>Wyświetla odległość między miastem dnia a podanym miastem</p>
+                    </div>
+                    <div class="clueRow">
+                        <div class="clueIcon"><img src="static/icons/table-headers/people.png"><p>Populacja</p></div>
+                        <p>Pokazuje jak bardzo różni się populacja miasta dnia od populacji podanego miasta. Dodatkowo pokazuje populację podanego miasta</p>
+                    </div>
+                    <div class="clueRow">
+                        <div class="clueIcon"><img src="static/icons/table-headers/surface.png"><p>Powierzchnia</p></div>
+                        <p>Pokazuje jak bardzo różni się powierzchnia miasta dnia od powierzchni podanego miasta. Dodatkowo pokazuje powierzchnię podanego miasta</p>
+                    </div>
+                </div>
+                <div class="clueCont2">
+                    <div class="clueTitle">Ikony wskazujące</div>
+                    <div class="clueRow">
+                        <div class="clueIcon2"><img src="static/icons/table-rows/MUCH_MORE.png"><img src="static/icons/table-rows/MUCH_LESS.png"></div>
+                        <p>Wartość podanego miasta różni się o więcej niż 50% względem miasta dnia</p>
+                    </div>
+                    <div class="clueRow">
+                        <div class="clueIcon2"><img src="static/icons/table-rows/MORE.png"><img src="static/icons/table-rows/LESS.png"></div>
+                        <p>Wartość podanego miasta nie różni się o więcej niż 50% względem miasta dnia</p>
+                    </div>
+                    <div class="clueRow">
+                        <div class="clueIcon2"><img src="static/icons/table-rows/DONE.png"></div>
+                        <p>Wartość podanego miasta nie różni się o więcej niż 5% względem miasta dnia</p>
+                    </div>
+                    <div class="clueTitle">Poziomy trudności</div>
+                    <P class="diffTitle">Gra zawiera 4 stopnie trudności:</P>
+                    <p class="diff">Poziom łatwy - wybrane miasto ma powyżej 100 tysięcy ludności,</p>
+                    <p class="diff">Poziom średni - wybrane miasto ma powyżej 40 tysięcy ludności,</p>
+                    <p class="diff">Poziom trudny - wybrane miasto ma pomiędzy 10 a 40 tysięcy ludności,</p>
+                    <p class="diff">Poziom ekstremalny - wybrane miasto ma poniżej 10 tysięcy ludności</p>
+                </div>
+                <div class="clueCont">
+                    <div class="clueTitle">Cel gry</div>
+                    <p>Gra opiera się na standardowym modelu Wordle w wersji geograficznej. Strona opiera się na bazie danych wszystkich polskich miast i ich podstawowych informacjach. Codziennie wybierane jest losowe polskie miasto a Twoim celem jest zgadnąć jego nazwę na podstawie swojej wiedzy i ukazywanych informacji. Powodzenia!</p>
+                    <div class="clueTitle">Przyszłość gry</div>
+                    <p>Gra będzie ciągle rozwijana, mam parę pomysłów na wzbogacenie strony i może nawet dodanie elementu rywalizacji, lecz ze względu na ilość czasu wolnego, będzie to musiało trochę poczekać. Tak czy siak życzę udanego szukania!</p>
+                    <div class="suppButt"><a href="https://ko-fi.com/poldle"><img src="static/icons/other/supportButton.png"></a></div>
+                </div>
+                <div class="exit" id="exit">
+                    <button id="EXIT">
+                        <img src="static/icons/other/exit.png">
+                    </button>
+                </div>
+            </div>
+    </body>
+    <script src="static/scripts/information.js"></script>
+</html>
