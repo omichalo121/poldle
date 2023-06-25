@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html>
-
     <head>
         <title>Witamy w Poldle!</title>
         <link href="static/styleIndex.css" type="text/css" rel="stylesheet">
@@ -9,6 +8,12 @@
     </head>
     <p></p>
     <body>
+        <li class="regLog">
+            <div>
+                <button class="button-59" role="button" onclick="logout()" id="logout" name="logout">Wyloguj się</button>
+            </div>
+        </li>
+
         <div class="title">
             <img src="static/icons/other/title.png" alt="Title">
         </div>
@@ -85,5 +90,20 @@
                 </div>
             </div>
     </body>
+
     <script src="static/scripts/information.js"></script>
+
+    <script>
+        function logout() {
+
+        const sessionID = '';
+        fetch('/logout', {
+            method: 'POST',
+            body: JSON.stringify({ session_id: sessionID }),
+            headers: {
+            'Content-Type': 'application/json'
+            }
+        });
+        }
+    </script>
 </html>

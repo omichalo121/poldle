@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Rejestracja</title>
+        <link href="static/register.css" type="text/css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="static/icons/other/favicon.png">
+    </head>
+    <p></p>
+    <body>
+        <li class="regLog">
+            <div>
+                <input class="input" id="username" name="username" required autocomplete="off" autofocus placeholder="Login" type="text">
+                <input class="input" id="password" name="password" required autofocus autocomplete="off" placeholder="Hasło" type="text">
+                <button class="button-59" role="button" disabled onclick="login()" id="login" name="login">Zaloguj się</button>
+            </div>
+        </li>
+        <div class="badLogin"><span id="badLogin"></span></div>
+
+        <div class="title">
+            <a href="/index"><img src="static/icons/other/title.png" alt="Title"></a>
+        </div>
+
+        <li class="register">
+            <div class="liRow">
+                <input class="input-reg" id="username_r" name="username" required autocomplete="off" autofocus placeholder="Login" type="text">
+                <div class="info" id="login-info"><span id="login-text"></span></div>
+            </div>
+            <div class="liRow">
+                <input class="input-reg" id="password_r" name="password" required autofocus autocomplete="off" placeholder="Hasło" type="text">
+                <div class="info" id="password-info"><span id="password-text"></span></div>
+            </div>
+            <div class="liRow">
+                <input class="input-reg" id="password-accept_r" name="password-accept" required autofocus autocomplete="off" placeholder="Potwierdź hasło" type="text">
+                <div class="info" id="passwordAcc-info"><span id="passwordAcc-text"></span></div>
+            </div>
+            <button id="register" disabled class="button-59" role="button" onclick="register()">Zarejestruj</button>
+            <div class="succ"><span id="success"></span></div>
+        </li>
+    </body>
+
+    <script src="static/scripts/registerHandle.js"></script>
+
+    <script src="static/scripts/loginHandle.js"></script>
+
+    <script>
+        function redirect() {
+            const form = document.createElement('form');
+            document.body.appendChild(form)
+            form.method = 'GET';
+            form.action = '/';
+            console.log('to działa');
+
+            form.submit();
+        }
+        const register = () => {
+            const log = document.getElementById('username_r');
+            const pass = document.getElementById('password_r');
+            const passAcc = document.getElementById('password-accept_r');
+            const inf = document.getElementById('passwordAcc-text');
+            const infBlock = document.getElementById('password-info');
+            const infBlock2 = document.getElementById('passwordAcc-info');
+            const succ = document.getElementById('success');
+
+            const u = log.value.trim();
+            const space = u.includes(' ');
+            const p = passValue;
+            const pA = passAccValue;
+
+            if(space) {
+                return;
+            }
+
+            if(p !== pA) {
+                [pass.value, passAcc.value] = ['', ''];
+                [passAccValue, passValue, maskedAccPassword, maskedPassword] = [null, null, null, null];
+                inf.textContent = 'Hasła muszą być takie same';
+                infBlock2.style.display = 'flex';
+                infBlock.style.display = 'none';
+                return;
+            } else if (p === pA) {
+                fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: u,
+                    password: p
+                    })
+                })
+                .then(res => {
+                    res.json().then(response => {
+                        if (response.success) {
+                            succ.textContent = 'Pomyślnie zarejestrowano! Zostaniesz przekierowany na stronę główną.';
+                            setTimeout(redirect, 2500);
+                            return;
+                        } else if (response.occupied) {
+                            succ.textContent = 'Ten login jest już zajęty.';
+                            return; }
+                    })
+                })
+            }
+        }
+    </script>
+
+    <script>
+            function redirectLogged() {
+            const form = document.createElement('form');
+            document.body.appendChild(form);
+            form.method = 'GET';
+            form.action = '/logged';
+
+            form.submit();
+        }
+
+        const login = () => {
+            const unsuccessful = document.getElementById('badLogin');
+            const log_login = document.getElementById('username');
+            const pass_login = document.getElementById('password');
+
+            const uLog = log_login.value.trim();
+            const pLog = passLogValue;
+
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: uLog,
+                    password: pLog
+                    })
+                })
+                .then(resLog => {
+                    resLog.json().then(response => {
+                        if(response.success) {
+                            redirectLogged();
+                            return;
+                        }
+                        else if(!response.success && LB.disabled === false) {
+                            unsuccessful.textContent = 'Niepoprawny login bądź hasło';
+                        }
+                    })
+                })
+        }
+    </script>
+</html>

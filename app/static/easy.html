@@ -5,18 +5,19 @@
     <head>
         <title>Poldle - poziom łatwy</title>
         <link href="static/style.css" type="text/css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="static/icons/other/favicon.png">
     </head>
     <p></p>
     <body>
         <div class="titleE">
-            <a href="/app/static"><img src="static/icons/other/title_easy.png" alt="Title"></a>
+            <a href="/index"><img src="static/icons/other/title_easy.png" alt="Title"></a>
         </div>
         <div class="MainCont">
             <div class="ButtonsContainer">
                 <table>
                     <tr><td><a id="extreme" href="/extreme" class="button-60" role="button">Miasto poniżej 10 tysięcy ludności</a></td></tr>
                     <tr><td><a id="hard" href="/hard" class="button-60" role="button">Miasto pomiędzy 10 a 40 tysięcy ludności</a></td></tr>
-                    <tr><td><a id="medium" href="/medium" class="button-60" role="button">Miasto od 50 tysięcy ludności</a></td></tr>
+                    <tr><td><a id="medium" href="/medium" class="button-60" role="button">Miasto od 40 tysięcy ludności</a></td></tr>
                     <tr><td><button id="info" class="button-60" role="button">Informacje</button></td></tr>
                 </table>
             </div>
@@ -73,7 +74,7 @@
                     <div class="clueTitle">Cel gry</div>
                     <p>Gra opiera się na standardowym modelu Wordle w wersji geograficznej. Strona opiera się na bazie danych wszystkich polskich miast i ich podstawowych informacjach. Codziennie wybierane jest losowe polskie miasto a Twoim celem jest zgadnąć jego nazwę na podstawie swojej wiedzy i ukazywanych informacji. Powodzenia!</p>
                     <div class="clueTitle">Przyszłość gry</div>
-                    <p>Gra będzie ciągle rozwijana, mam parę pomysłów na wzbogacenie strony i może nawet dodanie elementu rywalizacji, lecz ze względu na ilość czasu wolnego, będzię to musiało trochę poczekać. Tak czy siak życzę udanego szukania!</p>
+                    <p>Gra będzie ciągle rozwijana, mam parę pomysłów na wzbogacenie strony i może nawet dodanie elementu rywalizacji, lecz ze względu na ilość czasu wolnego, będzie to musiało trochę poczekać. Tak czy siak życzę udanego szukania!</p>
                     <div class="suppButt"><a href="https://ko-fi.com/poldle"><img src="static/icons/other/supportButton.png"></a></div>
                 </div>
                 <div class="exit" id="exit">
@@ -282,6 +283,7 @@
     </script>
 
     <script>
+        let citiesGiven = [];
         let count = 0;
         const submit = () => {
             const cityInput = document.querySelector('#city');
@@ -308,11 +310,16 @@
                         else if (response.success === false) {
                             return;
                         }
-                        const info = [response.guessed, response.name, response.dir, response.distance, response.lud, response.pow, response.arrowP, response.arrowL, response.powDoTablicy, response.ludDoTablicy];
-                        console.log(info)
-                        count = tableClearScriptFunction(count);
-                        circleNormalScriptFunction(response.name)
-                        tableScriptFunction(info);
+
+                        if (!citiesGiven.includes(response.name)) {
+                            citiesGiven.push(response.name)
+                            console.log(citiesGiven);
+                            const info = [response.guessed, response.name, response.dir, response.distance, response.lud, response.pow, response.arrowP, response.arrowL, response.powDoTablicy, response.ludDoTablicy];
+                            console.log(info)
+                            count = tableClearScriptFunction(count);
+                            circleNormalScriptFunction(response.name)
+                            tableScriptFunction(info);
+                        }
                     })
                 })
                 .catch(err => {

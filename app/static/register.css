@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('fonts/Oswald-VariableFont_wght.ttf') format('truetype');
+}
+
+.regLog {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 23px;
+}
+
+.succ {
+  font-family: 'Oswald';
+  font-size: 30px;
+}
+
+.badLogin {
+  text-align: end;
+  font-family: 'Oswald';
+  font-size: 20px;
+  margin-right: 230px;
+}
+
+.input {
+    height: 42px;
+    border: 2px solid #000;
+    text-align: center;
+    margin-right: 5px;
+    font-family: 'Oswald';
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.button-59 {
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-59:focus {
+  color: #171e29;
+}
+
+.button-59:hover {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+.button-59:active {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+
+body {
+    background-image: url('icons/other/background.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+
+.f2 {
+    font-family: 'Oswald', sans-serif;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 1;
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+
+.register {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.input-reg {
+    height: 50px;
+    border: 2px solid #000;
+    text-align: center;
+    font-family: 'Oswald';
+    font-size: 20px;
+    font-weight: 600;
+    width: 250px;
+}
+
+
+.liRow {
+    display: flex;
+    flex-direction: column;
+}
+.info {
+    display: none;
+    height: 30px;
+    background: gray;
+    border-width: 0 2px 2px 2px;
+    border-style: none solid solid solid;
+    border-color: transparent #000 #000 #000;
+    border-radius: 0 0 5px 5px;
+    align-items: center;
+}
+
+.info span {
+    margin-left: 5px;
+    white-space: normal;
+    font-size: 12.5px;
+}
