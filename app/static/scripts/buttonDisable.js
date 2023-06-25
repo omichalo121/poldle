@@ -13,4 +13,4 @@ input.addEventListener('input', (event) => {
 function buttonDisableScriptFunction() {
     const submitButton = document.getElementById('SB');
     submitButton.disabled = true;
-}
+};

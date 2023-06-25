@@ -1,20 +1,16 @@
-from fastapi import FastAPI
+from fastapi import HTTPException, FastAPI, Response
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.responses import FileResponse
-import sqlite3
+import sqlite3, random, math, time, threading
 from sqlite3.dbapi2 import *
-import random
 from pydantic import BaseModel
-import math
-import time
 from datetime import date
-import threading
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-cx = sqlite3.connect('miasta.db')
+cx = sqlite3.connect('data.db')
 db = cx.cursor()
 
 idOTD = random.randint(393, 979)
@@ -23,6 +19,42 @@ idOTD_MEDIUM = random.randint(1, 108)
 idOTD_EASY = random.randint(1, 37)
 today = date.today()
 dayToday = today.day
+todayInsert = today.strftime("%d/%m/%Y")
+
+# Wybierz random miasto dnia
+info = []; infoH = []; infoM = []; infoE = []
+cityOTD_info = []; cityOTDH_info = []; cityOTDM_info = []; cityOTDE_info = []
+
+def getInfo():
+    cityOTD_info = []; cityOTDH_info = []; cityOTDM_info = []; cityOTDE_info = []
+
+    db.execute("SELECT * FROM miasta WHERE id = ?", (idOTD,))
+    info = db.fetchone()
+    db.execute("SELECT * FROM miasta WHERE id = ?", (idOTD_HARD,))
+    infoH = db.fetchone()
+    db.execute("SELECT * FROM miasta WHERE id = ?", (idOTD_MEDIUM,))
+    infoM = db.fetchone()
+    db.execute("SELECT * FROM miasta WHERE id = ?", (idOTD_EASY,))
+    infoE = db.fetchone()
+
+    for i in range(1, 8):
+        cityOTD_info.append(info[i])
+
+    for i in range(1, 8):
+        cityOTDH_info.append(infoH[i])
+
+    for i in range(1, 8):
+        cityOTDM_info.append(infoM[i])
+
+    for i in range(1, 8):
+        cityOTDE_info.append(infoE[i])
+
+    print(cityOTD_info)
+    print(cityOTDH_info)
+    print(cityOTDM_info)
+    print(cityOTDE_info)
+
+getInfo()
 
 def changeNumbers():
     global idOTD, idOTD_HARD, idOTD_MEDIUM, idOTD_EASY, dayToday
@@ -37,40 +69,12 @@ def changeNumbers():
             idOTD_MEDIUM = random.randint(1, 108)
             idOTD_EASY = random.randint(1, 37)
             dayToday = dayTomorrow
+            getInfo()
+            print(dayToday)
         time.sleep(180)
 
 thread = threading.Thread(target=changeNumbers)
 thread.start()
-
-# Wybierz random miasto dnia
-info = []; infoH = []; infoM = []; infoE = []
-db.execute("SELECT * FROM miasta WHERE id = ?", (idOTD,))
-info = db.fetchone()
-db.execute("SELECT * FROM miasta WHERE id = ?", (idOTD_HARD,))
-infoH = db.fetchone()
-db.execute("SELECT * FROM miasta WHERE id = ?", (idOTD_MEDIUM,))
-infoM = db.fetchone()
-db.execute("SELECT * FROM miasta WHERE id = ?", (idOTD_EASY,))
-infoE = db.fetchone()
-cityOTD_info = []; cityOTDH_info = []; cityOTDM_info = []; cityOTDE_info = []
-
-for i in range(1, 8):
-    cityOTD_info.append(info[i])
-
-for i in range(1, 8):
-    cityOTDH_info.append(infoH[i])
-
-for i in range(1, 8):
-    cityOTDM_info.append(infoM[i])
-
-for i in range(1, 8):
-    cityOTDE_info.append(infoE[i])
-
-print(cityOTD_info)
-print(cityOTDH_info)
-print(cityOTDM_info)
-print(cityOTDE_info)
-
 
 def distance_calc(longDAY, longGIVEN, latDAY, latGIVEN):
 
@@ -159,6 +163,7 @@ async def css():
     return FileResponse('static/style.css', media_type="text/css")
 
 @app.get('/')
+@app.get('/index')
 async def root():
      return FileResponse('static/index.html', media_type="text/html")
 
@@ -166,6 +171,7 @@ async def root():
 async def guess(guess: Guess):
     CI = []
     CITY = guess.city
+    CITY = CITY.title()
     CITY = CITY.replace("Nad", "nad")
 
     db.execute("SELECT * FROM miasta where nazwa = ?", (CITY,))
