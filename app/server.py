@@ -26,6 +26,7 @@ info = []; infoH = []; infoM = []; infoE = []
 cityOTD_info = []; cityOTDH_info = []; cityOTDM_info = []; cityOTDE_info = []
 
 def getInfo():
+    global cityOTD_info, cityOTDH_info, cityOTDM_info, cityOTDE_info
     cityOTD_info = []; cityOTDH_info = []; cityOTDM_info = []; cityOTDE_info = []
 
     db.execute("SELECT * FROM miasta WHERE id = ?", (idOTD,))
@@ -304,7 +305,6 @@ async def guess(guess: Guess):
     if check:
         for i in range(1, 8):
             CI.append(check[i])
-
         pow, lud, arrP, arrL = rest(cityOTDE_info, CI)
         distance = distance_calc(cityOTDE_info[5], CI[5], cityOTDE_info[6], CI[6])
         angle = calculate_angle(cityOTDE_info[6], cityOTDE_info[5], CI[6], CI[5])
