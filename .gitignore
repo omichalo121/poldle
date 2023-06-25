@@ -1,3 +1,5 @@
 /server.py
 /static
 /tools
+/package-lock.json
+node_modules
