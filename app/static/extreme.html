@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html>
-
     <head>
         <title>Poldle - poziom extreme</title>
         <link href="static/style.css" type="text/css" rel="stylesheet">
@@ -9,6 +8,20 @@
     </head>
     <p></p>
     <body>
+        <li class="regLog" id="regLog">
+            <a href="/register"><p>Rejestracja</p></a>
+            <div>
+                <input class="input" id="username" name="username" required autocomplete="off" autofocus placeholder="Login" type="text">
+                <input class="input" id="password" name="password" required autofocus autocomplete="off" placeholder="Hasło" type="text">
+                <button class="button-59" role="button" disabled onclick="login()" id="login" name="login">Zaloguj się</button>
+            </div>
+        </li>
+        <li class="regLog" id="logoutButt">
+            <div>
+                <button class="button-59" role="button" onclick="logout()" id="logout" name="logout">Wyloguj się</button>
+            </div>
+        </li>
+        <div class="badLogin"><span id="badLogin"></span></div>
         <div class="titleEx">
             <a href="/index"><img src="static/icons/other/title_extreme.png" alt="Title"></a>
         </div>
@@ -265,6 +278,12 @@
 
     <script src="static/scripts/information.js"></script>
 
+    <script src="static/scripts/loginHandle.js"></script>
+
+    <script src="static/scripts/login.js"></script>
+
+    <script src="static/scripts/fetchToken.js"></script>
+
     <script>
         fetch('/country')
         .then(res => {
@@ -329,6 +348,8 @@
             return false;
         }
     </script>
+
+    <script src="static/scripts/logout.js"></script>
 
     <script src="static/scripts/win.js"></script>
 
