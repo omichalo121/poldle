@@ -3,6 +3,45 @@
     src: url('fonts/Oswald-VariableFont_wght.ttf') format('truetype');
 }
 
+.regLog {
+  display: none;
+  flex-direction: row;
+  gap: 1250px;
+  margin-left: 30px;
+  height: 40px;
+}
+
+.regLog a {
+  text-decoration: none;
+}
+
+
+.regLog p {
+  font-family: 'Oswald';
+  color: black;
+  font-size: 25px;
+  font-weight: 400;
+  margin-top: 1px;
+}
+
+.regLog input {
+    height: 42px;
+    border: 2px solid #000;
+    text-align: center;
+    margin-right: 5px;
+    font-family: 'Oswald';
+    font-size: 16px;
+    font-weight: 600;
+
+}
+
+.badLogin {
+  text-align: end;
+  font-family: 'Oswald';
+  font-size: 20px;
+  margin-right: 230px;
+  margin-top: 10px;
+}
 
 body {
     background-image: url('icons/other/background.png');
@@ -22,7 +61,7 @@ body {
     align-items: center;
     scale: 0.76;
     margin-bottom: 0px;
-    margin-top: -20px;
+    margin-top: -40px;
     margin-left: 100px;
 }
 
@@ -32,7 +71,7 @@ body {
   align-items: center;
   scale: 0.7;
   margin-bottom: 0px;
-  margin-top: -20px;
+  margin-top: -50px;
   margin-left: -50px;
 }
 
@@ -42,7 +81,7 @@ body {
   align-items: center;
   scale: 0.76;
   margin-bottom: 0px;
-  margin-top: -20px;
+  margin-top: -50px;
   margin-left: 65px;
 }
 
@@ -52,7 +91,7 @@ body {
   align-items: center;
   scale: 0.7;
   margin-bottom: 0px;
-  margin-top: -20px;
+  margin-top: -55px;
   margin-left: -65px;
 }
 

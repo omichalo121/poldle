@@ -4,7 +4,7 @@
 }
 
 .regLog {
-  display: flex;
+  display: none;
   flex-direction: row;
   gap: 1250px;
   margin-left: 30px;
