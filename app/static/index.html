@@ -27,14 +27,85 @@
             <img src="static/icons/other/title.png" alt="Title">
         </div>
         <div class="MainCont">
+            <div class="statsOTD">
+                <div><p style="font-size: 35px;">Statystyki dnia</p></div>
+                <div class="statsButtRow">
+                    <button class="button_all" onclick="stats('extreme')" id="extrStats" role="button"><p>Extreme</p></button>
+                    <button class="button_all" onclick="stats('hard')" id="hardStats" role="button"><p>Hard</p></button>
+                    <button class="button_all" onclick="stats('medium')" id="medStats" role="button"><p>Medium</p></button>
+                    <button class="button_all" onclick="stats('easy')" id="easyStats" role="button" style="border-style: solid none solid none; border-color: #000 transparent #000 transparent;"><p>Easy</p></button>
+                </div>
+                <div>
+                    <p style="font-size: 30px; margin-top: 5px;">Najszybsi zgadywacze dnia!</p>
+                    <p style="font-size: 26px;">1.<span id="1" style="font-size: 24px; margin-left: 0;"></span></p>
+                    <p style="font-size: 26px;">2.<span id="2" style="font-size: 24px; margin-left: 0;"></span></p>
+                    <p style="font-size: 26px;">3.<span id="3" style="font-size: 24px; margin-left: 0;"></span></p>
+                    <p style="font-size: 26px;">4.<span id="4" style="font-size: 24px; margin-left: 0;"></span></p>
+                    <p style="font-size: 26px;">5.<span id="5" style="font-size: 24px; margin-left: 0;"></span></p>
+                    <p style="font-size: 26px;">Tyle osób odgadło dzisiejsze miasto:</p>
+                    <p><span id="count" style="font-size: 30px; margin-left: 0;"></span></p>
+                    <p style="font-size: 26px;">Dzisiejsza średnia ilość prób: </p>
+                    <p><span id="avrg" style="font-size: 30px; margin-left: 0;"></span></p>
+                    <p style="font-size: 26px;">Wczorajszym miastem dnia było: </p>
+                    <p><span id="miasto" style="font-size: 30px; margin-left: 0;"></span></p>
+                </div>
+            </div>
             <div class="ButtonsContainer">
                 <table>
                     <tr><td><a id="extreme" href="/extreme" class="button-60" role="button">Miasto poniżej 10 tysięcy ludności</a></td></tr>
                     <tr><td><a id="hard" href="/hard" class="button-60" role="button">Miasto pomiędzy 10 a 40 tysięcy ludności</a></td></tr>
-                    <tr><td><a id="medium" href="/medium" class="button-60" role="button">Miasto od 40 tysięcy ludności</a></td></tr>
+                    <tr><td><a id="medium" href="/medium" class="button-60" role="button">Miasto pomiędzy 40 a 100 tysięcy ludności</a></td></tr>
                     <tr><td><a id="easy" href="/easy" class="button-60" role="button">Miasto od 100 tysięcy ludności</a></td></tr>
+                    <tr><td><a id="data" onclick="showInfo()" class="button-60" role="button" style="display: none">Twoje statystyki</a></td></tr>
                     <tr><td><a id="info" class="button-60" role="button">Informacje</a></td></tr>
                 </table>
+            </div>
+            <div class="statsOTD" id="statsUser" style="display: none">
+                <div><p style="font-size: 35px;">Twoje statystyki</p></div>
+                <div class="statsButtRow" style="height: 37px;">
+                    <button class="button_all" onclick="getUserStats('extreme')" id="extrUserStats" role="button" style="width: 150px;"><p>Extreme</p></button>
+                    <button class="button_all" onclick="getUserStats('hard')" id="hardUserStats" role="button" style="width: 150px;"><p>Hard</p></button>
+                    <button class="button_all" onclick="getUserStats('medium')" id="medUserStats" role="button" style="width: 150px;"><p>Medium</p></button>
+                    <button class="button_all" onclick="getUserStats('easy')" id="easyUserStats" role="button" style="width: 150px;"><p>Easy</p></button>
+                    <button class="button_all" onclick="getUserStats('user')" id="userStats" role="button" style="width: 150px; border-style: solid none solid none; border-color: #000 transparent #000 transparent;"><p>Ogólne</p></button>
+                </div>
+                <div>
+                    <p id="hehe" style="font-size: 26px; display: block;">Chcesz widzieć to się zarejestruj! :D</p>
+                    <div id="difficultyBlock" style="display: none">
+                        <p style="font-size: 26px;">Wykres twoich prób</p>
+                        <canvas id="userChart" width="550" height="250"></canvas>
+
+                        <p style="font-size: 26px;">Twój obecny winstreak:<span id="userWSN" style="font-size: 24px; margin-left: 0.25em;"></span></p>
+
+                        <p style="font-size: 26px;">Twój najwyższy winstreak:<span id="userWSB" style="font-size: 24px; margin-left: 0.25em;"></span></p>
+
+                        <p style="font-size: 26px;">Twoja dzisiejsza ilość prób:<span id="userTries" style="font-size: 24px; margin-left: 0.25em;"></span></p>
+
+                        <p style="font-size: 26px;">Twoja średnia ilość prób:<span id="userAVGTries" style="font-size: 24px; margin-left: 0.25em;"></span></p>
+
+                        <p style="font-size: 26px;">Twoje ulubione miasto:<span id="userFavCityDiff" style="font-size: 24px; margin-left: 0.25em;"></span></p>
+
+                    </div>
+                    <div id="userStatsBlock" style="display: none">
+                        <p style="font-size: 26px; border-style: none none solid none; border-color: transparent transparent #000 transparent; border-width: 0 0 2px 0;">Poziom łatwy</p>
+                        <p style="font-size: 26px;">Łącznie zgadłeś:<span id="totalE" style="font-size: 24px; margin-left: 0.5em;"></span><span style="margin-left: 0.25em;"></span>miast(a)</p>
+                        <p style="font-size: 26px;">Pojedyncze strzały:<span id="osE" style="font-size: 24px; margin-left: 0.5em;">5</span><span id="osE_per" style="font-size: 15px; margin-left: 1em; text-align: end;"></span></p>
+
+                        <p style="font-size: 26px; border-style: solid none solid none; border-color: #000 transparent #000 transparent; border-width: 2px 0 2px 0;">Poziom średni</p>
+                        <p style="font-size: 26px;">Łącznie zgadłeś:<span id="totalM" style="font-size: 24px; margin-left: 0.5em;"></span><span style="margin-left: 0.25em;"></span>miast(a)</p>
+                        <p style="font-size: 26px;">Pojedyncze strzały:<span id="osM" style="font-size: 24px; margin-left: 0.5em;"></span><span id="osM_per" style="font-size: 15px; margin-left: 1em; text-align: end;"></span></p>
+
+                        <p style="font-size: 26px; border-style: solid none solid none; border-color: #000 transparent #000 transparent; border-width: 2px 0 2px 0;">Poziom trudny</p>
+                        <p style="font-size: 26px;">Łącznie zgadłeś:<span id="totalH" style="font-size: 24px; margin-left: 0.5em;"></span><span style="margin-left: 0.25em;"></span>miast(a)</p>
+                        <p style="font-size: 26px;">Pojedyncze strzały:<span id="osH" style="font-size: 24px; margin-left: 0.5em;"></span><span id="osH_per" style="font-size: 15px; margin-left: 1em; text-align: end;"></span></p>
+
+                        <p style="font-size: 26px; border-style: solid none solid none; border-color: #000 transparent #000 transparent; border-width: 2px 0 2px 0;">Poziom extreme</p>
+                        <p style="font-size: 26px;">Łącznie zgadłeś:<span id="totalEX" style="font-size: 24px; margin-left: 0.5em;"></span><span style="margin-left: 0.25em;"></span>miast(a)</p>
+                        <p style="font-size: 26px;">Pojedyncze strzały:<span id="osEX" style="font-size: 24px; margin-left: 0.5em;"></span><span id="osEX_per" style="font-size: 15px; margin-left: 1em; text-align: end;"></span></p>
+
+                        <p style="font-size: 26px; border-style: solid none none none; border-color: #000 transparent transparent transparent; border-width: 2px 0 0 0;">Najczęściej sprawdzane miasto:<span id="userFavCity2" style="font-size: 24px; margin-left: 0.5em;"></span></p>
+                    </div>
+                </div>
             </div>
             <div id="information" class="info-block">
                 <div class="clueCont">
@@ -81,7 +152,7 @@
                     <div class="clueTitle">Poziomy trudności</div>
                     <P class="diffTitle">Gra zawiera 4 stopnie trudności:</P>
                     <p class="diff">Poziom łatwy - wybrane miasto ma powyżej 100 tysięcy ludności,</p>
-                    <p class="diff">Poziom średni - wybrane miasto ma powyżej 40 tysięcy ludności,</p>
+                    <p class="diff">Poziom średni - wybrane miasto ma pomiędzy 40 a 100 tysięcy ludności,</p>
                     <p class="diff">Poziom trudny - wybrane miasto ma pomiędzy 10 a 40 tysięcy ludności,</p>
                     <p class="diff">Poziom ekstremalny - wybrane miasto ma poniżej 10 tysięcy ludności</p>
                 </div>
@@ -99,8 +170,14 @@
                 </div>
             </div>
     </body>
+    <script src="static/scripts/indexFunc.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+
+    <script src="static/scripts/getStats.js"></script>
+
     <script src="static/scripts/fetchToken.js"></script>
-    
+
     <script src="static/scripts/loginHandle.js"></script>
 
     <script src="static/scripts/information.js"></script>

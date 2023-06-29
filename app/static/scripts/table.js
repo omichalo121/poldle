@@ -108,7 +108,7 @@ function tableScriptFunction(info) {
         table.appendChild(newRow);
 
         DL3.removeChild(optionName);
-        return;
+        return C;
     }
     else if(info[0] === true) {
         wayCell = document.createElement('td');
@@ -135,6 +135,6 @@ function tableScriptFunction(info) {
         table.appendChild(newRow);
 
         DL3.removeChild(optionName);
-        return;
+        return C;
     }
 };

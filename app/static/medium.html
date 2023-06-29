@@ -31,7 +31,7 @@
                 <table>
                     <tr><td><a id="extreme" href="/extreme" class="button-60" role="button">Miasto poniżej 10 tysięcy ludności</a></td></tr>
                     <tr><td><a id="hard" href="/hard" class="button-60" role="button">Miasto pomiędzy 10 a 40 tysięcy ludności</a></td></tr>
-                    <tr><td><a id="easy" href="/easy" class="button-60" role="button">Miasto od 100 tysięcy ludności</a></td></tr>
+                    <tr><td><a id="easy" href="/easy" class="button-60" role="button">Miasto powyżej 100 tysięcy ludności</a></td></tr>
                     <tr><td><button id="info" class="button-60" role="button">Informacje</button></td></tr>
                 </table>
             </div>
@@ -80,7 +80,7 @@
                     <div class="clueTitle">Poziomy trudności</div>
                     <P class="diffTitle">Gra zawiera 4 stopnie trudności:</P>
                     <p class="diff">Poziom łatwy - wybrane miasto ma powyżej 100 tysięcy ludności,</p>
-                    <p class="diff">Poziom średni - wybrane miasto ma powyżej 40 tysięcy ludności,</p>
+                    <p class="diff">Poziom średni - wybrane miasto ma pomiędzy 40 a 100 tysięcy ludności,</p>
                     <p class="diff">Poziom trudny - wybrane miasto ma pomiędzy 10 a 40 tysięcy ludności,</p>
                     <p class="diff">Poziom ekstremalny - wybrane miasto ma poniżej 10 tysięcy ludności</p>
                 </div>
@@ -265,6 +265,29 @@
             <button onclick="submit(); buttonDisableScriptFunction()" id="SB" class="button-59" role="button" disabled>Zatwierdź</button>
         </div>
     </body>
+    <script>
+        const WON = document.getElementById('SB');
+        const INP = document.getElementById('city');
+        fetch('/checkWon', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify('medium')
+        })
+        .then(res => {
+            res.json().then(response => {
+                if (response.won === 1) {
+                    WON.disabled = true;
+                    INP.disabled = true;
+                }
+                else {
+                    INP.disabled = false;
+                }
+            })
+        })
+    </script>
+
     <script src="static/scripts/buttonDisable.js"></script>
 
     <script src="static/scripts/handle-enter.js"> </script>
@@ -303,18 +326,38 @@
     </script>
 
     <script>
+        function giveWinningNumber(number) {
+            const difficulty = 'medium';
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/averageCount');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                console.log(xhr.responseText);
+                } else {
+                console.error('Request failed. Status:', xhr.status);
+                }
+            };
+
+            const data = JSON.stringify({ number: number, difficulty: difficulty });
+            xhr.send(data);
+        }
+
         let count = 0;
         let citiesGiven = [];
         const submit = () => {
             const cityInput = document.querySelector('#city');
             const city = document.querySelector('#city').value.split(',')[0];
-            fetch('/medium', {
+            fetch('/checkCity', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        city: city
+                        city: city,
+                        diff: 'medium'
                     })
                 })
                 .then(res => {
@@ -323,7 +366,8 @@
                             const info = [response.guessed, response.name];
                             count = tableClearScriptFunction(count);
                             circleWinScriptFunction(response.name)
-                            tableScriptFunction(info);
+                            const finalCount = tableScriptFunction(info);
+                            giveWinningNumber(finalCount);
                             winScriptFunction();
                             return;
                         }
@@ -332,17 +376,14 @@
                         }
                         if (!citiesGiven.includes(response.name)) {
                             citiesGiven.push(response.name)
-                            console.log(citiesGiven);
                             const info = [response.guessed, response.name, response.dir, response.distance, response.lud, response.pow, response.arrowP, response.arrowL, response.powDoTablicy, response.ludDoTablicy];
-                            console.log(info)
                             count = tableClearScriptFunction(count);
                             circleNormalScriptFunction(response.name)
-                            tableScriptFunction(info);
+                            const finalCount = tableScriptFunction(info);
                         }
                     })
                 })
                 .catch(err => {
-                    console.log('failed')
                     console.log(err)
                 })
             cityInput.value = '';
