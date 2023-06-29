@@ -5,7 +5,6 @@ fetch('/getToken')
     res.json().then(response => {
         if(response.logged === 1){
             logOut.style.display = 'flex';
-            console.log(response.logged);
         }
         else {
             regLog.style.display = 'flex'

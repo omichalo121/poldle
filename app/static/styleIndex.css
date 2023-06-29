@@ -3,6 +3,68 @@
     src: url('fonts/Oswald-VariableFont_wght.ttf') format('truetype');
 }
 
+.statsOTD {
+  display: flex;
+  width: 400px;
+  height: 612px;
+  border: 2px solid #000;
+  background-color: #fff;
+  margin-left: 100px;
+  flex-direction: column;
+}
+
+.statsOTD p {
+  display: flex;
+  font-family: 'Oswald';
+  font-size: 20px;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+p span {
+  margin-left: 0;
+}
+
+.statsButtRow {
+  display: flex;
+  flex-direction: row;
+  width: inherit;
+  height: 50px;
+}
+
+.button_all {
+  border-style: solid solid solid none;
+  border-color: #000 #000 #000 transparent;
+  width: 100px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.button_all:focus {
+  color: #171e29;
+}
+
+.button_all:hover {
+  color: #06f;
+  fill: #06f;
+  background-color: #ededed;
+}
+
+.button_all:active {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+
+
+
+
+
+
 .regLog {
   display: none;
   flex-direction: row;
@@ -40,6 +102,15 @@
   font-size: 20px;
   margin-right: 230px;
 }
+
+
+
+
+
+
+
+
+
 
 .button-59 {
   align-items: center;
@@ -114,8 +185,9 @@ body {
 .MainCont {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
+  margin-top: 50px;
 }
 
 .MapImage {
@@ -131,9 +203,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
   margin-right: 200px;
-  margin-left: 200px;
+  margin-left: 270px;
 }
 
 
@@ -176,6 +247,7 @@ body {
   background-color: #D3AF78;
   box-shadow: 30px 15px 4px 5px rgba(0, 0, 0, 0.1);
   font-family: 'Oswald', sans-serif;
+  margin-left: 270px;
 }
 
 .clueCont {
@@ -186,6 +258,7 @@ body {
   flex-direction: column;
   margin-left: 20px;
   width: 380px;
+  margin-top: 13px;
 }
 
 .clueCont2 {
@@ -196,6 +269,7 @@ body {
   flex-direction: column;
   margin-left: 20px;
   width: 500px;
+  margin-top: 13px;
 }
 
 .clueTitle {

@@ -235,6 +235,7 @@ body {
   flex-direction: column;
   margin-left: 20px;
   width: 380px;
+  margin-top: 13px;
 }
 
 .clueCont2 {
@@ -245,6 +246,7 @@ body {
   flex-direction: column;
   margin-left: 20px;
   width: 500px;
+  margin-top: 13px;
 }
 
 .clueIcon2 {

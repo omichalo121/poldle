@@ -1,20 +1,16 @@
-from fastapi import FastAPI, Response, Depends, HTTPException, status, Header
+from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.responses import FileResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from fastapi_sessions.backends.implementations import InMemoryBackend
-from fastapi_sessions.session_verifier import SessionVerifier
-from fastapi_sessions.frontends.implementations import SessionCookie, CookieParameters
+from fastapi.security import OAuth2PasswordBearer
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.responses import FileResponse
 from starlette.requests import Request
-import sqlite3, random, math, time, threading
+import sqlite3, random, math, time, threading, pytz, calendar
 from sqlite3.dbapi2 import *
 from pydantic import BaseModel
 from datetime import date, datetime, timedelta
 from jose import JWTError, jwt
 from passlib.context import CryptContext
-from typing import Annotated
 
 SECRET_KEY = "177c743305fc21a93dd66dd13d972723b26367b90cd603d9328b585cf43eb40a"
 ALGORITHM = "HS256"
@@ -25,6 +21,7 @@ class TokenGiven(BaseModel):
 
 class Guess(BaseModel):
     city: str
+    diff: str
 
 class Registration(BaseModel):
     username: str
@@ -60,25 +57,28 @@ pwd_context = CryptContext(schemes = ["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token", scheme_name="JWT")
 
 app = FastAPI()
-app.add_middleware(SessionMiddleware, secret_key="your-secret-key")
+app.add_middleware(SessionMiddleware, secret_key=SECRET_KEY, session_cookie='PoldleCookie')
 app.mount("/static", StaticFiles(directory="static"), name="static")
-
 
 idOTD = random.randint(393, 979)
 idOTD_HARD = random.randint(109, 392)
-idOTD_MEDIUM = random.randint(1, 108)
+idOTD_MEDIUM = random.randint(38, 108)
 idOTD_EASY = random.randint(1, 37)
-today = date.today()
+
+timezone = pytz.timezone('Europe/Warsaw')
+today = datetime.now(timezone)
+today = today.date()
 dayToday = today.day
 todayInsert = today.strftime("%d/%m/%Y")
 
 # Wybierz random miasto dnia
 info = []; infoH = []; infoM = []; infoE = []
-cityOTD_info = []; cityOTDH_info = []; cityOTDM_info = []; cityOTDE_info = []
+cityOTD_extreme_info = []; cityOTD_hard_info = []; cityOTD_medium_info = []; cityOTD_easy_info = []
+cityOYD = []; cityOYDH = []; cityOYDM = []; cityOYDE = []
 
 def getInfo(db):
-    global cityOTD_info, cityOTDH_info, cityOTDM_info, cityOTDE_info
-    cityOTD_info = []; cityOTDH_info = []; cityOTDM_info = []; cityOTDE_info = []
+    global cityOTD_extreme_info, cityOTD_hard_info, cityOTD_medium_info, cityOTD_easy_info
+    cityOTD_extreme_info = []; cityOTD_hard_info = []; cityOTD_medium_info = []; cityOTD_easy_info = []
 
     db.execute("SELECT * FROM miasta WHERE id = ?", (idOTD,))
     info = db.fetchone()
@@ -91,43 +91,225 @@ def getInfo(db):
 
 
     for i in range(1, 8):
-        cityOTD_info.append(info[i])
+        cityOTD_extreme_info.append(info[i])
 
     for i in range(1, 8):
-        cityOTDH_info.append(infoH[i])
+        cityOTD_hard_info.append(infoH[i])
 
     for i in range(1, 8):
-        cityOTDM_info.append(infoM[i])
+        cityOTD_medium_info.append(infoM[i])
 
     for i in range(1, 8):
-        cityOTDE_info.append(infoE[i])
+        cityOTD_easy_info.append(infoE[i])
 
-    print(cityOTD_info)
-    print(cityOTDH_info)
-    print(cityOTDM_info)
-    print(cityOTDE_info)
+    print(cityOTD_extreme_info)
+    print(cityOTD_hard_info)
+    print(cityOTD_medium_info)
+    print(cityOTD_easy_info)
 
 getInfo(db)
 
-def changeNumbers():
+def changeDay():
     global idOTD, idOTD_HARD, idOTD_MEDIUM, idOTD_EASY
-
+    global cityOYD, cityOYDH, cityOYDM, cityOYDE
     while True:
         tomorrow = date.today()
         dayTomorrow = tomorrow.day
         if dayToday != dayTomorrow:
+            cityOYD = []; cityOYDH = []; cityOYDM = []; cityOYDE = []
+            cityOYD.append(cityOTD_extreme_info[0])
+            cityOYDH.append(cityOTD_hard_info[0])
+            cityOYDM.append(cityOTD_medium_info[0])
+            cityOYDE.append(cityOTD_easy_info[0])
+
             cx = sqlite3.connect('data.db')
             db = cx.cursor()
-            print('it works')
+
+            db.execute('UPDATE infoOTD SET sum_of_tries = 0, winnersCount  = 0, averageTry  = 0, `1st` = NULL, `2nd` = NULL, `3rd` = NULL, `4th` = NULL, `5th` = NULL')
+            db.connection.commit()
+
+            db.execute('SELECT id from user_data ORDER BY id DESC LIMIT 1')
+            max = db.fetchone()
+            if dayToday == 1:
+                c = 1
+                while c != max:
+                        db.execute('SELECT * from user_data WHERE id = ?', (c,))
+                        check = db.fetchone()
+                        if check is not None:
+                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('easy', c))
+                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('medium', c))
+                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('hard', c))
+                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('extreme', c))
+                            db.connection.commit()
+                            c += 1
+                        else:
+                            c += 1
+
+            c2 = 1
+            while c2 != max:
+                db.execute('SELECT * from user_data WHERE id = ?', (c2,))
+                check = db.fetchone()
+                if check is not None:
+                    db.execute('UPDATE userIndividual SET todayTries = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('easy', c2))
+                    db.execute('UPDATE userIndividual SET todayTries = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('medium', c2))
+                    db.execute('UPDATE userIndividual SET todayTries = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('hard', c2))
+                    db.execute('UPDATE userIndividual SET todayTries = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('extreme', c2))
+                    db.connection.commit()
+
+                    difficulties = ['easy', 'medium', 'hard', 'extreme']
+                    for i in range(0, 3):
+                        db.execute('SELECT winstreakNow, winstreakYest FROM userIndividual WHERE difficulty = ? COLLATE BINARY AND id = ?', (difficulties[i], c2))
+                        (tod, yes) = db.fetchone()
+
+                        if tod == yes:
+                            db.execute('UPDATE userIndividual SET winstreakNow = 0, winstreakYest = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', (difficulties[i], c2))
+                            db.connection.commit()
+                        else:
+                            db.execute('UPDATE userIndividual SET winstreakYest = ? WHERE difficulty = ? COLLATE BINARY AND id = ?', (tod, difficulties[i], c2))
+                            db.connection.commit()
+
+                    c2 += 1
+                else:
+                    c2 += 1
+
             idOTD = random.randint(393, 979)
             idOTD_HARD = random.randint(109, 392)
-            idOTD_MEDIUM = random.randint(1, 108)
+            idOTD_MEDIUM = random.randint(38, 108)
             idOTD_EASY = random.randint(1, 37)
             getInfo(db)
         time.sleep(180)
 
-thread = threading.Thread(target=changeNumbers)
+thread = threading.Thread(target=changeDay)
 thread.start()
+
+def tableUpdater(number, difficulty, user):
+
+    db.execute('SELECT sum_of_tries, winnersCount FROM infoOTD WHERE difficulty = ? COLLATE BINARY', (difficulty,))
+    data = db.fetchone()
+    (tries, people) = data
+    tries += number
+    people += 1
+    countDays = 0
+    numberSum = 0
+    average = round((tries / people), 1)
+    db.execute('UPDATE infoOTD SET sum_of_tries = ?, winnersCount = ?, averageTry = ? WHERE difficulty = ? COLLATE BINARY', (tries, people, average, difficulty))
+    db.connection.commit()
+
+    if user != 'noUser':
+        db.execute(f'UPDATE userIndividual SET `{dayToday}` = ? WHERE difficulty = ? COLLATE BINARY AND id = (SELECT id FROM user_data WHERE username = ? COLLATE BINARY)', (number, difficulty, user))
+        db.connection.commit()
+
+        db.execute('SELECT `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31` FROM userIndividual WHERE difficulty = ? COLLATE BINARY AND id = (SELECT id FROM user_data WHERE username = ?)', (difficulty, user))
+        average = db.fetchone()
+        average = list(average)
+        for i in range(len(average)):
+            if average[i] != 'NULL' or average[i] == 0:
+                countDays += 1
+                numberSum += int(average[i])
+
+        averageFinal = round((numberSum / countDays), 2)
+        db.execute('UPDATE userIndividual SET averageTries = ? WHERE difficulty = ? AND id = (SELECT id FROM user_data WHERE username = ? COLLATE BINARY)', (averageFinal, difficulty, user))
+        db.connection.commit()
+
+        db.execute('SELECT guessed, winstreakNow, winstreakBest, oneshotTries FROM userIndividual WHERE difficulty = ? COLLATE BINARY and id = (SELECT id FROM user_data WHERE username = ? COLLATE BINARY)', (difficulty, user))
+        numbers = db.fetchone()
+        (guessed, wsNow, wsBest, oneshotTry) = numbers
+        guessed += 1
+        wsNow += 1
+
+        if wsBest < wsNow:
+            wsBest = wsNow
+
+        if number == 1:
+            oneshotTry += 1
+
+        db.execute(f'UPDATE userIndividual SET `{dayToday}` = ?, guessed = ?, winstreakNow = ?, winstreakBest = ?, todayTries = ?, oneshotTries = ? WHERE difficulty = ? COLLATE BINARY and id = (SELECT id FROM user_data WHERE username = ? COLLATE BINARY)', (number, guessed, wsNow, wsBest, number, oneshotTry, difficulty, user))
+        db.connection.commit()
+
+        db.execute('SELECT `1st`, `2nd`, `3rd`, `4th`, `5th` FROM infoOTD WHERE difficulty = ? COLLATE BINARY', (difficulty,))
+        podium = db.fetchone()
+        columns = ['1st', '2nd', '3rd', '4th', '5th']
+        for i in range(len(podium)):
+            if podium[i] == user:
+                return
+            elif not podium[i]:
+                column = columns[i]
+                db.execute(f'UPDATE infoOTD SET `{column}` = ? WHERE difficulty = ? COLLATE BINARY', (user, difficulty))
+                db.connection.commit()
+                return
+    return
+
+def addToFavCity(city, powiat, difficulty, user):
+
+    db.execute('SELECT count from userFavCity WHERE city = ? AND powiat = ? AND difficulty = ? COLLATE BINARY AND id = (SELECT id from user_data WHERE username = ?)', (city, powiat, difficulty, user))
+    count = db.fetchone()
+    if count is not None:
+        count = list(count)[0]
+        count += 1
+        db.execute('UPDATE userFavCity SET count = ? WHERE city = ? AND powiat = ? AND difficulty = ? COLLATE BINARY AND id = (SELECT id from user_data WHERE username = ?)', (count, city, powiat, difficulty, user))
+        db.connection.commit()
+    else:
+        db.execute('SELECT id from user_data where username = ?', (user,))
+        id = list(db.fetchone())[0]
+        db.execute('INSERT INTO userFavCity (id, difficulty, city, powiat, count) VALUES (?, ?, ?, ?, ?)', (id, difficulty, city, powiat, 1))
+        db.connection.commit()
+
+    return
+
+def getChart(difficulty, user):
+
+    db.execute('SELECT `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31` FROM userIndividual WHERE difficulty = ? COLLATE BINARY AND id = (SELECT id FROM user_data WHERE username = ?)', (difficulty, user))
+    info = db.fetchone()
+
+    column_names = [description[0] for description in db.description]
+    infoGot = dict(zip(column_names, info))
+
+    keys = list(infoGot.keys())
+    month = int(today.month)
+    year = int(today.year)
+    _, length = calendar.monthrange(year, month)
+
+    infoNew = {}
+    Cx = 0
+
+    for i in range(length):
+        if month >= 10:
+            keys[i] = f'{keys[i]}/{month}'
+        else:
+            keys[i] = f'{keys[i]}/0{month}'
+
+    for items in infoGot.items():
+        if items[1] == 'NULL':
+            value = 0
+        else:
+            value = items[1]
+
+        new_key = keys[Cx]
+        infoNew[new_key] = value
+        Cx += 1
+
+    difference = 31 - length
+    for i in range(difference):
+        del infoNew[f'{31 - i}']
+
+    labels = list(infoNew.keys())
+    values = list(infoNew.values())
+
+    first_number = next((index for index, num in enumerate(values) if num != 0), None)
+    last_number = next((index for index, num in enumerate(values[::-1]) if num != 0), None)
+    if first_number and last_number:
+        last_number = length - last_number
+        turnOff = 0
+        print(values)
+        print(first_number, last_number)
+        print(values[first_number:last_number+1], labels[first_number:])
+        return values[first_number:last_number+1], labels[first_number:], turnOff
+    else:
+        turnOff = 1
+        todday = 1
+        print(values[first_number:last_number], labels[todday-1:])
+        return values[first_number:last_number], labels[todday-1:], turnOff
+
 
 def distance_calc(longDAY, longGIVEN, latDAY, latGIVEN):
 
@@ -201,7 +383,7 @@ def getPasswordHash(password):
     return pwd_context.hash(password)
 
 def getUser(username: str):
-    db.execute('SELECT * FROM user_data WHERE username = ?', (username,))
+    db.execute('SELECT * FROM user_data WHERE username = ? COLLATE BINARY', (username,))
     logged = db.fetchone()
     if logged:
         column_names = [description[0] for description in db.description]
@@ -264,7 +446,7 @@ async def loginForAccessToken(login: Login, request: Request):
     accessTokenExpires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTE)
     accessToken = createAccessToken(data={"sub1": user.username, "sub2": user.permission}, expiresDelta=accessTokenExpires)
 
-    db.execute('UPDATE user_data SET activity = ? WHERE username = ?', (todayInsert, user.username))
+    db.execute('UPDATE user_data SET activity = ? WHERE username = ? COLLATE BINARY', (todayInsert, user.username))
     db.connection.commit()
 
     request.session['token'] = accessToken
@@ -272,8 +454,11 @@ async def loginForAccessToken(login: Login, request: Request):
     return {"access_token": accessToken, "token_type": "bearer"}
 
 @app.get('/register')
-async def register():
-    return FileResponse('static/register.html', media_type="text/html")
+async def register(request: Request):
+    if 'token' in request.session:
+        return RedirectResponse(url="/")
+    else:
+        return FileResponse('static/register.html', media_type="text/html")
 
 @app.post('/register')
 async def reg(register: Registration):
@@ -293,10 +478,17 @@ async def reg(register: Registration):
     elif not exists:
         db.execute('SELECT id FROM user_data ORDER BY id DESC LIMIT 1;')
         fetchNumber = db.fetchone()
-        (maxId,) = fetchNumber
-        maxId += 1
+        if fetchNumber is not None:
+            (maxId,) = fetchNumber
+            maxId += 1
+        else:
+            maxId = 1
 
         db.execute('INSERT INTO user_data (id, username, password, permission, created) VALUES (?, ?, ?, ?, ?)', (maxId, user, passw, 0, todayInsert))
+        db.execute('INSERT INTO userIndividual (id, difficulty, guessed, winstreakNow, winstreakBest, todayTries, averageTries, oneshotTries, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, winstreakYest, won) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (maxId, 'easy', 0, 0, 0, 0, 0, 0, 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 0, 0))
+        db.execute('INSERT INTO userIndividual (id, difficulty, guessed, winstreakNow, winstreakBest, todayTries, averageTries, oneshotTries, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, winstreakYest, won) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (maxId, 'medium', 0, 0, 0, 0, 0, 0, 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 0, 0))
+        db.execute('INSERT INTO userIndividual (id, difficulty, guessed, winstreakNow, winstreakBest, todayTries, averageTries, oneshotTries, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, winstreakYest, won) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (maxId, 'hard', 0, 0, 0, 0, 0, 0, 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 0, 0))
+        db.execute('INSERT INTO userIndividual (id, difficulty, guessed, winstreakNow, winstreakBest, todayTries, averageTries, oneshotTries, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, winstreakYest, won) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (maxId, 'extreme', 0, 0, 0, 0, 0, 0, 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 0, 0))
         db.connection.commit()
 
     return JSONResponse(
@@ -330,146 +522,57 @@ async def css():
 async def root():
     return FileResponse('static/index.html', media_type="text/html")
 
-@app.post('/extreme')
-async def guess(guess: Guess):
+@app.post('/checkCity')
+async def guess(guess: Guess, request: Request):
     CI = []
+    diff = guess.diff
+    name = f"cityOTD_{diff}_info"
+    cityOTD_info = globals().get(name)
     CITY = guess.city
     CITY = CITY.title()
     CITY = CITY.replace("Nad", "nad")
+    session = request.session
+
+    if 'token' in request.session:
+        token = request.session.get('token')
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        username = payload.get("sub1")
+        if not username:
+            return
+        else:
+            db.execute('SELECT won FROM userIndividual WHERE difficulty = ? COLLATE BINARY AND id = (SELECT id from user_data WHERE username = ?)', (diff, username))
+            (wonCheck,) = db.fetchone()
+    else:
+        wonCheck = 0
+
+    if session.get(f"won_game_{diff}", False) and 'token' not in request.session or wonCheck == 1:
+        return JSONResponse(
+            content={
+                'success': False
+            }
+        )
 
     db.execute("SELECT * FROM miasta where nazwa = ?", (CITY,))
     check = db.fetchone()
     if check:
         for i in range(1, 8):
             CI.append(check[i])
+
+        if 'token' in request.session:
+            if username:
+                powiat = check[2]
+                addToFavCity(CITY, powiat, diff, username)
 
         pow, lud, arrP, arrL = rest(cityOTD_info, CI)
         distance = distance_calc(cityOTD_info[5], CI[5], cityOTD_info[6], CI[6])
         angle = calculate_angle(cityOTD_info[6], cityOTD_info[5], CI[6], CI[5])
         dir = angle_to_direction(angle)
 
-        return JSONResponse(
-            content={
-                'name': CITY,
-                'success': True,
-                'dir': dir,
-                'distance': distance,
-                'pow': pow,
-                'lud': lud,
-                'guessed': distance == 0,
-                'arrowP': arrP,
-                'arrowL': arrL,
-                'powDoTablicy': CI[4],
-                'ludDoTablicy': CI[3]
-            }
-        )
-    else:
-        return JSONResponse(
-            content={
-                'success': False
-            }
-        )
-
-@app.post('/hard')
-async def guess(guess: Guess):
-    CI = []
-    CITY = guess.city
-    CITY = CITY.title()
-    CITY = CITY.replace("Nad", "nad")
-
-    db.execute("SELECT * FROM miasta where nazwa = ?", (CITY,))
-    check = db.fetchone()
-    if check:
-        for i in range(1, 8):
-            CI.append(check[i])
-
-        pow, lud, arrP, arrL = rest(cityOTDH_info, CI)
-        distance = distance_calc(cityOTDH_info[5], CI[5], cityOTDH_info[6], CI[6])
-        angle = calculate_angle(cityOTDH_info[6], cityOTDH_info[5], CI[6], CI[5])
-        dir = angle_to_direction(angle)
-
-        return JSONResponse(
-            content={
-                'name': CITY,
-                'success': True,
-                'dir': dir,
-                'distance': distance,
-                'pow': pow,
-                'lud': lud,
-                'guessed': distance == 0,
-                'arrowP': arrP,
-                'arrowL': arrL,
-                'powDoTablicy': CI[4],
-                'ludDoTablicy': CI[3]
-            }
-        )
-    else:
-        return JSONResponse(
-            content={
-                'success': False
-            }
-        )
-
-
-
-@app.post('/medium')
-async def guess(guess: Guess):
-    CI = []
-    CITY = guess.city
-    CITY = CITY.title()
-    CITY = CITY.replace("Nad", "nad")
-
-    db.execute("SELECT * FROM miasta where nazwa = ?", (CITY,))
-    check = db.fetchone()
-    if check:
-        for i in range(1, 8):
-            CI.append(check[i])
-
-        pow, lud, arrP, arrL = rest(cityOTDM_info, CI)
-        distance = distance_calc(cityOTDM_info[5], CI[5], cityOTDM_info[6], CI[6])
-        angle = calculate_angle(cityOTDM_info[6], cityOTDM_info[5], CI[6], CI[5])
-        dir = angle_to_direction(angle)
-
-        return JSONResponse(
-            content={
-                'name': CITY,
-                'success': True,
-                'dir': dir,
-                'distance': distance,
-                'pow': pow,
-                'lud': lud,
-                'guessed': distance == 0,
-                'arrowP': arrP,
-                'arrowL': arrL,
-                'powDoTablicy': CI[4],
-                'ludDoTablicy': CI[3]
-            }
-        )
-    else:
-        return JSONResponse(
-            content={
-                'success': False
-            }
-        )
-
-
-@app.post('/easy')
-async def guess(guess: Guess):
-    CI = []
-    CITY = guess.city
-    CITY = CITY.title()
-    CITY = CITY.replace("Nad", "nad")
-
-    db.execute("SELECT * FROM miasta where nazwa = ?", (CITY,))
-    check = db.fetchone()
-    if check:
-        for i in range(1, 8):
-            CI.append(check[i])
-
-        pow, lud, arrP, arrL = rest(cityOTDE_info, CI)
-        distance = distance_calc(cityOTDE_info[5], CI[5], cityOTDE_info[6], CI[6])
-        angle = calculate_angle(cityOTDE_info[6], cityOTDE_info[5], CI[6], CI[5])
-        dir = angle_to_direction(angle)
+        if distance == 0 and 'token' in request.session:
+            db.execute('UPDATE userIndividual SET won = ? WHERE difficulty = ? AND id = (SELECT id FROM user_data WHERE username = ?)', (1, diff, username))
+            db.connection.commit()
+        elif distance == 0 and 'token' not in request.session:
+            session[f"won_game_{diff}"] = True
 
         return JSONResponse(
             content={
@@ -549,8 +652,181 @@ async def del_ses(request: Request):
 
     return RedirectResponse(url="/")
 
+@app.post("/averageCount")
+async def countAVRG(request: Request):
+    data = await request.json()
+    number = data.get('number')
+    difficulty = data.get('difficulty')
+
+    if request.session.get('token'):
+        token = request.session.get('token')
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        username: str = payload.get("sub1")
+        if not username:
+            username = 'noUser'
+    else:
+        username = 'noUser'
+
+    tableUpdater(number, difficulty, username)
+    return
+
+@app.post("/getStats")
+async def getStats(request: Request):
+    difficulty = await request.json()
+
+    if difficulty == 'easy':
+        city = cityOYDE
+    elif difficulty == 'medium':
+        city = cityOYDM
+    elif difficulty == 'hard':
+        city = cityOYDH
+    else:
+        city = cityOYD
+
+    db.execute('SELECT winnersCount, averageTry, `1st`, `2nd`, `3rd`, `4th`, `5th` FROM infoOTD WHERE difficulty = ? COLLATE BINARY', (difficulty,))
+    data = db.fetchone()
+    (sumOfTries, averageTry) = data[0:2]
+    countDel = 0
+    data = list(data)
+    for i in reversed(range(len(data))):
+        if not data[i]:
+            countDel += 1
+            del data[i]
+
+    data = tuple(data)
+    winners = data[2:7 - countDel]
+
+    return JSONResponse(
+        content={
+            'tries': sumOfTries,
+            'average': averageTry,
+            'miasto': city,
+            'winners': winners
+        }
+    )
+
+@app.post("/userStats")
+async def getUserStats(request: Request):
+    difficulty = await request.json()
+
+    if 'token' not in request.session:
+        return
+    else:
+        token = request.session.get('token')
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        username = payload.get("sub1")
+        if not username:
+            return
+
+    if difficulty == 'user':
+        db.execute('SELECT guessed, oneshotTries FROM userIndividual WHERE id = (SELECT id from user_data WHERE username = ? COLLATE BINARY)', (username,))
+        (easyU, mediumU, hardU, extremeU) = db.fetchall()
+
+        easyU = list(easyU)
+        if easyU[1] != 0:
+            percentE = round(((easyU[1] / easyU[0]) * 100), 1)
+            easyU.append(f'({percentE}% wszystkich strzałów)')
+        else:
+            easyU.append('(Jeszcze ci się nie udało!)')
+
+        mediumU = list(mediumU)
+        if mediumU[1] != 0:
+            percentM = round(((mediumU[1] / mediumU[0]) * 100), 1)
+            mediumU.append(f'({percentM}% wszystkich strzałów)')
+        else:
+            mediumU.append('(Jeszcze ci się nie udało!)')
+
+        hardU = list(hardU)
+        if hardU[1] != 0:
+            percentH = round(((hardU[1] / hardU[0]) * 100), 1)
+            hardU.append(f'({percentH}% wszystkich strzałów)')
+        else:
+            hardU.append('(Jeszcze ci się nie udało!)')
+
+        extremeU = list(extremeU)
+        if extremeU[1] != 0:
+            percentEX = round(((extremeU[1] / extremeU[0]) * 100), 1)
+            extremeU.append(f'({percentEX}% wszystkich strzałów)')
+        else:
+            extremeU.append('(Jeszcze ci się nie udało!)')
+
+        db.execute('SELECT city FROM userFavCity WHERE id = (SELECT id from user_data WHERE username = ? COLLATE BINARY) ORDER BY count DESC LIMIT 1', (username,))
+        city = db.fetchone()
+        if city is not None:
+            (city,) = city
+        else:
+            city = 'Odziwo jeszcze nie masz!'
+
+        return JSONResponse(
+            content= {
+                'easy': easyU,
+                'medium': mediumU,
+                'hard': hardU,
+                'extreme': extremeU,
+                'city': city
+            }
+        )
+    else:
+        db.execute('SELECT winstreakNow, winstreakBest, todayTries, averageTries from userIndividual WHERE difficulty = ? COLLATE BINARY AND id = (SELECT id from user_data WHERE username = ?)', (difficulty, username))
+        (wsNow, wsBest, todayT, avgT) = db.fetchone()
+
+        db.execute('SELECT city FROM userFavCity where difficulty = ? COLLATE BINARY AND id = (SELECT id from user_data WHERE username = ?)', (difficulty, username))
+        cityUser = db.fetchone()
+        if cityUser is not None:
+            (cityUser,) = cityUser
+        else:
+            cityUser = 'Jeszcze nie ma!'
+
+        (values, labels, turnOff) = getChart(difficulty, username)
+
+        return JSONResponse(
+            content={
+                'wsNow': wsNow,
+                'wsBest': wsBest,
+                'todayT': todayT,
+                'avgT': avgT,
+                'city': cityUser,
+                'values': values,
+                'labels': labels,
+                'turnOff': turnOff
+            }
+        )
+
+@app.post("/checkWon")
+async def checkIfWon(request: Request):
+    diff = await request.json()
+    session = request.session
+
+    if 'token' in request.session:
+        token = request.session.get('token')
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        username = payload.get("sub1")
+        if not username:
+            return
+        else:
+            db.execute('SELECT won FROM userIndividual WHERE difficulty = ? COLLATE BINARY AND id = (SELECT id from user_data WHERE username = ?)', (diff, username))
+            (wonCheck,) = db.fetchone()
+    else:
+        wonCheck = 0
+
+    tomorrow = date.today()
+    dayTomorrow = tomorrow.day
+    if dayTomorrow != dayToday:
+        session[f"won_game_{diff}"] = False
+
+    if session.get(f"won_game_{diff}", False) and 'token' not in request.session or wonCheck == 1:
+        won = 1
+    else:
+        won = 0
+    return JSONResponse(
+        content={
+            'won': won
+        }
+    )
+
 @app.middleware("http")
 async def addCacheControlHeader(request: Request, call_next):
+
     response = await call_next(request)
     response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
     return response
