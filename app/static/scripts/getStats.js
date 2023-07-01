@@ -21,7 +21,7 @@ function stats(difficulty) {
 
         const first = document.getElementById('1');
         first.textContent = winners[0];
-        if (winners.length > 0 && winners[0] !== undefined) {
+        if (winners.length > 0 && winners[0] !== null) {
             first.style.marginLeft = '0.5em';
         }
         else {
@@ -29,7 +29,7 @@ function stats(difficulty) {
         }
         const second = document.getElementById('2');
         second.textContent = winners[1];
-        if (winners.length > 0 && winners[1] !== undefined) {
+        if (winners.length > 0 && winners[1] !== null) {
             second.style.marginLeft = '0.5em';
         }
         else {
@@ -37,7 +37,7 @@ function stats(difficulty) {
         }
         const third = document.getElementById('3');
         third.textContent = winners[2];
-        if (winners.length > 0 && winners[2] !== undefined) {
+        if (winners.length > 0 && winners[2] !== null) {
             console.log(winners[2])
             third.style.marginLeft = '0.5em';
         }
@@ -46,7 +46,7 @@ function stats(difficulty) {
         }
         const fourth = document.getElementById('4');
         fourth.textContent = winners[3];
-        if (winners.length > 0 && winners[3] !== undefined) {
+        if (winners.length > 0 && winners[3] !== null) {
             fourth.style.marginLeft = '0.5em';
         }
         else {
@@ -54,7 +54,7 @@ function stats(difficulty) {
         }
         const fifth = document.getElementById('5');
         fifth.textContent = winners[4];
-        if (winners.length > 0 && winners[4] !== undefined) {
+        if (winners.length > 0 && winners[4] !== null) {
             fifth.style.marginLeft = '0.5em';
         }
         else {
@@ -150,12 +150,27 @@ function getUserStats(difficulty) {
                           colorV = '#4c8d53';
                           fillV = false;
                         }
+                        console.log(dataMain.labels)
+                        console.log(dataMain.values)
+
+                        const values = dataMain.values;
+                        const labels = dataMain.labels;
+                        const filteredValues = [];
+                        const filteredLabels = [];
+
+                        for (let i = 0; i < values.length; i++) {
+                          const value = values[i];
+                          if (value !== null && value !== 0) {
+                            filteredValues.push(value);
+                            filteredLabels.push(labels[i]);
+                          }
+                        }
 
                         const data = {
-                          labels: dataMain.labels,
+                          labels: filteredLabels,
                           datasets: [{
                             label: 'Liczba prób na grę',
-                            data: dataMain.values,
+                            data: filteredValues,
                             borderColor: colorV,
                             fill: fillV,
                             tension: 0.4

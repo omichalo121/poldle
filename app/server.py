@@ -67,6 +67,7 @@ idOTD_EASY = random.randint(1, 37)
 
 timezone = pytz.timezone('Europe/Warsaw')
 today = datetime.now(timezone)
+
 today = today.date()
 dayToday = today.day
 todayInsert = today.strftime("%d/%m/%Y")
@@ -112,8 +113,10 @@ getInfo(db)
 def changeDay():
     global idOTD, idOTD_HARD, idOTD_MEDIUM, idOTD_EASY
     global cityOYD, cityOYDH, cityOYDM, cityOYDE
+    global dayToday
     while True:
-        tomorrow = date.today()
+        tomorrow = datetime.now(timezone)
+        tomorrow = tomorrow.date()
         dayTomorrow = tomorrow.day
         if dayToday != dayTomorrow:
             cityOYD = []; cityOYDH = []; cityOYDM = []; cityOYDE = []
@@ -122,6 +125,8 @@ def changeDay():
             cityOYDM.append(cityOTD_medium_info[0])
             cityOYDE.append(cityOTD_easy_info[0])
 
+            dayToday=dayTomorrow
+
             cx = sqlite3.connect('data.db')
             db = cx.cursor()
 
@@ -129,54 +134,56 @@ def changeDay():
             db.connection.commit()
 
             db.execute('SELECT id from user_data ORDER BY id DESC LIMIT 1')
-            max = db.fetchone()
+            (max,) = db.fetchone()
+
             if dayToday == 1:
                 c = 1
                 while c != max:
                         db.execute('SELECT * from user_data WHERE id = ?', (c,))
                         check = db.fetchone()
                         if check is not None:
-                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('easy', c))
-                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('medium', c))
-                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('hard', c))
-                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('extreme', c))
+                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL WHERE difficulty = ? COLLATE BINARY AND id = ?', ('easy', c))
+                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL WHERE difficulty = ? COLLATE BINARY AND id = ?', ('medium', c))
+                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL WHERE difficulty = ? COLLATE BINARY AND id = ?', ('hard', c))
+                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL WHERE difficulty = ? COLLATE BINARY AND id = ?', ('extreme', c))
                             db.connection.commit()
                             c += 1
                         else:
                             c += 1
 
-            c2 = 1
-            while c2 != max:
-                db.execute('SELECT * from user_data WHERE id = ?', (c2,))
+            c = 1
+            while c != max:
+                db.execute('SELECT * from user_data WHERE id = ?', (c,))
                 check = db.fetchone()
                 if check is not None:
-                    db.execute('UPDATE userIndividual SET todayTries = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('easy', c2))
-                    db.execute('UPDATE userIndividual SET todayTries = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('medium', c2))
-                    db.execute('UPDATE userIndividual SET todayTries = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('hard', c2))
-                    db.execute('UPDATE userIndividual SET todayTries = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('extreme', c2))
+                    db.execute('UPDATE userIndividual SET todayTries = 0, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('easy', c))
+                    db.execute('UPDATE userIndividual SET todayTries = 0, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('medium', c))
+                    db.execute('UPDATE userIndividual SET todayTries = 0, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('hard', c))
+                    db.execute('UPDATE userIndividual SET todayTries = 0, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('extreme', c))
                     db.connection.commit()
 
                     difficulties = ['easy', 'medium', 'hard', 'extreme']
-                    for i in range(0, 3):
-                        db.execute('SELECT winstreakNow, winstreakYest FROM userIndividual WHERE difficulty = ? COLLATE BINARY AND id = ?', (difficulties[i], c2))
+                    for i in range(0, 4):
+                        db.execute('SELECT winstreakNow, winstreakYest FROM userIndividual WHERE difficulty = ? COLLATE BINARY AND id = ?', (difficulties[i], c))
                         (tod, yes) = db.fetchone()
 
                         if tod == yes:
-                            db.execute('UPDATE userIndividual SET winstreakNow = 0, winstreakYest = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', (difficulties[i], c2))
+                            db.execute('UPDATE userIndividual SET winstreakNow = 0, winstreakYest = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', (difficulties[i], c))
                             db.connection.commit()
                         else:
-                            db.execute('UPDATE userIndividual SET winstreakYest = ? WHERE difficulty = ? COLLATE BINARY AND id = ?', (tod, difficulties[i], c2))
+                            db.execute('UPDATE userIndividual SET winstreakYest = ? WHERE difficulty = ? COLLATE BINARY AND id = ?', (tod, difficulties[i], c))
                             db.connection.commit()
 
-                    c2 += 1
+                    c += 1
                 else:
-                    c2 += 1
+                    c += 1
 
             idOTD = random.randint(393, 979)
             idOTD_HARD = random.randint(109, 392)
             idOTD_MEDIUM = random.randint(38, 108)
             idOTD_EASY = random.randint(1, 37)
             getInfo(db)
+
         time.sleep(180)
 
 thread = threading.Thread(target=changeDay)
@@ -203,7 +210,7 @@ def tableUpdater(number, difficulty, user):
         average = db.fetchone()
         average = list(average)
         for i in range(len(average)):
-            if average[i] != 'NULL' or average[i] == 0:
+            if average[i] is not None or average[i] == 0:
                 countDays += 1
                 numberSum += int(average[i])
 
@@ -295,20 +302,19 @@ def getChart(difficulty, user):
     labels = list(infoNew.keys())
     values = list(infoNew.values())
 
-    first_number = next((index for index, num in enumerate(values) if num != 0), None)
-    last_number = next((index for index, num in enumerate(values[::-1]) if num != 0), None)
-    if first_number and last_number:
-        last_number = length - last_number
-        turnOff = 0
-        print(values)
-        print(first_number, last_number)
-        print(values[first_number:last_number+1], labels[first_number:])
-        return values[first_number:last_number+1], labels[first_number:], turnOff
-    else:
+    first_number = next((index for index, num in enumerate(values) if num != None), None)
+    last_number = next((index for index, num in enumerate(values[::-1]) if num != None), None)
+    if last_number == None:
+        last_number = 0
+
+    if first_number == 0 and last_number == 0:
         turnOff = 1
         todday = 1
-        print(values[first_number:last_number], labels[todday-1:])
         return values[first_number:last_number], labels[todday-1:], turnOff
+    else:
+        last_number = length - last_number
+        turnOff = 0
+        return values[first_number:last_number+1], labels[first_number:last_number+1], turnOff
 
 
 def distance_calc(longDAY, longGIVEN, latDAY, latGIVEN):
@@ -496,6 +502,9 @@ async def reg(register: Registration):
             'success': True
         }
     )
+@app.get('/privacy')
+async def privacy():
+    return FileResponse('static/privacy.html', media_type="text/html")
 
 @app.get('/extreme')
 async def extreme():
@@ -686,15 +695,7 @@ async def getStats(request: Request):
     db.execute('SELECT winnersCount, averageTry, `1st`, `2nd`, `3rd`, `4th`, `5th` FROM infoOTD WHERE difficulty = ? COLLATE BINARY', (difficulty,))
     data = db.fetchone()
     (sumOfTries, averageTry) = data[0:2]
-    countDel = 0
-    data = list(data)
-    for i in reversed(range(len(data))):
-        if not data[i]:
-            countDel += 1
-            del data[i]
-
-    data = tuple(data)
-    winners = data[2:7 - countDel]
+    winners = data[2:7]
 
     return JSONResponse(
         content={
@@ -809,7 +810,8 @@ async def checkIfWon(request: Request):
     else:
         wonCheck = 0
 
-    tomorrow = date.today()
+    tomorrow = datetime.now(timezone)
+    tomorrow = tomorrow.date()
     dayTomorrow = tomorrow.day
     if dayTomorrow != dayToday:
         session[f"won_game_{diff}"] = False
