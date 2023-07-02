@@ -285,29 +285,6 @@
     <script src="static/scripts/fetchToken.js"></script>
 
     <script>
-        const WON = document.getElementById('SB');
-        const INP = document.getElementById('city');
-        fetch('/checkWon', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify('extreme')
-        })
-        .then(res => {
-            res.json().then(response => {
-                if (response.won === 1) {
-                    WON.disabled = true;
-                    INP.disabled = true;
-                }
-                else {
-                    INP.disabled = false;
-                }
-            })
-        })
-    </script>
-
-    <script>
         fetch('/country')
         .then(res => {
             res.json().then(response => {
@@ -388,6 +365,46 @@
             cityInput.value = '';
             return false;
         }
+    </script>
+
+    <script>
+        const WON = document.getElementById('SB');
+        const INP = document.getElementById('city');
+        fetch('/checkWon', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify('extreme')
+        })
+        .then(res => {
+            res.json().then(response => {
+                let CTXD = 0;
+                if (response.won === 1) {
+                    WON.disabled = true;
+                    INP.disabled = true;
+                    for (let i = 0; i < response.count; i++) {
+                        let info = response.tablica[i]
+                        if (info[0] === 'true') {
+                            circleWinScriptFunction(info[1])
+                        } else {
+                            circleNormalScriptFunction(info[1])
+                        }
+                        tableScriptFunction(info);
+                        CTXD = tableClearScriptFunction(CTXD);
+                    }
+                }
+                else {
+                    INP.disabled = false;
+                    for (let i = 0; i < response.count; i++) {
+                        let info = response.tablica[i]
+                        circleNormalScriptFunction(info[1])
+                        tableScriptFunction(info);
+                        CTXD = tableClearScriptFunction(CTXD);
+                    }
+                }
+            })
+        })
     </script>
 
     <script src="static/scripts/logout.js"></script>

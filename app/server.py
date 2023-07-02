@@ -113,7 +113,7 @@ getInfo(db)
 def changeDay():
     global idOTD, idOTD_HARD, idOTD_MEDIUM, idOTD_EASY
     global cityOYD, cityOYDH, cityOYDM, cityOYDE
-    global dayToday
+    global dayToday, dayYesterday
     while True:
         tomorrow = datetime.now(timezone)
         tomorrow = tomorrow.date()
@@ -125,12 +125,13 @@ def changeDay():
             cityOYDM.append(cityOTD_medium_info[0])
             cityOYDE.append(cityOTD_easy_info[0])
 
-            dayToday=dayTomorrow
+            dayToday = dayTomorrow
 
             cx = sqlite3.connect('data.db')
             db = cx.cursor()
 
             db.execute('UPDATE infoOTD SET sum_of_tries = 0, winnersCount  = 0, averageTry  = 0, `1st` = NULL, `2nd` = NULL, `3rd` = NULL, `4th` = NULL, `5th` = NULL')
+            db.execture('DELETE FROM tablica')
             db.connection.commit()
 
             db.execute('SELECT id from user_data ORDER BY id DESC LIMIT 1')
@@ -577,11 +578,51 @@ async def guess(guess: Guess, request: Request):
         angle = calculate_angle(cityOTD_info[6], cityOTD_info[5], CI[6], CI[5])
         dir = angle_to_direction(angle)
 
+        if 'token' not in request.session:
+            if 'day' not in request.session:
+                request.session['day'] = dayToday
+
+            if request.session['day'] == dayToday:
+                if f'count_{diff}' not in request.session:
+                    request.session[f'count_{diff}'] = 1
+                else:
+                    count = request.session[f'count_{diff}']
+                    count += 1
+                    request.session[f'count_{diff}'] = count
+            else:
+                request.session.clear()
+                request.session[f'count_{diff}'] = 1
+                request.session['day'] = dayToday
+
+            cnt = request.session[f'count_{diff}']
+            print(f'count_{diff}', cnt)
+            data = {'name': CITY, 'dir': dir, 'distance': distance, 'pow': pow, 'lud': lud, 'arrowP': arrP, 'arrowL': arrL, 'powDoTablicy': CI[4], 'ludDoTablicy': CI[3]}
+            data_name = f'data{cnt}_{diff}'
+            request.session[data_name] = data
+
+        else:
+            db.execute('SELECT id FROM user_data WHERE username = ?', (username,))
+            (id,) = db.fetchone()
+            db.execute('SELECT count FROM tablica WHERE difficulty = ? COLLATE BINARY AND id = ? ORDER BY count DESC LIMIT 1', (diff, id))
+            cnt2 = db.fetchone()
+            if cnt2 is None:
+                cnt2 = 1
+                db.execute('INSERT INTO tablica (id, difficulty, count, name, dir, distance, pow, lud, arrowP, arrowL, powDoTablicy, ludDoTablicy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (id, diff, cnt2, CITY, dir, distance, pow, lud, arrP, arrL, CI[4], CI[3]))
+                db.connection.commit()
+            else:
+                (cnt2,) = cnt2
+                cnt2 += 1
+                db.execute('INSERT INTO tablica (id, difficulty, count, name, dir, distance, pow, lud, arrowP, arrowL, powDoTablicy, ludDoTablicy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (id, diff, cnt2, CITY, dir, distance, pow, lud, arrP, arrL, CI[4], CI[3]))
+                db.connection.commit()
+
+
+
         if distance == 0 and 'token' in request.session:
             db.execute('UPDATE userIndividual SET won = ? WHERE difficulty = ? AND id = (SELECT id FROM user_data WHERE username = ?)', (1, diff, username))
             db.connection.commit()
         elif distance == 0 and 'token' not in request.session:
-            session[f"won_game_{diff}"] = True
+            data_name = f"won_game_{diff}"
+            request.session[data_name] = True
 
         return JSONResponse(
             content={
@@ -797,6 +838,7 @@ async def getUserStats(request: Request):
 async def checkIfWon(request: Request):
     diff = await request.json()
     session = request.session
+    tablicaChanged = []
 
     if 'token' in request.session:
         token = request.session.get('token')
@@ -805,24 +847,72 @@ async def checkIfWon(request: Request):
         if not username:
             return
         else:
+
             db.execute('SELECT won FROM userIndividual WHERE difficulty = ? COLLATE BINARY AND id = (SELECT id from user_data WHERE username = ?)', (diff, username))
             (wonCheck,) = db.fetchone()
+
+            db.execute('SELECT count FROM tablica WHERE difficulty = ? COLLATE BINARY and id = (SELECT id from user_data where username = ?) ORDER BY count DESC LIMIT 1', (diff, username))
+            count = db.fetchone()
+            if count is not None:
+                (count,) = count
+
+            db.execute('SELECT name, dir, distance, pow, lud, arrowP, arrowL, powDoTablicy, ludDoTablicy FROM tablica WHERE difficulty = ? COLLATE BINARY AND id = (SELECT id from user_data where username = ?) ORDER BY count ASC', (diff, username))
+            tablica = db.fetchall()
+            if tablica is not None:
+                tablicaChanged = [
+                    (('false', item[0]) + item[1:]) if item[2] != 0 else (('true', item[0]) + item[1:])
+                    for item in tablica
+                ]
     else:
         wonCheck = 0
+
+    if f'count_{diff}' in request.session and 'token' not in request.session:
+        count = request.session[f'count_{diff}']
+        for i in range(1, count + 1):
+            info = request.session[f'data{i}_{diff}']
+            if info['distance'] != 0:
+                infoFinal = {'false': 'false'}
+                infoFinal.update(info)
+                infoFinal = tuple(infoFinal.values())
+            else:
+                infoFinal = {'true': 'true'}
+                infoFinal.update(info)
+                infoFinal = tuple(infoFinal.values())
+
+            tablicaChanged.append(infoFinal)
+        print(tablicaChanged)
 
     tomorrow = datetime.now(timezone)
     tomorrow = tomorrow.date()
     dayTomorrow = tomorrow.day
-    if dayTomorrow != dayToday:
-        session[f"won_game_{diff}"] = False
+    if 'day' in request.session and 'token' not in request.session:
+        tokenDate = request.session['day']
+        if tokenDate != dayToday:
+            tablicaChanged = 0
+            count = 0
+    else:
+        tokenDate = dayToday
+
+
+
+    if f'won_game_{diff}' in request.session and 'token' not in request.session:
+        if session[f'won_game_{diff}'] == True and dayTomorrow != tokenDate:
+            session[f"won_game_{diff}"] = False
 
     if session.get(f"won_game_{diff}", False) and 'token' not in request.session or wonCheck == 1:
         won = 1
     else:
         won = 0
+
+    if f'count_{diff}' not in request.session and 'token' not in request.session:
+        count = 0
+        tablicaChanged = 0
+
     return JSONResponse(
         content={
-            'won': won
+            'won': won,
+            'tablica': tablicaChanged,
+            'count': count
         }
     )
 
