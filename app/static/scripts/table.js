@@ -1,8 +1,8 @@
 let C = 0;
 
 function tableScriptFunction(info) {
-
     C++;
+
     const table = document.getElementById('TBL');
     const newRow =document.createElement('tr');
     const DL3 = document.querySelector('#countries');
@@ -14,8 +14,10 @@ function tableScriptFunction(info) {
     countCell.innerHTML = C;
     newRow.appendChild(countCell);
 
-    DR = info[2], DS = Math.round(info[3]), P = info[4], S = info[5], arrS = info[6], arrP = info[7], S2 = info[8], P2 = info[9];
     const optionName = Array.from(DL3.options).find(option => option.getAttribute('miasto') === info[1]);
+
+    DR = info[2], DS = Math.round(info[3]), P = info[4], S = info[5], arrS = info[6], arrP = info[7], S2 = info[8], P2 = info[9];
+
     miejsce = optionName.getAttribute('value');
 
     cityCell = document.createElement('td');
@@ -23,7 +25,7 @@ function tableScriptFunction(info) {
     cityCell.innerHTML = miejsce;
     newRow.appendChild(cityCell)
 
-    if (info[0] === false) {
+    if (info[0] === false || info[0] === 'false') {
         wayCell = document.createElement('td');
         wayCell.classList.add('row-items');
         wayCell.innerHTML = `<img src="static/icons/table-rows/${DR}.png" class="icon">`;
@@ -110,7 +112,7 @@ function tableScriptFunction(info) {
         DL3.removeChild(optionName);
         return C;
     }
-    else if(info[0] === true) {
+    else if(info[0] === true || info[0] === 'true') {
         wayCell = document.createElement('td');
         wayCell.classList.add('row-items');
         wayCell.innerHTML = '<img src="static/icons/table-rows/DONE.png" class="icon">';

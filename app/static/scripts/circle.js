@@ -45,6 +45,13 @@ function circleWinScriptFunction(name) {
     const DL4 = document.querySelector('#countries');
     const svgMap = document.querySelector('.MapImage svg');
 
+    const Circles = svgMap.querySelectorAll('.circle');
+    if (Circles) {
+        Circles.forEach(circle => {
+            circle.setAttribute('fill', '#ff781f');
+        });
+    };
+
     const option = Array.from(DL4.options).find((option) => option.getAttribute('miasto') === name);
     if (option) {
         xCoord = parseFloat(option.getAttribute('szerokosc'));
