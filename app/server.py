@@ -3,7 +3,7 @@ from fastapi.responses import FileResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.security import OAuth2PasswordBearer
 from starlette.middleware.sessions import SessionMiddleware
-from starlette.responses import FileResponse
+from starlette.responses import FileResponse, HTMLResponse
 from starlette.requests import Request
 import sqlite3, random, math, time, threading, pytz, calendar
 from sqlite3.dbapi2 import *
@@ -112,8 +112,7 @@ getInfo(db)
 
 def changeDay():
     global idOTD, idOTD_HARD, idOTD_MEDIUM, idOTD_EASY
-    global cityOYD, cityOYDH, cityOYDM, cityOYDE
-    global dayToday, dayYesterday
+    global cityOYD, cityOYDH, cityOYDM, cityOYDE, dayToday
     while True:
         tomorrow = datetime.now(timezone)
         tomorrow = tomorrow.date()
@@ -131,49 +130,38 @@ def changeDay():
             db = cx.cursor()
 
             db.execute('UPDATE infoOTD SET sum_of_tries = 0, winnersCount  = 0, averageTry  = 0, `1st` = NULL, `2nd` = NULL, `3rd` = NULL, `4th` = NULL, `5th` = NULL')
-            db.execture('DELETE FROM tablica')
+            db.execute('UPDATE userIndividual SET todayTries = 0, won = 0')
+            db.execute('DELETE FROM tablica')
             db.connection.commit()
 
             db.execute('SELECT id from user_data ORDER BY id DESC LIMIT 1')
             (max,) = db.fetchone()
 
             if dayToday == 1:
-                c = 1
-                while c != max:
-                        db.execute('SELECT * from user_data WHERE id = ?', (c,))
-                        check = db.fetchone()
-                        if check is not None:
-                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL WHERE difficulty = ? COLLATE BINARY AND id = ?', ('easy', c))
-                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL WHERE difficulty = ? COLLATE BINARY AND id = ?', ('medium', c))
-                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL WHERE difficulty = ? COLLATE BINARY AND id = ?', ('hard', c))
-                            db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL WHERE difficulty = ? COLLATE BINARY AND id = ?', ('extreme', c))
-                            db.connection.commit()
-                            c += 1
-                        else:
-                            c += 1
-
-            c = 1
-            while c != max:
-                db.execute('SELECT * from user_data WHERE id = ?', (c,))
+                db.execute('SELECT username from user_data')
                 check = db.fetchone()
                 if check is not None:
-                    db.execute('UPDATE userIndividual SET todayTries = 0, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('easy', c))
-                    db.execute('UPDATE userIndividual SET todayTries = 0, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('medium', c))
-                    db.execute('UPDATE userIndividual SET todayTries = 0, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('hard', c))
-                    db.execute('UPDATE userIndividual SET todayTries = 0, won = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', ('extreme', c))
+                    db.execute('UPDATE userIndividual SET averageTries = 0, `1` = NULL, `2` = NULL, `3` = NULL, `4` = NULL, `5` = NULL, `6` = NULL, `7` = NULL, `8` = NULL, `9` = NULL, `10` = NULL, `11` = NULL, `12` = NULL, `13` = NULL, `14` = NULL, `15` = NULL, `16` = NULL, `17` = NULL, `18` = NULL, `19` = NULL, `20` = NULL, `21` = NULL, `22` = NULL, `23` = NULL, `24` = NULL, `25` = NULL, `26` = NULL, `27` = NULL, `28` = NULL, `29` = NULL, `30` = NULL, `31` = NULL')
                     db.connection.commit()
 
+            c = 1
+            while c != max + 1:
+                db.execute('SELECT username from user_data WHERE id = ?', (c,))
+                check = db.fetchone()
+                if check is not None:
                     difficulties = ['easy', 'medium', 'hard', 'extreme']
                     for i in range(0, 4):
                         db.execute('SELECT winstreakNow, winstreakYest FROM userIndividual WHERE difficulty = ? COLLATE BINARY AND id = ?', (difficulties[i], c))
-                        (tod, yes) = db.fetchone()
+                        check = db.fetchone()
+                        if check is not None:
+                            (tod, yes) = check
 
-                        if tod == yes:
-                            db.execute('UPDATE userIndividual SET winstreakNow = 0, winstreakYest = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', (difficulties[i], c))
-                            db.connection.commit()
-                        else:
-                            db.execute('UPDATE userIndividual SET winstreakYest = ? WHERE difficulty = ? COLLATE BINARY AND id = ?', (tod, difficulties[i], c))
-                            db.connection.commit()
+                            if tod == yes:
+                                db.execute('UPDATE userIndividual SET winstreakNow = 0, winstreakYest = 0 WHERE difficulty = ? COLLATE BINARY AND id = ?', (difficulties[i], c))
+                                db.connection.commit()
+                            else:
+                                db.execute('UPDATE userIndividual SET winstreakYest = ? WHERE difficulty = ? COLLATE BINARY AND id = ?', (tod, difficulties[i], c))
+                                db.connection.commit()
 
                     c += 1
                 else:
@@ -424,7 +412,7 @@ async def getCurrentUser(token: str = Depends(oauth2_scheme)):
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         username: str = payload.get("sub1")
         permission: int = payload.get("sub2")
-        if username is NONE:
+        if username is None:
             raise credentialException
 
         token_data = TokenData(username=username, permission=permission)
@@ -435,13 +423,7 @@ async def getCurrentUser(token: str = Depends(oauth2_scheme)):
     if user is None:
         raise credentialException
 
-    return user
-
-async def getCurrentActiveUser(currentUser: UserInDB = Depends(getCurrentUser)):
-    if currentUser.disabled:
-        raise HTTPException(status_code=400, detail="Inactive user")
-
-    return currentUser
+    return user.username
 
 @app.post("/token", response_model=Token)
 async def loginForAccessToken(login: Login, request: Request):
@@ -544,9 +526,7 @@ async def guess(guess: Guess, request: Request):
     session = request.session
 
     if 'token' in request.session:
-        token = request.session.get('token')
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        username = payload.get("sub1")
+        username = await getCurrentUser(request.session['token'])
         if not username:
             return
         else:
@@ -554,6 +534,7 @@ async def guess(guess: Guess, request: Request):
             (wonCheck,) = db.fetchone()
     else:
         wonCheck = 0
+        username = 0
 
     if session.get(f"won_game_{diff}", False) and 'token' not in request.session or wonCheck == 1:
         return JSONResponse(
@@ -568,54 +549,29 @@ async def guess(guess: Guess, request: Request):
         for i in range(1, 8):
             CI.append(check[i])
 
-        if 'token' in request.session:
-            if username:
-                powiat = check[2]
-                addToFavCity(CITY, powiat, diff, username)
-
         pow, lud, arrP, arrL = rest(cityOTD_info, CI)
         distance = distance_calc(cityOTD_info[5], CI[5], cityOTD_info[6], CI[6])
         angle = calculate_angle(cityOTD_info[6], cityOTD_info[5], CI[6], CI[5])
         dir = angle_to_direction(angle)
 
-        if 'token' not in request.session:
-            if 'day' not in request.session:
-                request.session['day'] = dayToday
+        if 'token' in request.session:
+            if username:
+                powiat = check[2]
+                addToFavCity(CITY, powiat, diff, username)
 
-            if request.session['day'] == dayToday:
-                if f'count_{diff}' not in request.session:
-                    request.session[f'count_{diff}'] = 1
+                db.execute('SELECT id FROM user_data WHERE username = ?', (username,))
+                (id,) = db.fetchone()
+                db.execute('SELECT count FROM tablica WHERE difficulty = ? COLLATE BINARY AND id = ? ORDER BY count DESC LIMIT 1', (diff, id))
+                cnt2 = db.fetchone()
+                if cnt2 is None:
+                    cnt2 = 1
+                    db.execute('INSERT INTO tablica (id, difficulty, count, name, dir, distance, pow, lud, arrowP, arrowL, powDoTablicy, ludDoTablicy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (id, diff, cnt2, CITY, dir, distance, pow, lud, arrP, arrL, CI[4], CI[3]))
+                    db.connection.commit()
                 else:
-                    count = request.session[f'count_{diff}']
-                    count += 1
-                    request.session[f'count_{diff}'] = count
-            else:
-                request.session.clear()
-                request.session[f'count_{diff}'] = 1
-                request.session['day'] = dayToday
-
-            cnt = request.session[f'count_{diff}']
-            print(f'count_{diff}', cnt)
-            data = {'name': CITY, 'dir': dir, 'distance': distance, 'pow': pow, 'lud': lud, 'arrowP': arrP, 'arrowL': arrL, 'powDoTablicy': CI[4], 'ludDoTablicy': CI[3]}
-            data_name = f'data{cnt}_{diff}'
-            request.session[data_name] = data
-
-        else:
-            db.execute('SELECT id FROM user_data WHERE username = ?', (username,))
-            (id,) = db.fetchone()
-            db.execute('SELECT count FROM tablica WHERE difficulty = ? COLLATE BINARY AND id = ? ORDER BY count DESC LIMIT 1', (diff, id))
-            cnt2 = db.fetchone()
-            if cnt2 is None:
-                cnt2 = 1
-                db.execute('INSERT INTO tablica (id, difficulty, count, name, dir, distance, pow, lud, arrowP, arrowL, powDoTablicy, ludDoTablicy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (id, diff, cnt2, CITY, dir, distance, pow, lud, arrP, arrL, CI[4], CI[3]))
-                db.connection.commit()
-            else:
-                (cnt2,) = cnt2
-                cnt2 += 1
-                db.execute('INSERT INTO tablica (id, difficulty, count, name, dir, distance, pow, lud, arrowP, arrowL, powDoTablicy, ludDoTablicy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (id, diff, cnt2, CITY, dir, distance, pow, lud, arrP, arrL, CI[4], CI[3]))
-                db.connection.commit()
-
-
+                    (cnt2,) = cnt2
+                    cnt2 += 1
+                    db.execute('INSERT INTO tablica (id, difficulty, count, name, dir, distance, pow, lud, arrowP, arrowL, powDoTablicy, ludDoTablicy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (id, diff, cnt2, CITY, dir, distance, pow, lud, arrP, arrL, CI[4], CI[3]))
+                    db.connection.commit()
 
         if distance == 0 and 'token' in request.session:
             db.execute('UPDATE userIndividual SET won = ? WHERE difficulty = ? AND id = (SELECT id FROM user_data WHERE username = ?)', (1, diff, username))
@@ -636,7 +592,8 @@ async def guess(guess: Guess, request: Request):
                 'arrowP': arrP,
                 'arrowL': arrL,
                 'powDoTablicy': CI[4],
-                'ludDoTablicy': CI[3]
+                'ludDoTablicy': CI[3],
+                'username': username
             }
         )
     else:
@@ -708,10 +665,8 @@ async def countAVRG(request: Request):
     number = data.get('number')
     difficulty = data.get('difficulty')
 
-    if request.session.get('token'):
-        token = request.session.get('token')
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        username: str = payload.get("sub1")
+    if 'token' in request.session:
+        username = await getCurrentUser(request.session['token'])
         if not username:
             username = 'noUser'
     else:
@@ -754,9 +709,7 @@ async def getUserStats(request: Request):
     if 'token' not in request.session:
         return
     else:
-        token = request.session.get('token')
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        username = payload.get("sub1")
+        username = await getCurrentUser(request.session['token'])
         if not username:
             return
 
@@ -841,13 +794,12 @@ async def checkIfWon(request: Request):
     tablicaChanged = []
 
     if 'token' in request.session:
-        token = request.session.get('token')
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        username = payload.get("sub1")
+        response = 0
+        logged = 1
+        username = await getCurrentUser(request.session['token'])
         if not username:
             return
         else:
-
             db.execute('SELECT won FROM userIndividual WHERE difficulty = ? COLLATE BINARY AND id = (SELECT id from user_data WHERE username = ?)', (diff, username))
             (wonCheck,) = db.fetchone()
 
@@ -855,6 +807,8 @@ async def checkIfWon(request: Request):
             count = db.fetchone()
             if count is not None:
                 (count,) = count
+            else:
+                count = 0
 
             db.execute('SELECT name, dir, distance, pow, lud, arrowP, arrowL, powDoTablicy, ludDoTablicy FROM tablica WHERE difficulty = ? COLLATE BINARY AND id = (SELECT id from user_data where username = ?) ORDER BY count ASC', (diff, username))
             tablica = db.fetchall()
@@ -865,54 +819,39 @@ async def checkIfWon(request: Request):
                 ]
     else:
         wonCheck = 0
-
-    if f'count_{diff}' in request.session and 'token' not in request.session:
-        count = request.session[f'count_{diff}']
-        for i in range(1, count + 1):
-            info = request.session[f'data{i}_{diff}']
-            if info['distance'] != 0:
-                infoFinal = {'false': 'false'}
-                infoFinal.update(info)
-                infoFinal = tuple(infoFinal.values())
-            else:
-                infoFinal = {'true': 'true'}
-                infoFinal.update(info)
-                infoFinal = tuple(infoFinal.values())
-
-            tablicaChanged.append(infoFinal)
-        print(tablicaChanged)
+        count = 0
+        tablicaChanged = 0
 
     tomorrow = datetime.now(timezone)
     tomorrow = tomorrow.date()
     dayTomorrow = tomorrow.day
     if 'day' in request.session and 'token' not in request.session:
         tokenDate = request.session['day']
-        if tokenDate != dayToday:
-            tablicaChanged = 0
-            count = 0
     else:
         tokenDate = dayToday
+        request.session[f"won_game_{diff}"] = False
 
-
-
-    if f'won_game_{diff}' in request.session and 'token' not in request.session:
-        if session[f'won_game_{diff}'] == True and dayTomorrow != tokenDate:
-            session[f"won_game_{diff}"] = False
+    if 'token' not in request.session:
+        logged = 0
+        if dayTomorrow != tokenDate:
+            response = 1
+            if request.session[f'won_game_{diff}'] == True:
+                request.session[f"won_game_{diff}"] = False
+        else:
+            response = 0
 
     if session.get(f"won_game_{diff}", False) and 'token' not in request.session or wonCheck == 1:
         won = 1
     else:
         won = 0
 
-    if f'count_{diff}' not in request.session and 'token' not in request.session:
-        count = 0
-        tablicaChanged = 0
-
     return JSONResponse(
         content={
             'won': won,
             'tablica': tablicaChanged,
-            'count': count
+            'count': count,
+            'clear': response,
+            'user': logged
         }
     )
 

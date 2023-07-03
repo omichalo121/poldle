@@ -266,6 +266,23 @@
         </div>
     </body>
 
+    <script>
+        fetch('/country')
+        .then(res => {
+            res.json().then(response => {
+                const datalist = document.querySelector('#countries')
+                response.forEach(country => {
+                    const nazwa = country.nazwa === country.powiat ? country.nazwa : `${country.nazwa}, ${country.powiat}`
+                    datalist.innerHTML += `<option value='${nazwa}' szerokosc='${country.szerokosc}' dlugosc='${country.dlugosc}' ludnosc='${country.ludnosc}' powierzchnia='${country.powierzchnia}' miasto='${country.nazwa}'>`;
+                })
+                rememberDataScriptFunction("medium");
+            })
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    </script>
+
     <script src="static/scripts/buttonDisable.js"></script>
 
     <script src="static/scripts/handle-enter.js"> </script>
@@ -287,44 +304,30 @@
     <script src="static/scripts/fetchToken.js"></script>
 
     <script>
-        fetch('/country')
-        .then(res => {
-            res.json().then(response => {
-                const datalist = document.querySelector('#countries')
-                response.forEach(country => {
-                    const nazwa = country.nazwa === country.powiat ? country.nazwa : `${country.nazwa}, ${country.powiat}`
-                    datalist.innerHTML += `<option value='${nazwa}' szerokosc='${country.szerokosc}' dlugosc='${country.dlugosc}' ludnosc='${country.ludnosc}' powierzchnia='${country.powierzchnia}' miasto='${country.nazwa}'>`;
-                })
-            })
-        })
-        .catch(err => {
-            console.log('failed');
-            console.log(err);
-        });
-    </script>
+        let storedResponses = localStorage.getItem('responses_medium');
+        storedResponses = storedResponses ? JSON.parse(storedResponses) : [];
 
-    <script>
         function giveWinningNumber(number) {
-            const difficulty = 'medium';
+        const difficulty = 'medium';
 
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', '/averageCount');
-            xhr.setRequestHeader('Content-Type', 'application/json');
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '/averageCount');
+        xhr.setRequestHeader('Content-Type', 'application/json');
 
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                console.log(xhr.responseText);
-                } else {
-                console.error('Request failed. Status:', xhr.status);
-                }
-            };
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+            console.log(xhr.responseText);
+            } else {
+            console.error('Request failed. Status:', xhr.status);
+            }
+        };
 
-            const data = JSON.stringify({ number: number, difficulty: difficulty });
-            xhr.send(data);
+        const data = JSON.stringify({ number: number, difficulty: difficulty });
+        xhr.send(data);
         }
 
-        let count = 0;
         let citiesGiven = [];
+        let count = 0;
         const submit = () => {
             const cityInput = document.querySelector('#city');
             const city = document.querySelector('#city').value.split(',')[0];
@@ -343,70 +346,41 @@
                         if (response.success && response.guessed) {
                             const info = [response.guessed, response.name];
                             count = tableClearScriptFunction(count);
-                            circleWinScriptFunction(response.name)
+                            circleWinScriptFunction(response.name);
                             const finalCount = tableScriptFunction(info);
                             giveWinningNumber(finalCount);
                             winScriptFunction();
+                            if (response.username === 0) {
+                                storedResponses.push(info);
+                                localStorage.setItem('responses_medium', JSON.stringify(storedResponses));
+                            }
                             return;
                         }
                         else if (response.success === false) {
                             return;
                         }
+
                         if (!citiesGiven.includes(response.name)) {
                             citiesGiven.push(response.name)
                             const info = [response.guessed, response.name, response.dir, response.distance, response.lud, response.pow, response.arrowP, response.arrowL, response.powDoTablicy, response.ludDoTablicy];
                             count = tableClearScriptFunction(count);
-                            circleNormalScriptFunction(response.name)
+                            circleNormalScriptFunction(response.name);
                             const finalCount = tableScriptFunction(info);
+                            console.log(response.username);
+                            if (response.username === 0) {
+                                storedResponses.push(info);
+                                localStorage.setItem('responses_medium', JSON.stringify(storedResponses));
+                            }
                         }
                     })
                 })
                 .catch(err => {
+                    console.log('failed')
                     console.log(err)
                 })
             cityInput.value = '';
             return false;
         }
-    </script>
-
-    <script>
-        const WON = document.getElementById('SB');
-        const INP = document.getElementById('city');
-        fetch('/checkWon', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify('medium')
-        })
-        .then(res => {
-            res.json().then(response => {
-                let CTXD = 0;
-                if (response.won === 1) {
-                    WON.disabled = true;
-                    INP.disabled = true;
-                    for (let i = 0; i < response.count; i++) {
-                        let info = response.tablica[i]
-                        if (info[0] === 'true') {
-                            circleWinScriptFunction(info[1])
-                        } else {
-                            circleNormalScriptFunction(info[1])
-                        }
-                        tableScriptFunction(info);
-                        CTXD = tableClearScriptFunction(CTXD);
-                    }
-                }
-                else {
-                    INP.disabled = false;
-                    for (let i = 0; i < response.count; i++) {
-                        let info = response.tablica[i]
-                        circleNormalScriptFunction(info[1])
-                        tableScriptFunction(info);
-                        CTXD = tableClearScriptFunction(CTXD);
-                    }
-                }
-            })
-        })
     </script>
 
     <script src="static/scripts/logout.js"></script>
