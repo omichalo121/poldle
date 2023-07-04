@@ -572,6 +572,8 @@ async def guess(guess: Guess, request: Request):
                     cnt2 += 1
                     db.execute('INSERT INTO tablica (id, difficulty, count, name, dir, distance, pow, lud, arrowP, arrowL, powDoTablicy, ludDoTablicy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (id, diff, cnt2, CITY, dir, distance, pow, lud, arrP, arrL, CI[4], CI[3]))
                     db.connection.commit()
+        else:
+            request.session['day'] = dayToday
 
         if distance == 0 and 'token' in request.session:
             db.execute('UPDATE userIndividual SET won = ? WHERE difficulty = ? AND id = (SELECT id FROM user_data WHERE username = ?)', (1, diff, username))
@@ -829,6 +831,7 @@ async def checkIfWon(request: Request):
         tokenDate = request.session['day']
     else:
         tokenDate = dayToday
+        request.session['day'] = dayToday
         request.session[f"won_game_{diff}"] = False
 
     if 'token' not in request.session:
