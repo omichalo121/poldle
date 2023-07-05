@@ -10,18 +10,19 @@ const passwordAccept = document.getElementById('password-accept_r');
 const passAccBlock = document.getElementById('passwordAcc-info');
 
 const RB = document.getElementById('register');
+let correctPassword = 0;
 
 // Disabling the button
 
-loginCheck.addEventListener('input', loginHandler);
-passwordCheck.addEventListener('input', loginHandler);
-passwordAccept.addEventListener('input', loginHandler);
+loginCheck.addEventListener('input', registerHandler);
+passwordCheck.addEventListener('input', registerHandler);
+passwordAccept.addEventListener('input', registerHandler);
 
-function loginHandler() {
-    if(loginCheck.value.trim() === '' || passwordCheck.value.trim() === '' || passwordAccept.value.trim() === '') {
+function registerHandler() {
+    if(loginCheck.value.trim() === '' || passwordCheck.value.trim() === '' || passwordAccept.value.trim() === '' || correctPassword === 0) {
         RB.disabled = true;
     }
-    else {
+    else if (correctPassword === 1) {
         RB.disabled = false;
     }
 }
@@ -53,12 +54,12 @@ loginCheck.addEventListener('input', (event) => {
             loginBox.style.display = 'flex';
         }
         else if (invalidChar !== null && invalidChar.length > 0) {
-                loginText.textContent = 'Login zawiera niedozwolone znaki';
-                loginBox.style.display = 'flex';
+            loginText.textContent = 'Login zawiera niedozwolone znaki';
+            loginBox.style.display = 'flex';
         }
         else {
             loginText.textContent = 'Login poprawny';
-                loginBox.style.display = 'flex';
+            loginBox.style.display = 'flex';
         }
     }
 });
@@ -103,6 +104,7 @@ passwordCheck.addEventListener('input', (event) => {
         const smallLetter = passValue.match(/[a-z]/);
         const number = passValue.match(/[0-9]/);
         const invalidChar = passValue.match(/[!@#$%^&*()_+<>?{}:";\-=`[\]]/);
+        correctPassword = 0;
 
         if (invalidChar && invalidChar.length > 0) {
             passwordText.textContent = 'Hasło zawiera niedozwolone znaki';
@@ -122,6 +124,7 @@ passwordCheck.addEventListener('input', (event) => {
         } else if (number && bigLetter && smallLetter) {
             passwordText.textContent = 'Hasło poprawne';
             passwordBox.style.display = 'flex';
+            correctPassword = 1;
         }
     }
     passwordCheck.value = maskedPassword;
