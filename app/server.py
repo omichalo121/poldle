@@ -797,7 +797,7 @@ async def checkIfWon(request: Request):
     diff = await request.json()
     session = request.session
     tablicaChanged = []
-
+    # csds
     if session.get('token') is not None:
         response = 0
         logged = 1
