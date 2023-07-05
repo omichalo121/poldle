@@ -318,7 +318,6 @@
 
         xhr.onload = function () {
             if (xhr.status === 200) {
-            console.log(xhr.responseText);
             } else {
             console.error('Request failed. Status:', xhr.status);
             }
@@ -368,7 +367,6 @@
                             count = tableClearScriptFunction(count);
                             circleNormalScriptFunction(response.name);
                             const finalCount = tableScriptFunction(info);
-                            console.log(response.username);
                             if (response.username === 0) {
                                 storedResponses.push(info);
                                 localStorage.setItem('responses_easy', JSON.stringify(storedResponses));

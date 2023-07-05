@@ -199,7 +199,10 @@ def tableUpdater(number, difficulty, user):
         average = db.fetchone()
         average = list(average)
         for i in range(len(average)):
-            if average[i] is not None or average[i] == 0:
+            if average[i] is None:
+                continue
+            if average[i] != 'NULL' or average[i] == 0:
+                print(average[i])
                 countDays += 1
                 numberSum += int(average[i])
 
@@ -291,8 +294,8 @@ def getChart(difficulty, user):
     labels = list(infoNew.keys())
     values = list(infoNew.values())
 
-    first_number = next((index for index, num in enumerate(values) if num != None), None)
-    last_number = next((index for index, num in enumerate(values[::-1]) if num != None), None)
+    first_number = next((index for index, num in enumerate(values) if num != 0 or num is not None), None)
+    last_number = next((index for index, num in enumerate(values[::-1]) if num != 0), None)
     if last_number == None:
         last_number = 0
 
@@ -795,7 +798,7 @@ async def checkIfWon(request: Request):
     session = request.session
     tablicaChanged = []
 
-    if 'token' in request.session:
+    if session.get('token') is not None:
         response = 0
         logged = 1
         username = await getCurrentUser(request.session['token'])
@@ -827,14 +830,14 @@ async def checkIfWon(request: Request):
     tomorrow = datetime.now(timezone)
     tomorrow = tomorrow.date()
     dayTomorrow = tomorrow.day
-    if 'day' in request.session and 'token' not in request.session:
+    if 'day' in request.session and session.get('token') == None:
         tokenDate = request.session['day']
+        print(tokenDate)
     else:
         tokenDate = dayToday
-        request.session['day'] = dayToday
         request.session[f"won_game_{diff}"] = False
 
-    if 'token' not in request.session:
+    if session.get('token') is None:
         logged = 0
         if dayTomorrow != tokenDate:
             response = 1
@@ -843,7 +846,9 @@ async def checkIfWon(request: Request):
         else:
             response = 0
 
-    if session.get(f"won_game_{diff}", False) and 'token' not in request.session or wonCheck == 1:
+    print(response, session)
+
+    if session.get(f"won_game_{diff}", False) and session.get('token') is None or wonCheck == 1:
         won = 1
     else:
         won = 0
