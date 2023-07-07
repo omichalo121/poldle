@@ -797,14 +797,19 @@ async def checkIfWon(request: Request):
     diff = await request.json()
     session = request.session
     tablicaChanged = []
-    # csds
-    if session.get('token') is not None:
+    print(session)
+    if session.get('token') != None:
+        print("im here")
         response = 0
         logged = 1
-        username = await getCurrentUser(request.session['token'])
-        if not username:
-            return
-        else:
+        try:
+            payload = jwt.decode(request.session['token'], SECRET_KEY, algorithms=[ALGORITHM])
+            username : str = payload.get("sub1")
+        except:
+            username = "noUser"
+            del request.session['token']
+
+        if username != "noUser":
             db.execute('SELECT won FROM userIndividual WHERE difficulty = ? COLLATE BINARY AND id = (SELECT id from user_data WHERE username = ?)', (diff, username))
             (wonCheck,) = db.fetchone()
 
@@ -822,6 +827,10 @@ async def checkIfWon(request: Request):
                     (('false', item[0]) + item[1:]) if item[2] != 0 else (('true', item[0]) + item[1:])
                     for item in tablica
                 ]
+        else:
+            wonCheck = 0
+            count = 0
+            tablicaChanged = 0
     else:
         wonCheck = 0
         count = 0
@@ -830,14 +839,14 @@ async def checkIfWon(request: Request):
     tomorrow = datetime.now(timezone)
     tomorrow = tomorrow.date()
     dayTomorrow = tomorrow.day
-    if 'day' in request.session and session.get('token') == None:
+    if session.get('day') == None and session.get('token') == None or session.get('day') == None and wonCheck == 0:
         tokenDate = request.session['day']
         print(tokenDate)
     else:
         tokenDate = dayToday
         request.session[f"won_game_{diff}"] = False
 
-    if session.get('token') is None:
+    if 'token' not in request.session:
         logged = 0
         if dayTomorrow != tokenDate:
             response = 1
@@ -846,9 +855,7 @@ async def checkIfWon(request: Request):
         else:
             response = 0
 
-    print(response, session)
-
-    if session.get(f"won_game_{diff}", False) and session.get('token') is None or wonCheck == 1:
+    if session.get(f"won_game_{diff}", False) and session.get('token') == None or wonCheck == 1:
         won = 1
     else:
         won = 0
