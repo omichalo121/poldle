@@ -11,9 +11,10 @@ from pydantic import BaseModel
 from datetime import date, datetime, timedelta
 from jose import JWTError, jwt
 from passlib.context import CryptContext
+from decouple import config
 
-SECRET_KEY = "177c743305fc21a93dd66dd13d972723b26367b90cd603d9328b585cf43eb40a"
-ALGORITHM = "HS256"
+SECRET_KEY = config("SECRET_KEY")
+ALGORITHM = config("ALGORITHM")
 ACCESS_TOKEN_EXPIRE_MINUTE = 60
 
 class TokenGiven(BaseModel):
@@ -42,10 +43,8 @@ class TokenData(BaseModel):
 class User(BaseModel):
     id: int
     username: str
+    password: str
     permission: int
-    email: str or None = None
-    created: str or None = None
-    activity: str or None = None
 
 class UserInDB(User):
     password: str
@@ -293,9 +292,12 @@ def getChart(difficulty, user):
 
     labels = list(infoNew.keys())
     values = list(infoNew.values())
+    print(values)
 
-    first_number = next((index for index, num in enumerate(values) if num != 0 or num is not None), None)
-    last_number = next((index for index, num in enumerate(values[::-1]) if num != 0), None)
+    first_number = next((index for index, num in enumerate(values) if num == 0 or num == 'None'), None)
+    last_number = next((index for index, num in enumerate(values[::-1]) if num == 0), None)
+
+    print(first_number, last_number)
     if last_number == None:
         last_number = 0
 
@@ -381,7 +383,7 @@ def getPasswordHash(password):
     return pwd_context.hash(password)
 
 def getUser(username: str):
-    db.execute('SELECT * FROM user_data WHERE username = ? COLLATE BINARY', (username,))
+    db.execute('SELECT id, username, password, permission FROM user_data WHERE username = ? COLLATE BINARY', (username,))
     logged = db.fetchone()
     if logged:
         column_names = [description[0] for description in db.description]
