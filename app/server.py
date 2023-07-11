@@ -16,8 +16,6 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from typing import Annotated
 
-SECRET_KEY = "177c743305fc21a93dd66dd13d972723b26367b90cd603d9328b585cf43eb40a"
-ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTE = 60
 
 class TokenGiven(BaseModel):
