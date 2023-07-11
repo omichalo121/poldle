@@ -797,9 +797,7 @@ async def checkIfWon(request: Request):
     diff = await request.json()
     session = request.session
     tablicaChanged = []
-    print(session)
     if session.get('token') != None:
-        print("im here")
         response = 0
         logged = 1
         try:
@@ -839,9 +837,8 @@ async def checkIfWon(request: Request):
     tomorrow = datetime.now(timezone)
     tomorrow = tomorrow.date()
     dayTomorrow = tomorrow.day
-    if session.get('day') == None and session.get('token') == None or session.get('day') == None and wonCheck == 0:
+    if session.get('day') is not None and session.get('token') == None or session.get('day') is not None and wonCheck == 0:
         tokenDate = request.session['day']
-        print(tokenDate)
     else:
         tokenDate = dayToday
         request.session[f"won_game_{diff}"] = False
