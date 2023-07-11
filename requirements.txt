@@ -2,3 +2,7 @@ fastapi
 uvicorn
 gunicorn
 starlette
+python-jose[cryptography]
+passlib
+pytz
+python-decouple
